@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GTA Handling Editor</title>
+	<style>
+		@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+		body, html {
+			background: #000;
+			padding: 0;
+			margin: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+			body *, html * {
+				box-sizing: border-box;
+				font-family: 'Source Sans Pro', 'sans-serif';
+			}
+
+			::selection {
+				background: transparent;
+			}
+			
+			/* HEADER: TODO > LOAD MODELS IN THREE.JS HERE */
+			header.vehicle-model {
+				width: 100%;
+				background: #000;
+				height: 33.33%;
+				min-height: 200px;
+			}
+
+			div.button {
+				position: absolute;
+				width: 10%;
+				top: 0;
+				bottom: 0;
+				text-align: center;
+				padding-top: 5rem;
+				background: rgba(255,255,255,0.2);
+				font-size: 2rem;
+				cursor: pointer;
+				color: #fff;
+				transition: background 0.15s ease-in-out;
+				border-style: solid;
+				border-color: rgb(188, 154, 65);
+				border-width: 0;
+			}
+				div.button:hover {
+					background: rgba(255,255,255,0.5);
+				}
+				div.button.next {
+					right: 0;
+					border-left-width: 2px;
+				}
+				div.button.previous {
+					left: 0;
+					border-right-width: 2px;
+				}
+
+			.vehicles-container {
+				position: relative;
+				width: 100%;
+				height: 66.66%;
+			}
+				.vehicle {
+					width: 80%;
+					height: 100%;
+					margin: 0 auto;
+					background: #ddd;
+					padding: 1rem 2rem;
+					overflow-y: auto;
+				}
+					.vehicle-title {
+						text-align: center;
+						display: block;
+						border-bottom: 1px solid #bbb;
+						margin: 1rem 0 2rem 0;
+						padding-bottom: 1rem;
+						font-weight: 300;
+						font-size: 4vmax;
+					}
+					.vehicle-form .field-container {
+						position: relative;
+						display: inline-block;
+						width: 25%;
+						margin-bottom: 1rem;
+						border-bottom: 4px solid rgb(188, 154, 65);
+					}
+					.vehicle-form label, .vehicle-form input {
+						display: block;
+						font-size: 0.8rem;
+						width: 100%;
+					}
+					.vehicle-form label {
+						margin-bottom: 0.15rem;
+					}
+					.vehicle-form input {
+						padding: 0.66rem;
+						border: none;
+						font-size: 1.2rem;
+						border-left: 2px solid #ddd;
+					}
+	</style>
+</head>
+<body>
+	<header class="vehicle-model">
+	</header>
+
+	<section class="vehicles-container">
+		<div class="vehicle">
+			<div class="button previous" onclick="previousVehicle()"><span>&#9664;</span></div>
+			<h1 class="vehicle-title"></h1>
+			<div class="button next" onclick="nextVehicle()"><span>&#9654;</span></div>
+			<form class="vehicle-form" action=""></form>
+		</div>
+	</section>
+</body>
+	<script>
+		var VEHICLES = {
+			METHOD: 'GET',
+			URL: 'vehicles.json',
+			DATA: null,
+			START_INDEX: 0
+		};
+
+		var PROPERTIES = {
+			id: 'Vehicle Id',
+			mass: 'Mass',
+			dimx: 'Dimension: X Axis',
+			dimy: 'Dimension: Y Axis',
+			dimz: 'Dimension: Z Axis',
+			cmassx: 'Center of Mass: X Axis',
+			cmassy: 'Center of Mass: Y Axis',
+			cmassz: 'Center of Mass: Z Axis',
+			persubmerged: 'Percent Submerged',
+			tractionmult: 'Traction: Multiplier',
+			tractionloss: 'Traction: Loss',
+			tractionbias: 'Traction: Bias',
+			numofgears: 'Number of Gears',
+			velocity: 'Velocity',
+			acceleration: 'Acceleration',
+			drivetype: 'Drive Type',
+			enginetype: 'Engine Type',
+			deceleration: 'Deceleration',
+			brakebias: 'Brake Bias',
+			abs: 'ABS',
+			steeringlock: 'Steering Lock',
+			suspensionforce: 'Suspension: Force',
+			suspensiondamping: 'Suspension: Damping',
+			seatoffset: 'Seat Offset',
+			collisiondamage: 'Collision Damage',
+			value: 'Monetary Value',
+			suspensionuplimit: 'Suspension: Upper Limit',
+			suspensionlowlimit: 'Suspension: Lower Limit',
+			suspensionbias: 'Suspension: Bias',
+			flags: 'Flags',
+			frontlights: 'Front Lights',
+			rearlights: 'Rear Lights'
+		};
+
+		var NAMES = {
+			'LANDSTAL': 'Landstalker',
+			'IDAHO': 'Idaho',
+			'STINGER': 'Stinger',
+			'LINERUN': 'Linerunner',
+			'PEREN': 'Perennial',
+			'SENTINEL': 'Sentinel',
+			'PATRIOT': 'Patriot',
+			'FIRETRUK': 'Fire Truck',
+			'TRASH': 'Trashmaster',
+			'STRETCH': 'Stretch',
+			'MANANA': 'Manana',
+			'INFERNUS': 'Infernus',
+			'BLISTA': 'Blista',
+			'PONY': 'Pony',
+			'MULE': 'Mule',
+			'CHEETAH': 'Cheetah',
+			'AMBULAN': 'Ambulance',
+			'FBICAR': 'FBI Car',
+			'MOONBEAM': 'Moonbeam',
+			'ESPERANT': 'Esperanto',
+			'TAXI': 'Taxi',
+			'KURUMA': 'Kuruma',
+			'BOBCAT': 'Bobcat',
+			'MRWHOOP': 'Mr. Whoopie',
+			'BFINJECT': 'BF Injection',
+			'POLICE': 'Police',
+			'ENFORCER': 'Enforcer',
+			'SECURICA': 'Securicar',
+			'BANSHEE': 'Banshee',
+			'PREDATOR': 'Predator',
+			'BUS': 'Bus',
+			'RHINO': 'Rhino',
+			'BARRACKS': 'Barracks OL',
+			'TRAIN': 'Train',
+			'HELI': 'Police Heli',
+			'DODO': 'Dodo',
+			'COACH': 'Coach',
+			'CABBIE': 'Cabbie',
+			'STALLION': 'Stallion',
+			'RUMPO': 'Rumpo',
+			'RCBANDIT': 'RC Bandit',
+			'BELLYUP': 'Belly Up',
+			'MRWONGS': 'Mr. Wong\'s',
+			'MAFIA': 'Mafia Sentinel',
+			'YARDIE': 'Yardie Lobo',
+			'YAKUZA': 'Yakuza Stinger',
+			'DIABLOS': 'Diablo Stallion',
+			'COLUMB': 'Cartel Cruiser',
+			'HOODS': 'Hoods Rumpo',
+			'AIRTRAIN': 'Non-Playable Airliner',
+			'DEADDODO': 'Non-Playable Dodo',
+			'SPEEDER': 'Speeder',
+			'REEFER': 'Reefer',
+			'PANLANT': 'Panlantic',
+			'FLATBED': 'Flatbed',
+			'YANKEE': 'Yankee',
+			'BORGNINE': 'Borgnine Cabbie'
+		};
+
+		/**
+		 * Requests vehicle data from configured URL.
+		 * @method retrieveVehicleData
+		*/
+		(function retrieveVehicleData() {
+			var req = new XMLHttpRequest();
+			req.onreadystatechange = function() {
+				if (req.readyState == 4 && req.status == 200) {
+					var data = JSON.parse(req.responseText);
+					VEHICLES.DATA = transformVehicleData(data);
+
+					return buildVehicleForm(VEHICLES.START_INDEX);	
+				}
+			}
+			req.open(VEHICLES.METHOD, VEHICLES.URL, true);
+			req.send();
+		})();
+
+		/**
+		 * Finalizes vehicle data for display.
+		 * @method transformVehicleData
+		 * @param {array} data Data object to transform
+		 * @return data
+		*/
+		function transformVehicleData(data) {
+			data.forEach(function(vehicle) {
+				vehicle.name = NAMES[vehicle.id];
+
+				for(var prop in vehicle) {
+					var obj = {
+						name: PROPERTIES[prop],
+						value: vehicle[prop]
+					};
+					vehicle[prop] = obj;
+				}
+			});
+
+			return data;
+		}
+
+		/**
+		 * Loads vehicle data into form by index.
+		 * @method buildVehicleForm
+		 * @param {number} vehicleIndex Index of vehicle data to load
+		*/
+		function buildVehicleForm(vehicleIndex) {
+			new VehicleForm({
+				target: '.vehicle-form',
+				titleSection: {
+					el: '.vehicle-title',
+					property: 'name',
+				},
+				disabledFields: ['id']
+			});
+
+			/**
+			 * Creates vehicle form object.
+			 * @method VehicleForm
+			 * @param {object} config Configures the vehicle form.
+			 * @param {string} target Selects element to append vehicle form.
+			 * @param {object} titleSection Configures vehicle form title section.
+			 * @param {string} el Selects element to append vehicle form title.
+			 * @param {string} property Vehicle data property to display as title.
+			 * @param {array of strings} disabledProps Properties by id to disable.
+			*/
+			function VehicleForm(config) {
+				var target = document.querySelector(config.target),
+					vehicle = VEHICLES.DATA[vehicleIndex];
+
+				target.innerHTML = '';
+					
+				for(var prop in vehicle) {
+					if(vehicle.hasOwnProperty(prop)) {
+						if(prop === config.titleSection.property) {
+							var vehicleTitle = document.querySelector(config.titleSection.el);
+							vehicleTitle.innerHTML = vehicle[prop].value;
+						} else {
+							var field = {
+								label: document.createElement('label'),
+								input: document.createElement('input')
+							};
+							var fieldContainer = document.createElement('div');
+							
+							fieldContainer.classList.add('field-container');
+							field.label.innerHTML = vehicle[prop].name;
+							field.input.value = vehicle[prop].value;
+
+							config.disabledFields.forEach(function(disabledField) {
+								if(prop === disabledField) {
+									field.input.disabled = true;
+								}
+							});
+
+							for(var el in field) {
+								fieldContainer.appendChild(field[el]);
+								target.appendChild(fieldContainer);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		var currentIndex = VEHICLES.START_INDEX;
+
+		/**
+		 * Move index to next vehicle.
+		 * @method nextVehicle
+		*/
+		function nextVehicle() {
+			if(currentIndex < VEHICLES.DATA.length - 1) {
+				currentIndex++;
+				buildVehicleForm(currentIndex);
+			}
+		}
+
+		/**
+		 * Move index to previous vehicle.
+		 * @method nextVehicle
+		*/
+		function previousVehicle() {
+			if(currentIndex > 0) {
+				currentIndex--;
+				buildVehicleForm(currentIndex);
+			}
+		}
+	</script>
+</html>
