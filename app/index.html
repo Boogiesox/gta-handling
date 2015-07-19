@@ -26,7 +26,18 @@
 				width: 100%;
 				background: #000;
 				height: 33.33%;
-				min-height: 200px;
+				min-height: 320px;
+				background-image: url('img/vehicles/MOONBEAM.jpg');
+				background-size: cover;
+				animation-name: example;
+				animation-duration: 24s;
+				animation-iteration-count: infinite;
+    			animation-direction: alternate;
+			}
+
+			@keyframes example {
+			    from {background-position: top, center}
+			    to {background-position: bottom, center;}
 			}
 
 			div.button {
@@ -117,7 +128,7 @@
 </body>
 	<script src="js/constants.js" type="text/javascript"></script>
 	<script>
-		var CONFIG = CONFIGS.GTAVC;
+		var CONFIG = CONFIGS.GTAIII;
 
 		/**
 		 * Requests vehicle data from configured URL.
@@ -149,7 +160,7 @@
 
 				for(var prop in vehicle) {
 					var obj = {
-						name: CONFIG.PROPERTIES[prop],
+						name: CONFIG.PARAMETER_NAMES[prop],
 						value: vehicle[prop]
 					};
 					vehicle[prop] = obj;

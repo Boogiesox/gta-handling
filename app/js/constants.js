@@ -3,7 +3,7 @@ var CONFIGS = {
 		METHOD: 'GET',
 		URL: 'models/gta_iii.json',
 		START_INDEX: 0,
-		PROPERTIES: {
+		PARAMETER_NAMES: {
 			id: 'Vehicle Id',
 			mass: 'Mass',
 			dimx: 'Dimension: X Axis',
@@ -101,7 +101,7 @@ var CONFIGS = {
 		METHOD: 'GET',
 		URL: 'models/gta_vc.json',
 		START_INDEX: 0,
-		PROPERTIES: {
+		PARAMETER_NAMES: {
 			id: 'Vehicle Id',
 			mass: 'Mass',
 			dimx: 'Dimension: X Axis',
