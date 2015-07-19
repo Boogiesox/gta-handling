@@ -115,108 +115,9 @@
 		</div>
 	</section>
 </body>
+	<script src="js/constants.js" type="text/javascript"></script>
 	<script>
-		var VEHICLES = {
-			METHOD: 'GET',
-			URL: 'models/gta_vc.json',
-			DATA: null,
-			START_INDEX: 0
-		};
-
-		var PROPERTIES = {
-			id: 'Vehicle Id',
-			mass: 'Mass',
-			dimx: 'Dimension: X Axis',
-			dimy: 'Dimension: Y Axis',
-			dimz: 'Dimension: Z Axis',
-			cmassx: 'Center of Mass: X Axis',
-			cmassy: 'Center of Mass: Y Axis',
-			cmassz: 'Center of Mass: Z Axis',
-			persubmerged: 'Percent Submerged',
-			tractionmult: 'Traction: Multiplier',
-			tractionloss: 'Traction: Loss',
-			tractionbias: 'Traction: Bias',
-			numofgears: 'Number of Gears',
-			velocity: 'Velocity',
-			acceleration: 'Acceleration',
-			drivetype: 'Drive Type',
-			enginetype: 'Engine Type',
-			deceleration: 'Deceleration',
-			brakebias: 'Brake Bias',
-			abs: 'ABS',
-			steeringlock: 'Steering Lock',
-			suspensionforce: 'Suspension: Force',
-			suspensiondamping: 'Suspension: Damping',
-			seatoffset: 'Seat Offset',
-			collisiondamage: 'Collision Damage',
-			value: 'Monetary Value',
-			suspensionuplimit: 'Suspension: Upper Limit',
-			suspensionlowlimit: 'Suspension: Lower Limit',
-			suspensionbias: 'Suspension: Bias',
-			flags: 'Flags',
-			frontlights: 'Front Lights',
-			rearlights: 'Rear Lights'
-		};
-
-		var NAMES = {
-			'LANDSTAL': 'Landstalker',
-			'IDAHO': 'Idaho',
-			'STINGER': 'Stinger',
-			'LINERUN': 'Linerunner',
-			'PEREN': 'Perennial',
-			'SENTINEL': 'Sentinel',
-			'PATRIOT': 'Patriot',
-			'FIRETRUK': 'Fire Truck',
-			'TRASH': 'Trashmaster',
-			'STRETCH': 'Stretch',
-			'MANANA': 'Manana',
-			'INFERNUS': 'Infernus',
-			'BLISTA': 'Blista',
-			'PONY': 'Pony',
-			'MULE': 'Mule',
-			'CHEETAH': 'Cheetah',
-			'AMBULAN': 'Ambulance',
-			'FBICAR': 'FBI Car',
-			'MOONBEAM': 'Moonbeam',
-			'ESPERANT': 'Esperanto',
-			'TAXI': 'Taxi',
-			'KURUMA': 'Kuruma',
-			'BOBCAT': 'Bobcat',
-			'MRWHOOP': 'Mr. Whoopie',
-			'BFINJECT': 'BF Injection',
-			'POLICE': 'Police',
-			'ENFORCER': 'Enforcer',
-			'SECURICA': 'Securicar',
-			'BANSHEE': 'Banshee',
-			'PREDATOR': 'Predator',
-			'BUS': 'Bus',
-			'RHINO': 'Rhino',
-			'BARRACKS': 'Barracks OL',
-			'TRAIN': 'Train',
-			'HELI': 'Police Heli',
-			'DODO': 'Dodo',
-			'COACH': 'Coach',
-			'CABBIE': 'Cabbie',
-			'STALLION': 'Stallion',
-			'RUMPO': 'Rumpo',
-			'RCBANDIT': 'RC Bandit',
-			'BELLYUP': 'Belly Up',
-			'MRWONGS': 'Mr. Wong\'s',
-			'MAFIA': 'Mafia Sentinel',
-			'YARDIE': 'Yardie Lobo',
-			'YAKUZA': 'Yakuza Stinger',
-			'DIABLOS': 'Diablo Stallion',
-			'COLUMB': 'Cartel Cruiser',
-			'HOODS': 'Hoods Rumpo',
-			'AIRTRAIN': 'Non-Playable Airliner',
-			'DEADDODO': 'Non-Playable Dodo',
-			'SPEEDER': 'Speeder',
-			'REEFER': 'Reefer',
-			'PANLANT': 'Panlantic',
-			'FLATBED': 'Flatbed',
-			'YANKEE': 'Yankee',
-			'BORGNINE': 'Borgnine Cabbie'
-		};
+		var CONFIG = CONFIGS.GTAVC;
 
 		/**
 		 * Requests vehicle data from configured URL.
@@ -227,12 +128,12 @@
 			req.onreadystatechange = function() {
 				if (req.readyState == 4 && req.status == 200) {
 					var data = JSON.parse(req.responseText);
-					VEHICLES.DATA = transformVehicleData(data);
+					CONFIG.DATA = transformVehicleData(data);
 
-					return buildVehicleForm(VEHICLES.START_INDEX);	
+					return buildVehicleForm(CONFIG.START_INDEX);	
 				}
 			}
-			req.open(VEHICLES.METHOD, VEHICLES.URL, true);
+			req.open(CONFIG.METHOD, CONFIG.URL, true);
 			req.send();
 		})();
 
@@ -244,11 +145,11 @@
 		*/
 		function transformVehicleData(data) {
 			data.forEach(function(vehicle) {
-				vehicle.name = NAMES[vehicle.id];
+				vehicle.name = CONFIG.VEHICLE_NAMES[vehicle.id];
 
 				for(var prop in vehicle) {
 					var obj = {
-						name: PROPERTIES[prop],
+						name: CONFIG.PROPERTIES[prop],
 						value: vehicle[prop]
 					};
 					vehicle[prop] = obj;
@@ -285,7 +186,7 @@
 			*/
 			function VehicleForm(config) {
 				var target = document.querySelector(config.target),
-					vehicle = VEHICLES.DATA[vehicleIndex];
+					vehicle = CONFIG.DATA[vehicleIndex];
 
 				target.innerHTML = '';
 					
@@ -321,14 +222,14 @@
 			}
 		}
 
-		var currentIndex = VEHICLES.START_INDEX;
+		var currentIndex = CONFIG.START_INDEX;
 
 		/**
 		 * Move index to next vehicle.
 		 * @method nextVehicle
 		*/
 		function nextVehicle() {
-			if(currentIndex < VEHICLES.DATA.length - 1) {
+			if(currentIndex < CONFIG.DATA.length - 1) {
 				currentIndex++;
 				buildVehicleForm(currentIndex);
 			}
