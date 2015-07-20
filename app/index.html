@@ -129,10 +129,6 @@
 	<script>
 		var APP_CONFIG = APP_CONFIGS.GTAIII;
 
-		/**
-		 * Requests vehicle data from configured URL.
-		 * @method retrieveVehicleData
-		*/
 		(function retrieveVehicleData() {
 			var req = new XMLHttpRequest();
 			req.onreadystatechange = function() {
@@ -147,12 +143,6 @@
 			req.send();
 		})();
 
-		/**
-		 * Finalizes vehicle data for display.
-		 * @method transformVehicleData
-		 * @param {array} data Data object to transform
-		 * @return data
-		*/
 		function transformVehicleData(data) {
 			data.forEach(function(vehicle) {
 				vehicle.name = APP_CONFIG.VEHICLE_NAMES[vehicle.id];
@@ -169,11 +159,6 @@
 			return data;
 		}
 
-		/**
-		 * Loads vehicle data into form by index.
-		 * @method buildVehicleForm
-		 * @param {number} vehicleIndex Index of vehicle data to load
-		*/
 		function buildVehicleForm(vehicleIndex) {
 			new VehicleForm({
 				target: '.vehicle-form',
@@ -188,16 +173,6 @@
 				disabledFields: ['id']
 			});
 
-			/**
-			 * Creates vehicle form object.
-			 * @method VehicleForm
-			 * @param {object} config Configures the vehicle form.
-			 * @param {string} target Selects element to append vehicle form.
-			 * @param {object} titleSection Configures vehicle form title section.
-			 * @param {string} el Selects element to append vehicle form title.
-			 * @param {string} property Vehicle data property to display as title.
-			 * @param {array of strings} disabledProps Properties by id to disable.
-			*/
 			function VehicleForm(config) {
 				var target = document.querySelector(config.target),
 					vehicle = APP_CONFIG.DATA[vehicleIndex],
@@ -242,10 +217,6 @@
 
 		var currentIndex = APP_CONFIG.START_INDEX;
 
-		/**
-		 * Move index to next vehicle.
-		 * @method nextVehicle
-		*/
 		function nextVehicle() {
 			if(currentIndex < APP_CONFIG.DATA.length - 1) {
 				currentIndex++;
@@ -253,10 +224,6 @@
 			}
 		}
 
-		/**
-		 * Move index to previous vehicle.
-		 * @method nextVehicle
-		*/
 		function previousVehicle() {
 			if(currentIndex > 0) {
 				currentIndex--;
