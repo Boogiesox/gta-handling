@@ -1,7 +1,8 @@
-var CONFIGS = {
+var APP_CONFIGS = {
 	GTAIII: {
 		METHOD: 'GET',
-		URL: 'models/gta_iii.json',
+		DATA_URL: 'models/gta_iii.json',
+		IMAGES_URL: 'img/vehicles/gta_iii',
 		START_INDEX: 0,
 		PARAMETER_NAMES: {
 			id: 'Vehicle Id',
@@ -99,7 +100,8 @@ var CONFIGS = {
 	},
 	GTAVC: {
 		METHOD: 'GET',
-		URL: 'models/gta_vc.json',
+		DATA_URL: 'models/gta_vc.json',
+		IMAGES_URL: 'img/vehicles/gta_vc',
 		START_INDEX: 0,
 		PARAMETER_NAMES: {
 			id: 'Vehicle Id',
