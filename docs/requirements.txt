@@ -2,7 +2,7 @@ US1010 - As a user, I want the ability to set the application to produce configu
 	- User is prompted for which GTA game they would like to create a configuration.
 
 US1212 - As a user, I want an application that is easy to use and visually appealing.
-	- Selected vehicle is represented by the in-game 3D model.
+	- Selected vehicle is represented by an image taken of the vehicle in-game.
 	- All actions are performant.
 
 US1313 - As a user, I want the ability to navigate the vehicle list so I may edit the parameters of each vehicle.
