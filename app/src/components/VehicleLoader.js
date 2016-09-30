@@ -29,7 +29,13 @@ const VehicleLoader = React.createClass ({
     return (
       <div>
         <button onClick={this.previous}>Previous</button>
-        {this.vehicles[this.state.position].id}
+        { Object.keys(this.vehicles[this.state.position]).map(function (key) {
+          return (
+            <div>
+              {this.vehicles[this.state.position]}{key}: {key}
+            </div>
+            );
+        }, this)}
         <button onClick={this.next}>Next</button>
       </div>
     );
