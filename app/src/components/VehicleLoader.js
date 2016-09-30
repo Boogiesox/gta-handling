@@ -1,6 +1,8 @@
 import React from 'react';
 import Gta3 from '../models/gta_iii.js';
 import GtaVC from '../models/gta_vc.js';
+import GtaSA from '../models/gta_sa.js';
+import Gta4 from '../models/gta_iv.js';
 
 const VehicleLoader = React.createClass ({
   getInitialState: function() {
@@ -9,7 +11,7 @@ const VehicleLoader = React.createClass ({
     }
   },
 
-  vehicles: GtaVC,
+  vehicles: Gta4,
 
   next: function() {
     return this.setState({ 
