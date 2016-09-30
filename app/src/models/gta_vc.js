@@ -1,4 +1,5 @@
-[
+/* eslint-disable */
+var GtaVC = [
   {
     "id":"LANDSTAL",
     "mass":1700,
@@ -3710,3 +3711,5 @@
     "rearlights":1
   }
 ]
+
+export default GtaVC;

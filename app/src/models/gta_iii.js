@@ -1,4 +1,5 @@
-[
+/* eslint-disable */
+var Gta3 = [
   {
     "id":"LANDSTAL",
     "mass":1700,
@@ -1938,3 +1939,5 @@
     "rearlights":1
   }
 ]
+
+export default Gta3;

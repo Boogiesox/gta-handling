@@ -1,4 +1,5 @@
-[
+/* eslint-disable */
+var GtaSA = [
   {
     "id":"LANDSTAL",
     "mass":1700,
@@ -7980,3 +7981,5 @@
     "animgroup":0
   }
 ]
+
+export default GtaSA;

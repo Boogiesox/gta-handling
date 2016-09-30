@@ -1,21 +1,15 @@
 import React from 'react';
+import Gta3 from '../models/gta_iii.js';
+import GtaVC from '../models/gta_vc.js';
 
 const VehicleLoader = React.createClass ({
   getInitialState: function() {
     return {
-      position: 0,
-      vehicles: [
-        { 
-          "id": "KURUMA",
-          "name": "Kuruma"
-        },
-        { 
-          "id": "IDAHO",
-          "name": "Idaho"
-        }
-      ]
+      position: 0
     }
   },
+
+  vehicles: GtaVC,
 
   next: function() {
     return this.setState({ 
@@ -31,16 +25,13 @@ const VehicleLoader = React.createClass ({
 
   render: function() {
     return (
-      
       <div>
         <button onClick={this.previous}>Previous</button>
-        {this.state.vehicles[this.state.position].name}
+        {this.vehicles[this.state.position].id}
         <button onClick={this.next}>Next</button>
       </div>
     );
   }
 });
-
-
 
 export default VehicleLoader;

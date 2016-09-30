@@ -1,4 +1,5 @@
-[
+/* eslint-disable */
+var Gta4 = [
   {
     "id":"ADMIRAL",
     "mass":1700,
@@ -4914,3 +4915,5 @@
     "animgroup":0
   }
 ]
+
+export default Gta4;
