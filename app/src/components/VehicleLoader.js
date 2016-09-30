@@ -32,7 +32,7 @@ const VehicleLoader = React.createClass ({
         { Object.keys(this.vehicles[this.state.position]).map(function (key) {
           return (
             <div>
-              {this.vehicles[this.state.position]}{key}: {key}
+              {key}: {this.vehicles[this.state.position][key]}
             </div>
             );
         }, this)}
