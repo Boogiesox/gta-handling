@@ -14,14 +14,16 @@ const VehicleLoader = React.createClass ({
   vehicles: Gta4,
 
   next: function() {
-    return this.setState({ 
-      position: this.state.position+1
+    var pos = this.state.position;
+    return this.setState({
+      position: pos < this.vehicles.length - 1 ? pos + 1 : pos
     });
   },
 
   previous: function() {
+    var pos = this.state.position;
     return this.setState({
-      position: this.state.position-1
+      position: pos > 0 ? pos - 1 : 0
     })
   },
 
