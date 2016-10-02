@@ -5,7 +5,6 @@ import { version } from '../../package.json';
 const App = ({ children }) => (
   <div>
     <header>
-      <h1>React Starterify {version}</h1>
       <Link to="/vehicles">Vehicles</Link>
     </header>
     <section>

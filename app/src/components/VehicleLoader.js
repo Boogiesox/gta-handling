@@ -7,16 +7,22 @@ import Gta4 from '../models/gta_iv.js';
 const VehicleLoader = React.createClass ({
   getInitialState: function() {
     return {
-      position: 0
+      position: 0,
+      vehicles: this.games['GTA3']
     }
   },
 
-  vehicles: Gta4,
+  games: {
+    GTA3: Gta3,
+    GTAVC: GtaVC,
+    GTASA: GtaSA,
+    GTA4: Gta4
+  },
 
   next: function() {
     var pos = this.state.position;
     return this.setState({
-      position: pos < this.vehicles.length - 1 ? pos + 1 : pos
+      position: pos < this.state.vehicles.length - 1 ? pos + 1 : pos
     });
   },
 
@@ -27,18 +33,39 @@ const VehicleLoader = React.createClass ({
     })
   },
 
+  changeGame: function(e) {
+    return this.setState({
+      position: 0,
+      vehicles: this.games[e.target.value]
+    });
+  },
+
   render: function() {
     return (
       <div>
+        <select onChange={this.changeGame}>
+          {
+            Object.keys(this.games).map(function (key) {
+              return (
+                <option value={key} key={key}>{key}</option>
+              );
+            }, this)
+          }
+        </select>
+
         <button onClick={this.previous}>Previous</button>
-        { Object.keys(this.vehicles[this.state.position]).map(function (key) {
-          return (
-            <div>
-              {key}: {this.vehicles[this.state.position][key]}
-            </div>
-            );
-        }, this)}
+
         <button onClick={this.next}>Next</button>
+        
+        {
+          Object.keys(this.state.vehicles[this.state.position]).map(function (key) {
+            return (
+              <div key={key}>
+                {key}: {this.state.vehicles[this.state.position][key]}
+              </div>
+            );
+          }, this)
+        }
       </div>
     );
   }
