@@ -18269,13 +18269,10 @@ define('ObjectKeysValueConverter',["exports"], function (exports) {
     });
     class ObjectKeysValueConverter {
         toView(obj) {
-            // Create a temporary array to populate with object keys
-            let temp = [];
-
             return Object.keys(obj);
         }
     }
     exports.ObjectKeysValueConverter = ObjectKeysValueConverter;
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"ObjectKeysValueConverter\"></require>\n\n  <div>\n    <span>${vehicle.id}</span>\n  </div>\n\n  <div repeat.for=\"prop of vehicle | objectKeys\">\n    <label>${prop} <input value.bind=\"vehicle[prop]\"/></label>\n  </div>\n  \n  <br>\n\n  <button click.delegate=\"previous()\"><</button>\n  <button click.delegate=\"next()\">></button>\n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"ObjectKeysValueConverter\"></require>\n\n  <div>\n    <button click.delegate=\"previous()\"><</button>\n    <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n    <button click.delegate=\"next()\">></button>\n  </div>\n\n  <div repeat.for=\"prop of vehicle | objectKeys\">\n    <label>${prop} <input value.bind=\"vehicle[prop]\"/></label>\n  </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map

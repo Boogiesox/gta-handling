@@ -2,15 +2,12 @@
   <require from="ObjectKeysValueConverter"></require>
 
   <div>
-    <span>${vehicle.id}</span>
+    <button click.delegate="previous()"><</button>
+    <span style="width: 150px; display: inline-block; text-align: center">${vehicle.id}</span>
+    <button click.delegate="next()">></button>
   </div>
 
   <div repeat.for="prop of vehicle | objectKeys">
     <label>${prop} <input value.bind="vehicle[prop]"/></label>
   </div>
-  
-  <br>
-
-  <button click.delegate="previous()"><</button>
-  <button click.delegate="next()">></button>
 </template>
