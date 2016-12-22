@@ -1,7 +1,8 @@
 /* eslint-disable */
-var Gta3 = [
+export default [
   {
     "id":"LANDSTAL",
+    "name": "TBD",
     "mass":1700,
     "dimx":2,
     "dimy":5,
@@ -36,6 +37,7 @@ var Gta3 = [
   },
   {
     "id":"IDAHO",
+    "name": "TBD",
     "mass":1600,
     "dimx":1.9,
     "dimy":5,
@@ -70,6 +72,7 @@ var Gta3 = [
   },
   {
     "id":"STINGER",
+    "name": "TBD",
     "mass":1000,
     "dimx":1.9,
     "dimy":4.7,
@@ -104,6 +107,7 @@ var Gta3 = [
   },
   {
     "id":"LINERUN",
+    "name": "TBD",
     "mass":3800,
     "dimx":2.6,
     "dimy":7.5,
@@ -138,6 +142,7 @@ var Gta3 = [
   },
   {
     "id":"PEREN",
+    "name": "TBD",
     "mass":1200,
     "dimx":1.9,
     "dimy":5,
@@ -172,6 +177,7 @@ var Gta3 = [
   },
   {
     "id":"SENTINEL",
+    "name": "TBD",
     "mass":1400,
     "dimx":2,
     "dimy":4.9,
@@ -206,6 +212,7 @@ var Gta3 = [
   },
   {
     "id":"PATRIOT",
+    "name": "TBD",
     "mass":2500,
     "dimx":2.4,
     "dimy":5.7,
@@ -240,6 +247,7 @@ var Gta3 = [
   },
   {
     "id":"FIRETRUK",
+    "name": "TBD",
     "mass":6500,
     "dimx":2.9,
     "dimy":7.7,
@@ -274,6 +282,7 @@ var Gta3 = [
   },
   {
     "id":"TRASH",
+    "name": "TBD",
     "mass":5500,
     "dimx":2.9,
     "dimy":8,
@@ -308,6 +317,7 @@ var Gta3 = [
   },
   {
     "id":"STRETCH",
+    "name": "TBD",
     "mass":2200,
     "dimx":2,
     "dimy":7.3,
@@ -342,6 +352,7 @@ var Gta3 = [
   },
   {
     "id":"MANANA",
+    "name": "TBD",
     "mass":1000,
     "dimx":2,
     "dimy":4.5,
@@ -376,6 +387,7 @@ var Gta3 = [
   },
   {
     "id":"INFERNUS",
+    "name": "TBD",
     "mass":1600,
     "dimx":2,
     "dimy":4.4,
@@ -410,6 +422,7 @@ var Gta3 = [
   },
   {
     "id":"BLISTA",
+    "name": "TBD",
     "mass":1900,
     "dimx":2.1,
     "dimy":5.5,
@@ -444,6 +457,7 @@ var Gta3 = [
   },
   {
     "id":"PONY",
+    "name": "TBD",
     "mass":2600,
     "dimx":2,
     "dimy":6,
@@ -478,6 +492,7 @@ var Gta3 = [
   },
   {
     "id":"MULE",
+    "name": "TBD",
     "mass":3500,
     "dimx":2.3,
     "dimy":6.5,
@@ -512,6 +527,7 @@ var Gta3 = [
   },
   {
     "id":"CHEETAH",
+    "name": "TBD",
     "mass":1200,
     "dimx":2,
     "dimy":4.5,
@@ -546,6 +562,7 @@ var Gta3 = [
   },
   {
     "id":"AMBULAN",
+    "name": "TBD",
     "mass":2600,
     "dimx":2.2,
     "dimy":6.5,
@@ -580,6 +597,7 @@ var Gta3 = [
   },
   {
     "id":"FBICAR",
+    "name": "TBD",
     "mass":1500,
     "dimx":1.9,
     "dimy":4.9,
@@ -614,6 +632,7 @@ var Gta3 = [
   },
   {
     "id":"MOONBEAM",
+    "name": "TBD",
     "mass":2000,
     "dimx":2.2,
     "dimy":5.5,
@@ -648,6 +667,7 @@ var Gta3 = [
   },
   {
     "id":"ESPERANT",
+    "name": "TBD",
     "mass":1800,
     "dimx":2,
     "dimy":5,
@@ -682,6 +702,7 @@ var Gta3 = [
   },
   {
     "id":"TAXI",
+    "name": "TBD",
     "mass":1450,
     "dimx":2.1,
     "dimy":5.4,
@@ -716,6 +737,7 @@ var Gta3 = [
   },
   {
     "id":"KURUMA",
+    "name": "TBD",
     "mass":1500,
     "dimx":1.9,
     "dimy":4.9,
@@ -750,6 +772,7 @@ var Gta3 = [
   },
   {
     "id":"BOBCAT",
+    "name": "TBD",
     "mass":2000,
     "dimx":2.1,
     "dimy":5,
@@ -784,6 +807,7 @@ var Gta3 = [
   },
   {
     "id":"MRWHOOP",
+    "name": "TBD",
     "mass":1700,
     "dimx":2,
     "dimy":5,
@@ -818,6 +842,7 @@ var Gta3 = [
   },
   {
     "id":"BFINJECT",
+    "name": "TBD",
     "mass":800,
     "dimx":2,
     "dimy":3.5,
@@ -852,6 +877,7 @@ var Gta3 = [
   },
   {
     "id":"POLICE",
+    "name": "TBD",
     "mass":1600,
     "dimx":2.1,
     "dimy":5,
@@ -886,6 +912,7 @@ var Gta3 = [
   },
   {
     "id":"ENFORCER",
+    "name": "TBD",
     "mass":4000,
     "dimx":2.4,
     "dimy":6.8,
@@ -920,6 +947,7 @@ var Gta3 = [
   },
   {
     "id":"SECURICA",
+    "name": "TBD",
     "mass":7000,
     "dimx":2.6,
     "dimy":6.8,
@@ -954,6 +982,7 @@ var Gta3 = [
   },
   {
     "id":"BANSHEE",
+    "name": "TBD",
     "mass":1400,
     "dimx":2.3,
     "dimy":4.5,
@@ -988,6 +1017,7 @@ var Gta3 = [
   },
   {
     "id":"PREDATOR",
+    "name": "TBD",
     "mass":2200,
     "dimx":4,
     "dimy":12,
@@ -1022,6 +1052,7 @@ var Gta3 = [
   },
   {
     "id":"BUS",
+    "name": "TBD",
     "mass":5500,
     "dimx":2.9,
     "dimy":8,
@@ -1056,6 +1087,7 @@ var Gta3 = [
   },
   {
     "id":"RHINO",
+    "name": "TBD",
     "mass":18000,
     "dimx":3.5,
     "dimy":8,
@@ -1090,6 +1122,7 @@ var Gta3 = [
   },
   {
     "id":"BARRACKS",
+    "name": "TBD",
     "mass":10500,
     "dimx":3.3,
     "dimy":7.7,
@@ -1124,6 +1157,7 @@ var Gta3 = [
   },
   {
     "id":"TRAIN",
+    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1158,6 +1192,7 @@ var Gta3 = [
   },
   {
     "id":"HELI",
+    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1192,6 +1227,7 @@ var Gta3 = [
   },
   {
     "id":"DODO",
+    "name": "TBD",
     "mass":2500,
     "dimx":1,
     "dimy":10,
@@ -1226,6 +1262,7 @@ var Gta3 = [
   },
   {
     "id":"COACH",
+    "name": "TBD",
     "mass":9500,
     "dimx":2.9,
     "dimy":8,
@@ -1260,6 +1297,7 @@ var Gta3 = [
   },
   {
     "id":"CABBIE",
+    "name": "TBD",
     "mass":1250,
     "dimx":2,
     "dimy":5,
@@ -1294,6 +1332,7 @@ var Gta3 = [
   },
   {
     "id":"STALLION",
+    "name": "TBD",
     "mass":1600,
     "dimx":2.1,
     "dimy":5,
@@ -1328,6 +1367,7 @@ var Gta3 = [
   },
   {
     "id":"RUMPO",
+    "name": "TBD",
     "mass":2000,
     "dimx":2.1,
     "dimy":5,
@@ -1362,6 +1402,7 @@ var Gta3 = [
   },
   {
     "id":"RCBANDIT",
+    "name": "TBD",
     "mass":100,
     "dimx":0.8,
     "dimy":1.5,
@@ -1396,6 +1437,7 @@ var Gta3 = [
   },
   {
     "id":"BELLYUP",
+    "name": "TBD",
     "mass":2600,
     "dimx":2.2,
     "dimy":6.5,
@@ -1430,6 +1472,7 @@ var Gta3 = [
   },
   {
     "id":"MRWONGS",
+    "name": "TBD",
     "mass":3500,
     "dimx":2.2,
     "dimy":6.5,
@@ -1464,6 +1507,7 @@ var Gta3 = [
   },
   {
     "id":"MAFIA",
+    "name": "TBD",
     "mass":1700,
     "dimx":2,
     "dimy":4.9,
@@ -1498,6 +1542,7 @@ var Gta3 = [
   },
   {
     "id":"YARDIE",
+    "name": "TBD",
     "mass":1800,
     "dimx":2.1,
     "dimy":5,
@@ -1532,6 +1577,7 @@ var Gta3 = [
   },
   {
     "id":"YAKUZA",
+    "name": "TBD",
     "mass":1400,
     "dimx":1.9,
     "dimy":4.7,
@@ -1566,6 +1612,7 @@ var Gta3 = [
   },
   {
     "id":"DIABLOS",
+    "name": "TBD",
     "mass":1500,
     "dimx":2.2,
     "dimy":4.5,
@@ -1600,6 +1647,7 @@ var Gta3 = [
   },
   {
     "id":"COLUMB",
+    "name": "TBD",
     "mass":3200,
     "dimx":2.4,
     "dimy":5.7,
@@ -1634,6 +1682,7 @@ var Gta3 = [
   },
   {
     "id":"HOODS",
+    "name": "TBD",
     "mass":2000,
     "dimx":2.1,
     "dimy":5,
@@ -1668,6 +1717,7 @@ var Gta3 = [
   },
   {
     "id":"AIRTRAIN",
+    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1702,6 +1752,7 @@ var Gta3 = [
   },
   {
     "id":"DEADDODO",
+    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1736,6 +1787,7 @@ var Gta3 = [
   },
   {
     "id":"SPEEDER",
+    "name": "TBD",
     "mass":2200,
     "dimx":3.2,
     "dimy":10,
@@ -1770,6 +1822,7 @@ var Gta3 = [
   },
   {
     "id":"REEFER",
+    "name": "TBD",
     "mass":5000,
     "dimx":3.5,
     "dimy":7,
@@ -1804,6 +1857,7 @@ var Gta3 = [
   },
   {
     "id":"PANLANT",
+    "name": "TBD",
     "mass":2600,
     "dimx":2,
     "dimy":6,
@@ -1838,6 +1892,7 @@ var Gta3 = [
   },
   {
     "id":"FLATBED",
+    "name": "TBD",
     "mass":8500,
     "dimx":3.1,
     "dimy":7.7,
@@ -1872,6 +1927,7 @@ var Gta3 = [
   },
   {
     "id":"YANKEE",
+    "name": "TBD",
     "mass":4500,
     "dimx":2.4,
     "dimy":6.5,
@@ -1906,6 +1962,7 @@ var Gta3 = [
   },
   {
     "id":"BORGNINE",
+    "name": "TBD",
     "mass":1900,
     "dimx":2.1,
     "dimy":5,
@@ -1938,6 +1995,4 @@ var Gta3 = [
     "frontlights":"0",
     "rearlights":1
   }
-]
-
-export default Gta3;
+];
