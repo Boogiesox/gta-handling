@@ -63,11 +63,11 @@ define('app',['exports', 'models/gta_iii', './node_modules/papaparse/papaparse.j
       function generateConfigAsFile(config) {
         var textToWrite = config;
         var textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' });
-        var fileNameToSaveAs = "handling.cfg";
         var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        window.URL = window.URL || window.webkitURL;
-        location.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.download = "handling.cfg";
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
       }
 
       function destroyClickedElement(event) {
@@ -76,6 +76,38 @@ define('app',['exports', 'models/gta_iii', './node_modules/papaparse/papaparse.j
     }
   }
   exports.App = App;
+});
+define('configService',["exports", "./node_modules/papaparse/papaparse.js"], function (exports, _papaparse) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.ConfigService = undefined;
+
+    var _papaparse2 = _interopRequireDefault(_papaparse);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class ConfigService {
+        constructor() {
+            this.papa = _papaparse2.default;
+        }
+
+        parse(data) {
+            return this.papa.unparse(data, {
+                quotes: false,
+                delimiter: " ",
+                newline: "\r\n",
+                header: false
+            });
+        }
+    }
+    exports.ConfigService = ConfigService;
 });
 define('environment',["exports"], function (exports) {
   "use strict";
@@ -18211,15 +18243,15 @@ define('models/gta_vc',["exports"], function (exports) {
   exports.default = GtaVC;
 });
 define('resources/index',["exports"], function (exports) {
-  "use strict";
+    "use strict";
 
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.configure = configure;
-  function configure(config) {
-    //config.globalResources([]);
-  }
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.configure = configure;
+    function configure(config) {
+        //config.globalResources([]);
+    }
 });
 /*!
 	Papa Parse
@@ -19625,5 +19657,18 @@ define('resources/index',["exports"], function (exports) {
 	}
 })(typeof window !== 'undefined' ? window : this);
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n  <require from=\"ObjectKeysValueConverter\"></require>\n\n  <div>\n    <button click.delegate=\"previous()\"><</button>\n    <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n    <button click.delegate=\"next()\">></button>\n\n    <button click.delegate=\"generateConfig()\">Parse</button>\n  </div>\n\n  <div repeat.for=\"prop of vehicle | objectKeys\">\n    <label>${prop} <input value.bind=\"vehicle[prop]\"/></label>\n  </div>\n</template>\n"; });
+define('resources/value-converters/ObjectKeysValueConverter',["exports"], function (exports) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    class ObjectKeysValueConverter {
+        toView(obj) {
+            return Object.keys(obj);
+        }
+    }
+    exports.ObjectKeysValueConverter = ObjectKeysValueConverter;
+});
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"ObjectKeysValueConverter\"></require>\n\n    <div>\n        <button click.delegate=\"previous()\"><</button>\n        <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n        <button click.delegate=\"next()\">></button>\n\n        <button click.delegate=\"generateConfig()\">Parse</button>\n    </div>\n\n    <div repeat.for=\"prop of vehicle | objectKeys\">\n        <label>${prop} <input value.bind=\"vehicle[prop]\"/></label>\n    </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map

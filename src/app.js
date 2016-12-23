@@ -35,15 +35,14 @@ export class App {
     function generateConfigAsFile(config) {      
       var textToWrite = config;
       var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
-      var fileNameToSaveAs = "handling.cfg";
       var downloadLink = document.createElement("a");
-      downloadLink.download = fileNameToSaveAs;
-      window.URL = window.URL || window.webkitURL;
-      location.href = window.URL.createObjectURL(textFileAsBlob);
+      downloadLink.download = "handling.cfg";
+      downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
     }
 
-    function destroyClickedElement(event)
-    {
+    function destroyClickedElement(event) {
         document.body.removeChild(event.target);
     }
   }
