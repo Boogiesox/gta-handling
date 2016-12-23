@@ -1,50 +1,61 @@
-define('app',['exports', 'models/gta_iii', './configService'], function (exports, _gta_iii, _configService) {
-  'use strict';
+define('app',['exports', 'models/gta_iii', 'models/gta_vc', 'models/gta_sa', 'models/gta_iv', './configService'], function (exports, _gta_iii, _gta_vc, _gta_sa, _gta_iv, _configService) {
+    'use strict';
 
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.App = undefined;
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.App = undefined;
 
-  var _gta_iii2 = _interopRequireDefault(_gta_iii);
+    var _gta_iii2 = _interopRequireDefault(_gta_iii);
 
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-      default: obj
-    };
-  }
+    var _gta_vc2 = _interopRequireDefault(_gta_vc);
 
-  class App {
-    static inject() {
-      return [_configService.ConfigService];
+    var _gta_sa2 = _interopRequireDefault(_gta_sa);
+
+    var _gta_iv2 = _interopRequireDefault(_gta_iv);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
     }
 
-    constructor(configService) {
-      this.index = 0;
-      this.vehicleSet = _gta_iii2.default;
-      this.vehicle = this.vehicleSet[this.index];
-
-      this.next = () => {
-        if (this.index < this.vehicleSet.length - 1) {
-          this.index++;
-          this.vehicle = this.vehicleSet[this.index];
+    class App {
+        static inject() {
+            return [_configService.ConfigService];
         }
-      };
 
-      this.previous = () => {
-        if (this.index > 0) {
-          this.index--;
-          this.vehicle = this.vehicleSet[this.index];
+        constructor(configService) {
+            this.vehicleSet = _gta_iii2.default;
+            this.index = 0;
+            this.updateSelectedVehicle();
+            this.configService = configService;
         }
-      };
 
-      this.generateConfig = () => {
-        var config = configService.parse(this.vehicleSet);
-        configService.generateFile(config);
-      };
+        next() {
+            if (this.index < this.vehicleSet.length - 1) {
+                this.index++;
+                this.updateSelectedVehicle();
+            }
+        }
+
+        previous() {
+            if (this.index > 0) {
+                this.index--;
+                this.updateSelectedVehicle();
+            }
+        }
+
+        updateSelectedVehicle() {
+            this.vehicle = this.vehicleSet[this.index];
+        }
+
+        generateConfig() {
+            var config = this.configService.parse(this.vehicleSet);
+            this.configService.generateFile(config);
+        }
     }
-  }
-  exports.App = App;
+    exports.App = App;
 });
 define('configService',["exports", "./node_modules/papaparse/papaparse.js"], function (exports, _papaparse) {
     "use strict";
@@ -2051,8 +2062,7 @@ define('models/gta_iv',["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  /* eslint-disable */
-  var Gta4 = [{
+  exports.default = [{
     "id": "ADMIRAL",
     "mass": 1700,
     "dragmult": 6,
@@ -6841,8 +6851,6 @@ define('models/gta_iv',["exports"], function (exports) {
     "handlingflags": 400000,
     "animgroup": 0
   }];
-
-  exports.default = Gta4;
 });
 define('models/gta_sa',["exports"], function (exports) {
   "use strict";
@@ -6850,8 +6858,7 @@ define('models/gta_sa',["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  /* eslint-disable */
-  var GtaSA = [{
+  exports.default = [{
     "id": "LANDSTAL",
     "mass": 1700,
     "turnmass": 5008.3,
@@ -14622,8 +14629,6 @@ define('models/gta_sa',["exports"], function (exports) {
     "rearlights": 1,
     "animgroup": 0
   }];
-
-  exports.default = GtaSA;
 });
 define('models/gta_vc',["exports"], function (exports) {
   "use strict";
@@ -14631,8 +14636,7 @@ define('models/gta_vc',["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  /* eslint-disable */
-  var GtaVC = [{
+  exports.default = [{
     "id": "LANDSTAL",
     "mass": 1700,
     "dimx": 2,
@@ -18237,8 +18241,6 @@ define('models/gta_vc',["exports"], function (exports) {
     "frontlights": 0,
     "rearlights": 1
   }];
-
-  exports.default = GtaVC;
 });
 define('resources/index',["exports"], function (exports) {
     "use strict";

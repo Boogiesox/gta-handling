@@ -1,5 +1,5 @@
 /* eslint-disable */
-var Gta4 = [
+export default [
   {
     "id":"ADMIRAL",
     "mass":1700,
@@ -4914,6 +4914,4 @@ var Gta4 = [
     "handlingflags":400000,
     "animgroup":0
   }
-]
-
-export default Gta4;
+];

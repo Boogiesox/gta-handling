@@ -1,5 +1,5 @@
 /* eslint-disable */
-var GtaSA = [
+export default [
   {
     "id":"LANDSTAL",
     "mass":1700,
@@ -7980,6 +7980,4 @@ var GtaSA = [
     "rearlights":1,
     "animgroup":0
   }
-]
-
-export default GtaSA;
+];
