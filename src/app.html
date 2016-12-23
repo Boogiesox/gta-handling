@@ -5,6 +5,8 @@
     <button click.delegate="previous()"><</button>
     <span style="width: 150px; display: inline-block; text-align: center">${vehicle.id}</span>
     <button click.delegate="next()">></button>
+
+    <button click.delegate="generateConfig()">Parse</button>
   </div>
 
   <div repeat.for="prop of vehicle | objectKeys">

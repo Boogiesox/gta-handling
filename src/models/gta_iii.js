@@ -2,7 +2,6 @@
 export default [
   {
     "id":"LANDSTAL",
-    "name": "TBD",
     "mass":1700,
     "dimx":2,
     "dimy":5,
@@ -37,7 +36,6 @@ export default [
   },
   {
     "id":"IDAHO",
-    "name": "TBD",
     "mass":1600,
     "dimx":1.9,
     "dimy":5,
@@ -72,7 +70,6 @@ export default [
   },
   {
     "id":"STINGER",
-    "name": "TBD",
     "mass":1000,
     "dimx":1.9,
     "dimy":4.7,
@@ -107,7 +104,6 @@ export default [
   },
   {
     "id":"LINERUN",
-    "name": "TBD",
     "mass":3800,
     "dimx":2.6,
     "dimy":7.5,
@@ -142,7 +138,6 @@ export default [
   },
   {
     "id":"PEREN",
-    "name": "TBD",
     "mass":1200,
     "dimx":1.9,
     "dimy":5,
@@ -177,7 +172,6 @@ export default [
   },
   {
     "id":"SENTINEL",
-    "name": "TBD",
     "mass":1400,
     "dimx":2,
     "dimy":4.9,
@@ -212,7 +206,6 @@ export default [
   },
   {
     "id":"PATRIOT",
-    "name": "TBD",
     "mass":2500,
     "dimx":2.4,
     "dimy":5.7,
@@ -247,7 +240,6 @@ export default [
   },
   {
     "id":"FIRETRUK",
-    "name": "TBD",
     "mass":6500,
     "dimx":2.9,
     "dimy":7.7,
@@ -282,7 +274,6 @@ export default [
   },
   {
     "id":"TRASH",
-    "name": "TBD",
     "mass":5500,
     "dimx":2.9,
     "dimy":8,
@@ -317,7 +308,6 @@ export default [
   },
   {
     "id":"STRETCH",
-    "name": "TBD",
     "mass":2200,
     "dimx":2,
     "dimy":7.3,
@@ -352,7 +342,6 @@ export default [
   },
   {
     "id":"MANANA",
-    "name": "TBD",
     "mass":1000,
     "dimx":2,
     "dimy":4.5,
@@ -387,7 +376,6 @@ export default [
   },
   {
     "id":"INFERNUS",
-    "name": "TBD",
     "mass":1600,
     "dimx":2,
     "dimy":4.4,
@@ -422,7 +410,6 @@ export default [
   },
   {
     "id":"BLISTA",
-    "name": "TBD",
     "mass":1900,
     "dimx":2.1,
     "dimy":5.5,
@@ -457,7 +444,6 @@ export default [
   },
   {
     "id":"PONY",
-    "name": "TBD",
     "mass":2600,
     "dimx":2,
     "dimy":6,
@@ -492,7 +478,6 @@ export default [
   },
   {
     "id":"MULE",
-    "name": "TBD",
     "mass":3500,
     "dimx":2.3,
     "dimy":6.5,
@@ -527,7 +512,6 @@ export default [
   },
   {
     "id":"CHEETAH",
-    "name": "TBD",
     "mass":1200,
     "dimx":2,
     "dimy":4.5,
@@ -562,7 +546,6 @@ export default [
   },
   {
     "id":"AMBULAN",
-    "name": "TBD",
     "mass":2600,
     "dimx":2.2,
     "dimy":6.5,
@@ -597,7 +580,6 @@ export default [
   },
   {
     "id":"FBICAR",
-    "name": "TBD",
     "mass":1500,
     "dimx":1.9,
     "dimy":4.9,
@@ -632,7 +614,6 @@ export default [
   },
   {
     "id":"MOONBEAM",
-    "name": "TBD",
     "mass":2000,
     "dimx":2.2,
     "dimy":5.5,
@@ -667,7 +648,6 @@ export default [
   },
   {
     "id":"ESPERANT",
-    "name": "TBD",
     "mass":1800,
     "dimx":2,
     "dimy":5,
@@ -702,7 +682,6 @@ export default [
   },
   {
     "id":"TAXI",
-    "name": "TBD",
     "mass":1450,
     "dimx":2.1,
     "dimy":5.4,
@@ -737,7 +716,6 @@ export default [
   },
   {
     "id":"KURUMA",
-    "name": "TBD",
     "mass":1500,
     "dimx":1.9,
     "dimy":4.9,
@@ -772,7 +750,6 @@ export default [
   },
   {
     "id":"BOBCAT",
-    "name": "TBD",
     "mass":2000,
     "dimx":2.1,
     "dimy":5,
@@ -807,7 +784,6 @@ export default [
   },
   {
     "id":"MRWHOOP",
-    "name": "TBD",
     "mass":1700,
     "dimx":2,
     "dimy":5,
@@ -842,7 +818,6 @@ export default [
   },
   {
     "id":"BFINJECT",
-    "name": "TBD",
     "mass":800,
     "dimx":2,
     "dimy":3.5,
@@ -877,7 +852,6 @@ export default [
   },
   {
     "id":"POLICE",
-    "name": "TBD",
     "mass":1600,
     "dimx":2.1,
     "dimy":5,
@@ -912,7 +886,6 @@ export default [
   },
   {
     "id":"ENFORCER",
-    "name": "TBD",
     "mass":4000,
     "dimx":2.4,
     "dimy":6.8,
@@ -947,7 +920,6 @@ export default [
   },
   {
     "id":"SECURICA",
-    "name": "TBD",
     "mass":7000,
     "dimx":2.6,
     "dimy":6.8,
@@ -982,7 +954,6 @@ export default [
   },
   {
     "id":"BANSHEE",
-    "name": "TBD",
     "mass":1400,
     "dimx":2.3,
     "dimy":4.5,
@@ -1017,7 +988,6 @@ export default [
   },
   {
     "id":"PREDATOR",
-    "name": "TBD",
     "mass":2200,
     "dimx":4,
     "dimy":12,
@@ -1052,7 +1022,6 @@ export default [
   },
   {
     "id":"BUS",
-    "name": "TBD",
     "mass":5500,
     "dimx":2.9,
     "dimy":8,
@@ -1087,7 +1056,6 @@ export default [
   },
   {
     "id":"RHINO",
-    "name": "TBD",
     "mass":18000,
     "dimx":3.5,
     "dimy":8,
@@ -1122,7 +1090,6 @@ export default [
   },
   {
     "id":"BARRACKS",
-    "name": "TBD",
     "mass":10500,
     "dimx":3.3,
     "dimy":7.7,
@@ -1157,7 +1124,6 @@ export default [
   },
   {
     "id":"TRAIN",
-    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1192,7 +1158,6 @@ export default [
   },
   {
     "id":"HELI",
-    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1227,7 +1192,6 @@ export default [
   },
   {
     "id":"DODO",
-    "name": "TBD",
     "mass":2500,
     "dimx":1,
     "dimy":10,
@@ -1262,7 +1226,6 @@ export default [
   },
   {
     "id":"COACH",
-    "name": "TBD",
     "mass":9500,
     "dimx":2.9,
     "dimy":8,
@@ -1297,7 +1260,6 @@ export default [
   },
   {
     "id":"CABBIE",
-    "name": "TBD",
     "mass":1250,
     "dimx":2,
     "dimy":5,
@@ -1332,7 +1294,6 @@ export default [
   },
   {
     "id":"STALLION",
-    "name": "TBD",
     "mass":1600,
     "dimx":2.1,
     "dimy":5,
@@ -1367,7 +1328,6 @@ export default [
   },
   {
     "id":"RUMPO",
-    "name": "TBD",
     "mass":2000,
     "dimx":2.1,
     "dimy":5,
@@ -1402,7 +1362,6 @@ export default [
   },
   {
     "id":"RCBANDIT",
-    "name": "TBD",
     "mass":100,
     "dimx":0.8,
     "dimy":1.5,
@@ -1437,7 +1396,6 @@ export default [
   },
   {
     "id":"BELLYUP",
-    "name": "TBD",
     "mass":2600,
     "dimx":2.2,
     "dimy":6.5,
@@ -1472,7 +1430,6 @@ export default [
   },
   {
     "id":"MRWONGS",
-    "name": "TBD",
     "mass":3500,
     "dimx":2.2,
     "dimy":6.5,
@@ -1507,7 +1464,6 @@ export default [
   },
   {
     "id":"MAFIA",
-    "name": "TBD",
     "mass":1700,
     "dimx":2,
     "dimy":4.9,
@@ -1542,7 +1498,6 @@ export default [
   },
   {
     "id":"YARDIE",
-    "name": "TBD",
     "mass":1800,
     "dimx":2.1,
     "dimy":5,
@@ -1577,7 +1532,6 @@ export default [
   },
   {
     "id":"YAKUZA",
-    "name": "TBD",
     "mass":1400,
     "dimx":1.9,
     "dimy":4.7,
@@ -1612,7 +1566,6 @@ export default [
   },
   {
     "id":"DIABLOS",
-    "name": "TBD",
     "mass":1500,
     "dimx":2.2,
     "dimy":4.5,
@@ -1647,7 +1600,6 @@ export default [
   },
   {
     "id":"COLUMB",
-    "name": "TBD",
     "mass":3200,
     "dimx":2.4,
     "dimy":5.7,
@@ -1682,7 +1634,6 @@ export default [
   },
   {
     "id":"HOODS",
-    "name": "TBD",
     "mass":2000,
     "dimx":2.1,
     "dimy":5,
@@ -1717,7 +1668,6 @@ export default [
   },
   {
     "id":"AIRTRAIN",
-    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1752,7 +1702,6 @@ export default [
   },
   {
     "id":"DEADDODO",
-    "name": "TBD",
     "mass":25500,
     "dimx":2.5,
     "dimy":7.7,
@@ -1787,7 +1736,6 @@ export default [
   },
   {
     "id":"SPEEDER",
-    "name": "TBD",
     "mass":2200,
     "dimx":3.2,
     "dimy":10,
@@ -1822,7 +1770,6 @@ export default [
   },
   {
     "id":"REEFER",
-    "name": "TBD",
     "mass":5000,
     "dimx":3.5,
     "dimy":7,
@@ -1857,7 +1804,6 @@ export default [
   },
   {
     "id":"PANLANT",
-    "name": "TBD",
     "mass":2600,
     "dimx":2,
     "dimy":6,
@@ -1892,7 +1838,6 @@ export default [
   },
   {
     "id":"FLATBED",
-    "name": "TBD",
     "mass":8500,
     "dimx":3.1,
     "dimy":7.7,
@@ -1927,7 +1872,6 @@ export default [
   },
   {
     "id":"YANKEE",
-    "name": "TBD",
     "mass":4500,
     "dimx":2.4,
     "dimy":6.5,
@@ -1962,7 +1906,6 @@ export default [
   },
   {
     "id":"BORGNINE",
-    "name": "TBD",
     "mass":1900,
     "dimx":2.1,
     "dimy":5,
