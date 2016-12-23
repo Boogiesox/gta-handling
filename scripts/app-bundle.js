@@ -77,7 +77,7 @@ define('configService',["exports", "./node_modules/papaparse/papaparse.js"], fun
 
         generateFile(configBlob) {
             var textToWrite = configBlob,
-                textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' }),
+                textFileAsBlob = new Blob(["; " + textToWrite], { type: 'text/plain' }),
                 downloadLink = document.createElement("a");
 
             downloadLink.download = "handling.cfg";
