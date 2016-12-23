@@ -1,5 +1,5 @@
 <template>
-    <require from="ObjectKeysValueConverter"></require>
+    <require from="./resources/value-converters/ObjectKeysValueConverter"></require>
 
     <div>
         <button click.delegate="previous()"><</button>
@@ -10,6 +10,6 @@
     </div>
 
     <div repeat.for="prop of vehicle | objectKeys">
-        <label>${prop} <input value.bind="vehicle[prop]"/></label>
+        <label>${prop.name} <input value.bind="vehicle[prop.key]"/></label>
     </div>
 </template>

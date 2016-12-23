@@ -1,11 +1,13 @@
 import GTA3 from 'models/gta_iii';
-import Papa from './node_modules/papaparse/papaparse.js';
+import {ConfigService} from './configService';
 
 export class App {
-  constructor() {
+  static inject() { return [ConfigService]; }
+
+  constructor(configService) {
     this.index = 0;
     this.vehicleSet = GTA3;
-    this.vehicle = this.vehicleSet[0];
+    this.vehicle = this.vehicleSet[this.index];
     
     this.next = () => {
       if(this.index < this.vehicleSet.length - 1) {
@@ -22,29 +24,8 @@ export class App {
     };
 
     this.generateConfig = () => {
-      var config = Papa.unparse(this.vehicleSet, {
-        quotes: false,
-        delimiter: " ",
-        newline: "\r\n",
-        header: false
-      });
-
-      generateConfigAsFile(config);
+      var config = configService.parse(this.vehicleSet);
+      configService.generateFile(config);
     };
-
-    function generateConfigAsFile(config) {      
-      var textToWrite = config;
-      var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
-      var downloadLink = document.createElement("a");
-      downloadLink.download = "handling.cfg";
-      downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-    }
-
-    function destroyClickedElement(event) {
-        document.body.removeChild(event.target);
-    }
   }
 }
-

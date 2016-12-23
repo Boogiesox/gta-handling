@@ -1,17 +1,4 @@
-define('ObjectKeysValueConverter',["exports"], function (exports) {
-    "use strict";
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    class ObjectKeysValueConverter {
-        toView(obj) {
-            return Object.keys(obj);
-        }
-    }
-    exports.ObjectKeysValueConverter = ObjectKeysValueConverter;
-});
-define('app',['exports', 'models/gta_iii', './node_modules/papaparse/papaparse.js'], function (exports, _gta_iii, _papaparse) {
+define('app',['exports', 'models/gta_iii', './configService'], function (exports, _gta_iii, _configService) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {
@@ -21,8 +8,6 @@ define('app',['exports', 'models/gta_iii', './node_modules/papaparse/papaparse.j
 
   var _gta_iii2 = _interopRequireDefault(_gta_iii);
 
-  var _papaparse2 = _interopRequireDefault(_papaparse);
-
   function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
       default: obj
@@ -30,10 +15,14 @@ define('app',['exports', 'models/gta_iii', './node_modules/papaparse/papaparse.j
   }
 
   class App {
-    constructor() {
+    static inject() {
+      return [_configService.ConfigService];
+    }
+
+    constructor(configService) {
       this.index = 0;
       this.vehicleSet = _gta_iii2.default;
-      this.vehicle = this.vehicleSet[0];
+      this.vehicle = this.vehicleSet[this.index];
 
       this.next = () => {
         if (this.index < this.vehicleSet.length - 1) {
@@ -50,29 +39,9 @@ define('app',['exports', 'models/gta_iii', './node_modules/papaparse/papaparse.j
       };
 
       this.generateConfig = () => {
-        var config = _papaparse2.default.unparse(this.vehicleSet, {
-          quotes: false,
-          delimiter: " ",
-          newline: "\r\n",
-          header: false
-        });
-
-        generateConfigAsFile(config);
+        var config = configService.parse(this.vehicleSet);
+        configService.generateFile(config);
       };
-
-      function generateConfigAsFile(config) {
-        var textToWrite = config;
-        var textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' });
-        var downloadLink = document.createElement("a");
-        downloadLink.download = "handling.cfg";
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-      }
-
-      function destroyClickedElement(event) {
-        document.body.removeChild(event.target);
-      }
     }
   }
   exports.App = App;
@@ -102,12 +71,41 @@ define('configService',["exports", "./node_modules/papaparse/papaparse.js"], fun
             return this.papa.unparse(data, {
                 quotes: false,
                 delimiter: " ",
-                newline: "\r\n",
-                header: false
+                newline: "\r\n"
             });
+        }
+
+        generateFile(configBlob) {
+            var textToWrite = configBlob,
+                textFileAsBlob = new Blob([textToWrite], { type: 'text/plain' }),
+                downloadLink = document.createElement("a");
+
+            downloadLink.download = "handling.cfg";
+            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
         }
     }
     exports.ConfigService = ConfigService;
+});
+define('constants',["exports"], function (exports) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = {
+        FIELD_NAME_HASH: { // Mapping of vehicle prop keys to display strings
+            id: "Vehicle ID",
+            mass: "Mass",
+            dimx: "Dimension X",
+            dimy: "Dimension Y",
+            dimz: "Dimension Z",
+            cmassx: "Center of Mass X",
+            cmassy: "Center of Mazz Y",
+            cmassz: "Center of Mass Z"
+        }
+    };
 });
 define('environment',["exports"], function (exports) {
   "use strict";
@@ -18253,6 +18251,38 @@ define('resources/index',["exports"], function (exports) {
         //config.globalResources([]);
     }
 });
+define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.ObjectKeysValueConverter = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class ObjectKeysValueConverter {
+        toView(obj) {
+            var fields = [],
+                fieldNameLookup = _constants2.default.FIELD_NAME_HASH;
+
+            Object.keys(obj).forEach(key => {
+                fields.push({
+                    name: fieldNameLookup[key] || key,
+                    key: key
+                });
+            });
+            return fields;
+        }
+    }
+    exports.ObjectKeysValueConverter = ObjectKeysValueConverter;
+});
 /*!
 	Papa Parse
 	v4.1.2
@@ -19657,18 +19687,5 @@ define('resources/index',["exports"], function (exports) {
 	}
 })(typeof window !== 'undefined' ? window : this);
 
-define('resources/value-converters/ObjectKeysValueConverter',["exports"], function (exports) {
-    "use strict";
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    class ObjectKeysValueConverter {
-        toView(obj) {
-            return Object.keys(obj);
-        }
-    }
-    exports.ObjectKeysValueConverter = ObjectKeysValueConverter;
-});
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"ObjectKeysValueConverter\"></require>\n\n    <div>\n        <button click.delegate=\"previous()\"><</button>\n        <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n        <button click.delegate=\"next()\">></button>\n\n        <button click.delegate=\"generateConfig()\">Parse</button>\n    </div>\n\n    <div repeat.for=\"prop of vehicle | objectKeys\">\n        <label>${prop} <input value.bind=\"vehicle[prop]\"/></label>\n    </div>\n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/ObjectKeysValueConverter\"></require>\n\n    <div>\n        <button click.delegate=\"previous()\"><</button>\n        <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n        <button click.delegate=\"next()\">></button>\n\n        <button click.delegate=\"generateConfig()\">Parse</button>\n    </div>\n\n    <div repeat.for=\"prop of vehicle | objectKeys\">\n        <label>${prop.name} <input value.bind=\"vehicle[prop.key]\"/></label>\n    </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map
