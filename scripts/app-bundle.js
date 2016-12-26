@@ -114,7 +114,31 @@ define('constants',["exports"], function (exports) {
             dimz: "Dimension Z",
             cmassx: "Center of Mass X",
             cmassy: "Center of Mazz Y",
-            cmassz: "Center of Mass Z"
+            cmassz: "Center of Mass Z",
+            persubmerged: "Percent Submerged",
+            tractionmult: "Traction Multiplier",
+            tractionloss: "Traction Loss",
+            tractionbias: "Traction Bias",
+            numofgears: "Number of Gears",
+            velocity: "Max Velocity",
+            acceleration: "Acceleration",
+            drivetype: "Drive Type",
+            enginetype: "Engine Type",
+            deceleration: "Deceleration",
+            brakebias: "Brake Bias",
+            abs: "Anti-lock Brakes",
+            steeringlock: "Steering Lock",
+            suspensionforce: "Suspension Force",
+            suspensiondamping: "Suspension Damping",
+            seatoffset: "Seat Offset",
+            collisiondamage: "Collision Damage",
+            value: "Monetary Value",
+            suspensionuplimit: "Suspension Upper Limit",
+            suspensionlowlimit: "Suspension Lower Limit",
+            suspensionbias: "Suspension Bias",
+            flags: "Flags",
+            frontlights: "Front Lights Size",
+            rearlights: "Rear Lights Size"
         }
     };
 });
@@ -166,6 +190,17 @@ define('main',['exports', './environment'], function (exports, _environment) {
 
     aurelia.start().then(() => aurelia.setRoot());
   }
+});
+define('resources/index',["exports"], function (exports) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.configure = configure;
+    function configure(config) {
+        //config.globalResources([]);
+    }
 });
 define('models/gta_iii',["exports"], function (exports) {
   "use strict";
@@ -18241,17 +18276,6 @@ define('models/gta_vc',["exports"], function (exports) {
     "frontlights": 0,
     "rearlights": 1
   }];
-});
-define('resources/index',["exports"], function (exports) {
-    "use strict";
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.configure = configure;
-    function configure(config) {
-        //config.globalResources([]);
-    }
 });
 define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../constants'], function (exports, _constants) {
     'use strict';
