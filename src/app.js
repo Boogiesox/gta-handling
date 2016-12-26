@@ -6,14 +6,13 @@ import {ConfigService} from './configService';
 import Constants from './constants';
 
 export class App {
-    static inject() { return [ConfigService, Constants]; }
+    static inject() { return [ConfigService]; }
 
-    constructor(configService, constants) {
+    constructor(configService) {
         this.vehicleSet = gta3;
         this.index = 0;
         this.updateSelectedVehicle();
         this.configService = configService;
-        this.fieldConfig = constants.FIELD_CONFIG;
     }
 
     next() {

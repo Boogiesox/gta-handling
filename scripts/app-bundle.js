@@ -24,15 +24,14 @@ define('app',['exports', 'models/gta_iii', 'models/gta_vc', 'models/gta_sa', 'mo
 
     class App {
         static inject() {
-            return [_configService.ConfigService, _constants2.default];
+            return [_configService.ConfigService];
         }
 
-        constructor(configService, constants) {
+        constructor(configService) {
             this.vehicleSet = _gta_iii2.default;
             this.index = 0;
             this.updateSelectedVehicle();
             this.configService = configService;
-            this.fieldConfig = constants.FIELD_CONFIG;
         }
 
         next() {
@@ -144,19 +143,24 @@ define('constants',["exports"], function (exports) {
 
         FIELD_CONFIG: {
             id: {
+                name: "Vehicle ID",
                 readonly: true,
                 type: "text"
             },
             mass: {
+                name: "Mass",
                 maxlength: 10
             },
             dimx: {
+                name: "Dimension X",
                 step: 0.1
             },
             dimy: {
+                name: "Dimension Y",
                 step: 0.1
             },
             dimz: {
+                name: "Dimension Z",
                 step: 0.1
             }
         }
@@ -18316,11 +18320,11 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
     class ObjectKeysValueConverter {
         toView(obj) {
             var fields = [],
-                fieldNameLookup = _constants2.default.FIELD_NAME_HASH;
+                fieldConfigSet = _constants2.default.FIELD_CONFIG;
 
             Object.keys(obj).forEach(key => {
                 fields.push({
-                    name: fieldNameLookup[key] || key,
+                    data: fieldConfigSet[key],
                     key: key
                 });
             });
@@ -19733,5 +19737,5 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
 	}
 })(typeof window !== 'undefined' ? window : this);
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/ObjectKeysValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | objectKeys\">\n                <label>${prop.name}\n                    <input \n                        readonly.bind=\"fieldConfig[prop.key].readonly\"\n                        disabled.bind =\"fieldConfig[prop.key].disabled\"\n                        pattern.bind=\"fieldConfig[prop.key].pattern || '[A-z]'\"\n                        maxlength.bind=\"fieldConfig[prop.key].maxlength\"\n                        type.bind=\"fieldConfig[prop.key].type || 'number'\"\n                        step.bind=\"fieldConfig[prop.key].step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/ObjectKeysValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | objectKeys\">\n                <label>${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || '[A-z]'\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map

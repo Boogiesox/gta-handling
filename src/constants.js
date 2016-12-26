@@ -36,19 +36,24 @@ export default {
 
     FIELD_CONFIG: {
         id: {
+            name: "Vehicle ID",
             readonly: true,
             type: "text"
         },
         mass: {
+            name: "Mass",
             maxlength: 10
         },
         dimx: {
+            name: "Dimension X",
             step: 0.1
         },
         dimy: {
+            name: "Dimension Y",
             step: 0.1
         },
         dimz: {
+            name: "Dimension Z",
             step: 0.1
         }
     }

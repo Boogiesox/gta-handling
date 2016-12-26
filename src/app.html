@@ -8,14 +8,14 @@
             <button click.delegate="next()">></button>
 
             <div repeat.for="prop of vehicle | objectKeys">
-                <label>${prop.name}
+                <label>${prop.data.name}
                     <input 
-                        readonly.bind="fieldConfig[prop.key].readonly"
-                        disabled.bind ="fieldConfig[prop.key].disabled"
-                        pattern.bind="fieldConfig[prop.key].pattern || '[A-z]'"
-                        maxlength.bind="fieldConfig[prop.key].maxlength"
-                        type.bind="fieldConfig[prop.key].type || 'number'"
-                        step.bind="fieldConfig[prop.key].step || 1"
+                        readonly.bind="prop.data.readonly"
+                        disabled.bind ="prop.data.disabled"
+                        pattern.bind="prop.data.pattern || '[A-z]'"
+                        maxlength.bind="prop.data.maxlength"
+                        type.bind="prop.data.type || 'number'"
+                        step.bind="prop.data.step || 1"
                         value.bind="vehicle[prop.key]"/>
                 </label>
             </div>

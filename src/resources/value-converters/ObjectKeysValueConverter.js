@@ -3,11 +3,11 @@ import constants from '../../constants'
 export class ObjectKeysValueConverter {
     toView(obj) {
         var fields = [],
-            fieldNameLookup = constants.FIELD_NAME_HASH;
+            fieldConfigSet = constants.FIELD_CONFIG;
 
         Object.keys(obj).forEach((key) => {
             fields.push({
-                name: fieldNameLookup[key] || key,
+                data: fieldConfigSet[key],
                 key: key
             });
         })
