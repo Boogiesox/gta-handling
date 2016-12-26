@@ -106,41 +106,6 @@ define('constants',["exports"], function (exports) {
         value: true
     });
     exports.default = {
-        FIELD_NAME_HASH: { // Mapping of vehicle prop keys to display strings
-            id: "Vehicle ID",
-            mass: "Mass",
-            dimx: "Dimension X",
-            dimy: "Dimension Y",
-            dimz: "Dimension Z",
-            cmassx: "Center of Mass X",
-            cmassy: "Center of Mazz Y",
-            cmassz: "Center of Mass Z",
-            persubmerged: "Percent Submerged",
-            tractionmult: "Traction Multiplier",
-            tractionloss: "Traction Loss",
-            tractionbias: "Traction Bias",
-            numofgears: "Number of Gears",
-            velocity: "Max Velocity",
-            acceleration: "Acceleration",
-            drivetype: "Drive Type",
-            enginetype: "Engine Type",
-            deceleration: "Deceleration",
-            brakebias: "Brake Bias",
-            abs: "Anti-lock Brakes",
-            steeringlock: "Steering Lock",
-            suspensionforce: "Suspension Force",
-            suspensiondamping: "Suspension Damping",
-            seatoffset: "Seat Offset",
-            collisiondamage: "Collision Damage",
-            value: "Monetary Value",
-            suspensionuplimit: "Suspension Upper Limit",
-            suspensionlowlimit: "Suspension Lower Limit",
-            suspensionbias: "Suspension Bias",
-            flags: "Flags",
-            frontlights: "Front Lights Size",
-            rearlights: "Rear Lights Size"
-        },
-
         FIELD_CONFIG: {
             id: {
                 name: "Vehicle ID",
@@ -162,6 +127,98 @@ define('constants',["exports"], function (exports) {
             dimz: {
                 name: "Dimension Z",
                 step: 0.1
+            },
+            cmassx: {
+                name: "Center of Mass X",
+                step: 0.01
+            },
+            cmassy: {
+                name: "Center of Mass Y",
+                step: 0.01
+            },
+            cmassz: {
+                name: "Center of Mass Z",
+                step: 0.01
+            },
+            persubmerged: {
+                name: "Percent Submerged"
+            },
+            tractionmult: {
+                name: "Traction Multiplier",
+                step: 0.01
+            },
+            tractionloss: {
+                name: "Traction Loss",
+                step: 0.01
+            },
+            tractionbias: {
+                name: "Traction Bias",
+                step: 0.01
+            },
+            numofgears: {
+                name: "Number of Gears"
+            },
+            velocity: {
+                name: "Number of Gears"
+            },
+            acceleration: {
+                name: "Acceleration"
+            },
+            drivetype: {
+                name: "Drive Type",
+                maxlength: 1,
+                type: "text"
+            },
+            enginetype: {
+                name: "Engine Type",
+                maxlength: 1,
+                type: "text"
+            },
+            deceleration: {
+                name: "Deceleration"
+            },
+            brakebias: {
+                name: "Brake Bias"
+            },
+            abs: {
+                name: "Anti-lock Brakes"
+            },
+            steeringlock: {
+                name: "Steering Lock"
+            },
+            suspensionforce: {
+                name: "Suspension Force"
+            },
+            suspensiondamping: {
+                name: "Suspension Damping"
+            },
+            seatoffset: {
+                name: "Seat Offset"
+            },
+            collisiondamage: {
+                name: "Collision Damage"
+            },
+            value: {
+                name: "Monetary Value"
+            },
+            suspensionuplimit: {
+                name: "Suspension Upper Limit"
+            },
+            suspensionlowlimit: {
+                name: "Suspension Lower Limit"
+            },
+            suspensionbias: {
+                name: "Suspension Bias"
+            },
+            flags: {
+                name: "Flags",
+                type: "text"
+            },
+            frontlights: {
+                name: "Front Lights Size"
+            },
+            rearlights: {
+                name: "Rear Light Size"
             }
         }
     };
