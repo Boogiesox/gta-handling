@@ -1,4 +1,4 @@
-define('app',['exports', 'models/gta_iii', 'models/gta_vc', 'models/gta_sa', 'models/gta_iv', './configService'], function (exports, _gta_iii, _gta_vc, _gta_sa, _gta_iv, _configService) {
+define('app',['exports', 'models/gta_iii', 'models/gta_vc', 'models/gta_sa', 'models/gta_iv', './configService', './constants'], function (exports, _gta_iii, _gta_vc, _gta_sa, _gta_iv, _configService, _constants) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -14,6 +14,8 @@ define('app',['exports', 'models/gta_iii', 'models/gta_vc', 'models/gta_sa', 'mo
 
     var _gta_iv2 = _interopRequireDefault(_gta_iv);
 
+    var _constants2 = _interopRequireDefault(_constants);
+
     function _interopRequireDefault(obj) {
         return obj && obj.__esModule ? obj : {
             default: obj
@@ -22,14 +24,15 @@ define('app',['exports', 'models/gta_iii', 'models/gta_vc', 'models/gta_sa', 'mo
 
     class App {
         static inject() {
-            return [_configService.ConfigService];
+            return [_configService.ConfigService, _constants2.default];
         }
 
-        constructor(configService) {
+        constructor(configService, constants) {
             this.vehicleSet = _gta_iii2.default;
             this.index = 0;
             this.updateSelectedVehicle();
             this.configService = configService;
+            this.fieldConfig = constants.FIELD_CONFIG;
         }
 
         next() {
@@ -74,12 +77,10 @@ define('configService',["exports", "./node_modules/papaparse/papaparse.js"], fun
     }
 
     class ConfigService {
-        constructor() {
-            this.papa = _papaparse2.default;
-        }
+        constructor() {}
 
         parse(data) {
-            return this.papa.unparse(data, {
+            return _papaparse2.default.unparse(data, {
                 quotes: false,
                 delimiter: " ",
                 newline: "\r\n"
@@ -139,6 +140,25 @@ define('constants',["exports"], function (exports) {
             flags: "Flags",
             frontlights: "Front Lights Size",
             rearlights: "Rear Lights Size"
+        },
+
+        FIELD_CONFIG: {
+            id: {
+                readonly: true,
+                type: "text"
+            },
+            mass: {
+                maxlength: 10
+            },
+            dimx: {
+                step: 0.1
+            },
+            dimy: {
+                step: 0.1
+            },
+            dimz: {
+                step: 0.1
+            }
         }
     };
 });
@@ -19713,5 +19733,5 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
 	}
 })(typeof window !== 'undefined' ? window : this);
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/ObjectKeysValueConverter\"></require>\n\n    <div>\n        <button click.delegate=\"previous()\"><</button>\n        <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n        <button click.delegate=\"next()\">></button>\n\n        <button click.delegate=\"generateConfig()\">Parse</button>\n    </div>\n\n    <div repeat.for=\"prop of vehicle | objectKeys\">\n        <label>${prop.name} <input value.bind=\"vehicle[prop.key]\"/></label>\n    </div>\n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/ObjectKeysValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | objectKeys\">\n                <label>${prop.name}\n                    <input \n                        readonly.bind=\"fieldConfig[prop.key].readonly\"\n                        disabled.bind =\"fieldConfig[prop.key].disabled\"\n                        pattern.bind=\"fieldConfig[prop.key].pattern || '[A-z]'\"\n                        maxlength.bind=\"fieldConfig[prop.key].maxlength\"\n                        type.bind=\"fieldConfig[prop.key].type || 'number'\"\n                        step.bind=\"fieldConfig[prop.key].step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map

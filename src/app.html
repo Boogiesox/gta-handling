@@ -2,14 +2,25 @@
     <require from="./resources/value-converters/ObjectKeysValueConverter"></require>
 
     <div>
-        <button click.delegate="previous()"><</button>
-        <span style="width: 150px; display: inline-block; text-align: center">${vehicle.id}</span>
-        <button click.delegate="next()">></button>
+        <form submit.delegate="generateConfig()">
+            <button click.delegate="previous()"><</button>
+            <span style="width: 150px; display: inline-block; text-align: center">${vehicle.id}</span>
+            <button click.delegate="next()">></button>
 
-        <button click.delegate="generateConfig()">Parse</button>
-    </div>
+            <div repeat.for="prop of vehicle | objectKeys">
+                <label>${prop.name}
+                    <input 
+                        readonly.bind="fieldConfig[prop.key].readonly"
+                        disabled.bind ="fieldConfig[prop.key].disabled"
+                        pattern.bind="fieldConfig[prop.key].pattern || '[A-z]'"
+                        maxlength.bind="fieldConfig[prop.key].maxlength"
+                        type.bind="fieldConfig[prop.key].type || 'number'"
+                        step.bind="fieldConfig[prop.key].step || 1"
+                        value.bind="vehicle[prop.key]"/>
+                </label>
+            </div>
 
-    <div repeat.for="prop of vehicle | objectKeys">
-        <label>${prop.name} <input value.bind="vehicle[prop.key]"/></label>
+            <input type="submit" value="Parse" />
+        </form>
     </div>
 </template>

@@ -32,5 +32,24 @@ export default {
         flags: "Flags",
         frontlights: "Front Lights Size",
         rearlights: "Rear Lights Size"
+    },
+
+    FIELD_CONFIG: {
+        id: {
+            readonly: true,
+            type: "text"
+        },
+        mass: {
+            maxlength: 10
+        },
+        dimx: {
+            step: 0.1
+        },
+        dimy: {
+            step: 0.1
+        },
+        dimz: {
+            step: 0.1
+        }
     }
 }

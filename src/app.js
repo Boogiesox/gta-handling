@@ -3,15 +3,17 @@ import gtaVc from 'models/gta_vc';
 import gtaSa from 'models/gta_sa';
 import gta4 from 'models/gta_iv';
 import {ConfigService} from './configService';
+import Constants from './constants';
 
 export class App {
-    static inject() { return [ConfigService]; }
+    static inject() { return [ConfigService, Constants]; }
 
-    constructor(configService) {
+    constructor(configService, constants) {
         this.vehicleSet = gta3;
         this.index = 0;
         this.updateSelectedVehicle();
         this.configService = configService;
+        this.fieldConfig = constants.FIELD_CONFIG;
     }
 
     next() {
