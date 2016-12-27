@@ -9,12 +9,12 @@
 
             <div repeat.for="prop of vehicle | objectKeys">
                 <!-- Input Type -->
-                <label if.bind="prop.data.type !== 'select'">
+                <label if.bind="prop.data.type !== 'select' && !prop.data.hide">
                     ${prop.data.name}
                     <input 
                         readonly.bind="prop.data.readonly"
                         disabled.bind ="prop.data.disabled"
-                        pattern.bind="prop.data.pattern || '[A-z]'"
+                        pattern.bind="prop.data.pattern || ''"
                         maxlength.bind="prop.data.maxlength"
                         type.bind="prop.data.type || 'number'"
                         step.bind="prop.data.step || 1"
@@ -22,7 +22,7 @@
                 </label>
 
                 <!-- Select Type -->
-                <label if.bind="prop.data.type === 'select'">
+                <label if.bind="prop.data.type === 'select' && !prop.data.hide">
                     ${prop.data.name}
                     <select value.bind="vehicle[prop.key]">
                         <option repeat.for="option of prop.data.options" 

@@ -2,8 +2,7 @@ export default {
     FIELD_CONFIG: {
         id: {
             name: "Vehicle ID",
-            readonly: true,
-            type: "text"
+            hide: true
         },
         mass: {
             name: "Mass",
@@ -102,8 +101,7 @@ export default {
             step: 0.01
         },
         value: {
-            name: "Monetary Value",
-            step: 0.01
+            name: "Monetary Value"
         },
         suspensionuplimit: {
             name: "Suspension Upper Limit",
@@ -119,8 +117,7 @@ export default {
         },
         flags: {
             name: "Flags",
-            type: "text",
-            readonly: true
+            type: "text"
         },
         frontlights: {
             name: "Front Lights Size"
