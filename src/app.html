@@ -8,7 +8,9 @@
             <button click.delegate="next()">></button>
 
             <div repeat.for="prop of vehicle | objectKeys">
-                <label>${prop.data.name}
+                <!-- Input Type -->
+                <label if.bind="prop.data.type !== 'select'">
+                    ${prop.data.name}
                     <input 
                         readonly.bind="prop.data.readonly"
                         disabled.bind ="prop.data.disabled"
@@ -17,6 +19,16 @@
                         type.bind="prop.data.type || 'number'"
                         step.bind="prop.data.step || 1"
                         value.bind="vehicle[prop.key]"/>
+                </label>
+
+                <!-- Select Type -->
+                <label if.bind="prop.data.type === 'select'">
+                    ${prop.data.name}
+                    <select value.bind="vehicle[prop.key]">
+                        <option repeat.for="option of prop.data.options" 
+                            value="${option}">${option}
+                        </option>
+                    </select>
                 </label>
             </div>
 

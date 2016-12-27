@@ -60,52 +60,67 @@ export default {
         drivetype: {
             name: "Drive Type",
             maxlength: 1,
-            type: "text"
+            type: "select",
+            options: ["4", "F", "R"]
         },
         enginetype: {
             name: "Engine Type",
             maxlength: 1,
-            type: "text"
+            type: "select",
+            options: ["D", "P", "E"]
         },
         deceleration: { 
-            name: "Deceleration"
+            name: "Deceleration",
+            step: 0.01
         },
         brakebias: {
-            name: "Brake Bias"
+            name: "Brake Bias",
+            step: 0.01
         },
         abs: {
-            name: "Anti-lock Brakes"
+            name: "Anti-lock Brakes",
+            step: 0.01
         },
         steeringlock: {
-            name: "Steering Lock"
+            name: "Steering Lock",
+            step: 0.01
         },
         suspensionforce: {
-            name: "Suspension Force"
+            name: "Suspension Force",
+            step: 0.01
         },
         suspensiondamping: {
-            name: "Suspension Damping"
+            name: "Suspension Damping",
+            step: 0.01
         },
         seatoffset: {
-            name: "Seat Offset"
+            name: "Seat Offset",
+            step: 0.01
         },
         collisiondamage: {
             name: "Collision Damage",
+            step: 0.01
         },
         value: {
-            name: "Monetary Value"
+            name: "Monetary Value",
+            step: 0.01
         },
         suspensionuplimit: {
-            name: "Suspension Upper Limit"
+            name: "Suspension Upper Limit",
+            step: 0.01
         },
         suspensionlowlimit: {
-            name: "Suspension Lower Limit"
+            name: "Suspension Lower Limit",
+            step: 0.01
         },
         suspensionbias: {
-            name: "Suspension Bias"
+            name: "Suspension Bias",
+            step: 0.01
         },
         flags: {
             name: "Flags",
-            type: "text"
+            type: "text",
+            readonly: true
         },
         frontlights: {
             name: "Front Lights Size"
