@@ -1,13 +1,14 @@
 <template>
-    <require from="./resources/value-converters/ObjectKeysValueConverter"></require>
+    <require from="./resources/value-converters/FieldsConfigValueConverter"></require>
+    <require from="./resources/value-converters/VehicleNameValueConverter"></require>
 
     <div>
         <form submit.delegate="generateConfig()">
             <button click.delegate="previous()"><</button>
-            <span style="width: 150px; display: inline-block; text-align: center">${vehicle.id}</span>
+            <span style="width: 150px; display: inline-block; text-align: center">${vehicle.id | vehicleName}</span>
             <button click.delegate="next()">></button>
 
-            <div repeat.for="prop of vehicle | objectKeys">
+            <div repeat.for="prop of vehicle | fieldsConfig">
                 <!-- Input Type -->
                 <label if.bind="prop.data.type !== 'select' && !prop.data.hide">
                     ${prop.data.name}

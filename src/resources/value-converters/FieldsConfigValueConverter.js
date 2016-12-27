@@ -1,6 +1,6 @@
 import constants from '../../constants'
 
-export class ObjectKeysValueConverter {
+export class FieldsConfigValueConverter {
     toView(obj) {
         var fields = [],
             fieldConfigSet = constants.FIELD_CONFIG;
@@ -10,7 +10,8 @@ export class ObjectKeysValueConverter {
                 data: fieldConfigSet[key],
                 key: key
             });
-        })
+        });
+        
         return fields;
     }
 }

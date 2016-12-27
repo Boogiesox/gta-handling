@@ -232,6 +232,66 @@ define('constants',["exports"], function (exports) {
             rearlights: {
                 name: "Rear Light Size"
             }
+        },
+
+        VEHICLE_NAMES: {
+            "LANDSTAL": "Landstalker",
+            "IDAHO": "Idaho",
+            "STINGER": "Stinger",
+            "LINERUN": "Linerunner",
+            "PEREN": "Perennial",
+            "SENTINEL": "Sentinel",
+            "PATRIOT": "Patriot",
+            "FIRETRUK": "Fire Truck",
+            "TRASH": "Trashmaster",
+            "STRETCH": "Stretch",
+            "MANANA": "Manana",
+            "INFERNUS": "Infernus",
+            "BLISTA": "Blista",
+            "PONY": "Pony",
+            "MULE": "Mule",
+            "CHEETAH": "Cheetah",
+            "AMBULAN": "Ambulance",
+            "FBICAR": "FBI Kuruma",
+            "MOONBEAM": "Moonbeam",
+            "ESPERANT": "Esperanto",
+            "TAXI": "Taxi",
+            "KURUMA": "Kuruma",
+            "BOBCAT": "Bobcat",
+            "MRWHOOP": "Mr. Whoopee",
+            "BFINJECT": "BF Injection",
+            "POLICE": "Police",
+            "ENFORCER": "Enforcer",
+            "SECURICA": "Securicar",
+            "BANSHEE": "Banshee",
+            "PREDATOR": "Predator",
+            "BUS": "Bus",
+            "RHINO": "Rhino",
+            "BARRACKS": "Barracks OL",
+            "TRAIN": "Train",
+            "HELI": "Police Helicopter",
+            "DODO": "Dodo",
+            "COACH": "Coach",
+            "CABBIE": "Cabbie",
+            "STALLION": "Stallion",
+            "RUMPO": "Rumpo",
+            "RCBANDIT": "RC Bandit",
+            "BELLYUP": "Belly Up",
+            "MRWONGS": "Mr. Wong's",
+            "MAFIA": "Mafia Sentinel",
+            "YARDIE": "Yardie Lobo",
+            "YAKUZA": "Yakuza Stinger",
+            "DIABLOS": "Diablo Stallion",
+            "COLUMB": "Cartel Cruiser",
+            "HOODS": "Hoods Rumpo",
+            "AIRTRAIN": "NPC Airliner",
+            "DEADDODO": "NPC Dodo",
+            "SPEEDER": "Speeder",
+            "REEFER": "Reefer",
+            "PANLANT": "Panlantic",
+            "FLATBED": "Flatbed",
+            "YANKEE": "Yankee",
+            "BORGNINE": "Borgnine Cabbie"
         }
     };
 });
@@ -18376,7 +18436,7 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.ObjectKeysValueConverter = undefined;
+    exports.FieldDataProvider = undefined;
 
     var _constants2 = _interopRequireDefault(_constants);
 
@@ -18386,7 +18446,7 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
         };
     }
 
-    class ObjectKeysValueConverter {
+    class FieldDataProvider {
         toView(obj) {
             var fields = [],
                 fieldConfigSet = _constants2.default.FIELD_CONFIG;
@@ -18400,7 +18460,7 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
             return fields;
         }
     }
-    exports.ObjectKeysValueConverter = ObjectKeysValueConverter;
+    exports.FieldDataProvider = FieldDataProvider;
 });
 /*!
 	Papa Parse
@@ -19806,5 +19866,191 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
 	}
 })(typeof window !== 'undefined' ? window : this);
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/ObjectKeysValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | objectKeys\">\n                <!-- Input Type -->\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || ''\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n\n                <!-- Select Type -->\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <select value.bind=\"vehicle[prop.key]\">\n                        <option repeat.for=\"option of prop.data.options\" \n                            value=\"${option}\">${option}\n                        </option>\n                    </select>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
+define('resources/value-converters/FieldDataProvider',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.FieldsConfigMapper = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class FieldsConfigMapper {
+        toView(obj) {
+            var fields = [],
+                fieldConfigSet = _constants2.default.FIELD_CONFIG;
+
+            Object.keys(obj).forEach(key => {
+                fields.push({
+                    data: fieldConfigSet[key],
+                    key: key
+                });
+            });
+            return fields;
+        }
+    }
+    exports.FieldsConfigMapper = FieldsConfigMapper;
+});
+define('resources/value-converters/FieldsConfigMapper',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.FieldsConfigValueConverter = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class FieldsConfigValueConverter {
+        toView(obj) {
+            var fields = [],
+                fieldConfigSet = _constants2.default.FIELD_CONFIG;
+
+            Object.keys(obj).forEach(key => {
+                fields.push({
+                    data: fieldConfigSet[key],
+                    key: key
+                });
+            });
+            return fields;
+        }
+    }
+    exports.FieldsConfigValueConverter = FieldsConfigValueConverter;
+});
+define('resources/value-converters/FieldsConfigValueConverter',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.FieldsConfigValueConverter = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class FieldsConfigValueConverter {
+        toView(obj) {
+            var fields = [],
+                fieldConfigSet = _constants2.default.FIELD_CONFIG;
+
+            Object.keys(obj).forEach(key => {
+                fields.push({
+                    data: fieldConfigSet[key],
+                    key: key
+                });
+            });
+
+            return fields;
+        }
+    }
+    exports.FieldsConfigValueConverter = FieldsConfigValueConverter;
+});
+define('resources/value-converters/CarNamesValueConverter',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.VehicleDataValueConverter = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class VehicleDataValueConverter {
+        toView(obj) {
+            var fields = [],
+                vehicleData = _constants2.default.VEHICLE_DATA;
+
+            Object.keys(obj).forEach(id => {
+                fields.push({
+                    data: vehicleData[id],
+                    key: key
+                });
+            });
+            return fields;
+        }
+    }
+    exports.VehicleDataValueConverter = VehicleDataValueConverter;
+});
+define('resources/value-converters/VehicleDataValueConverter',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.VehicleNameValueConverter = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class VehicleNameValueConverter {
+        toView(obj) {
+            var vehicles = [],
+                vehicleData = _constants2.default.VEHICLE_Names;
+
+            Object.keys(obj).forEach(id => {
+                vehicles.push({
+                    id: vehicleData[id] || { name: id }
+                });
+            });
+
+            return vehicles;
+        }
+    }
+    exports.VehicleNameValueConverter = VehicleNameValueConverter;
+});
+define('resources/value-converters/VehicleNameValueConverter',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.VehicleNameValueConverter = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class VehicleNameValueConverter {
+        toView(id) {
+            var vehicleNames = _constants2.default.VEHICLE_NAMES;
+
+            return vehicleNames[id] || id;
+        }
+    }
+    exports.VehicleNameValueConverter = VehicleNameValueConverter;
+});
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\n                <!-- Input Type -->\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || ''\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n\n                <!-- Select Type -->\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <select value.bind=\"vehicle[prop.key]\">\n                        <option repeat.for=\"option of prop.data.options\" \n                            value=\"${option}\">${option}\n                        </option>\n                    </select>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map
