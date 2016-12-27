@@ -158,7 +158,7 @@ define('constants',["exports"], function (exports) {
                 name: "Number of Gears"
             },
             velocity: {
-                name: "Number of Gears"
+                name: "Max Velocity"
             },
             acceleration: {
                 name: "Acceleration"
