@@ -1,7 +1,6 @@
 export default {
     FIELD_CONFIG: {
         id: {
-            name: "Vehicle ID",
             hide: true
         },
         mass: {
@@ -83,8 +82,7 @@ export default {
             step: 0.01
         },
         abs: {
-            name: "Anti-lock Brakes",
-            step: 0.01
+            hide: true
         },
         steeringlock: {
             name: "Steering Lock",
@@ -126,10 +124,24 @@ export default {
             type: "text"
         },
         frontlights: {
-            name: "Front Lights Size"
+            name: "Front Lights Type",
+            type: "select",
+            options: [
+                { value: "0", name: "Long" },
+                { value: "1", name: "Small" },
+                { value: "2", name: "Big" },
+                { value: "3", name: "Tall" }
+            ]
         },
         rearlights: {
-            name: "Rear Light Size"
+            name: "Rear Lights Type",
+            type: "select",
+            options: [
+                { value: "0", name: "Long" },
+                { value: "1", name: "Small" },
+                { value: "2", name: "Big" },
+                { value: "3", name: "Tall" }
+            ]
         }
     },
 

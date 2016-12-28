@@ -32,7 +32,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"C00B",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"IDAHO",
@@ -66,7 +66,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"2",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"STINGER",
@@ -100,7 +100,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"A182",
         "frontlights":"1",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"LINERUN",
@@ -134,7 +134,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"100",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"PEREN",
@@ -168,7 +168,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"A",
         "frontlights":"1",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"SENTINEL",
@@ -202,7 +202,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"8002",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"PATRIOT",
@@ -236,7 +236,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"4103",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"FIRETRUK",
@@ -270,7 +270,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"4404",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"TRASH",
@@ -304,7 +304,7 @@ export default [
         "suspensionbias":0.55,
         "flags":"4003",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"STRETCH",
@@ -338,7 +338,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"8002",
         "frontlights":"1",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"MANANA",
@@ -372,7 +372,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"2",
         "frontlights":"0",
-        "rearlights":0
+        "rearlights":"0"
     },
     {
         "id":"INFERNUS",
@@ -406,7 +406,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"8181",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"BLISTA",
@@ -440,7 +440,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"2",
         "frontlights":"0",
-        "rearlights":1
+        "rearlights":"1"
     },
     {
         "id":"PONY",
@@ -474,7 +474,7 @@ export default [
         "suspensionbias":0.4,
         "flags":"22",
         "frontlights":"0",
-        "rearlights":3
+        "rearlights":"3"
     },
     {
         "id":"MULE",
@@ -508,7 +508,7 @@ export default [
         "suspensionbias":0.5,
         "flags":"4422",
         "frontlights":"0",
-        "rearlights":3
+        "rearlights":"3"
     },
     {
         "id":"CHEETAH",
@@ -542,7 +542,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8181",
     "frontlights":"0",
-    "rearlights":0
+    "rearlights":"0"
   },
   {
     "id":"AMBULAN",
@@ -576,7 +576,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"822",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"FBICAR",
@@ -610,7 +610,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8002",
     "frontlights":"0",
-    "rearlights":2
+    "rearlights":"2"
   },
   {
     "id":"MOONBEAM",
@@ -644,7 +644,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"A",
     "frontlights":"0",
-    "rearlights":3
+    "rearlights":"3"
   },
   {
     "id":"ESPERANT",
@@ -678,7 +678,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"1",
     "frontlights":"0",
-    "rearlights":3
+    "rearlights":"3"
   },
   {
     "id":"TAXI",
@@ -712,7 +712,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8002",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"KURUMA",
@@ -746,7 +746,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8002",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"BOBCAT",
@@ -780,7 +780,7 @@ export default [
     "suspensionbias":0.45,
     "flags":"A02",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"MRWHOOP",
@@ -814,7 +814,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"4402",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"BFINJECT",
@@ -848,7 +848,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"A118",
     "frontlights":"1",
-    "rearlights":2
+    "rearlights":"2"
   },
   {
     "id":"POLICE",
@@ -882,7 +882,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"9002",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"ENFORCER",
@@ -916,7 +916,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"27",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"SECURICA",
@@ -950,7 +950,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"823",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"BANSHEE",
@@ -984,7 +984,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"A183",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"PREDATOR",
@@ -1018,7 +1018,7 @@ export default [
     "suspensionbias":0,
     "flags":"4",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"BUS",
@@ -1052,7 +1052,7 @@ export default [
     "suspensionbias":0.45,
     "flags":"1",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"RHINO",
@@ -1086,7 +1086,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"4003",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"BARRACKS",
@@ -1120,7 +1120,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"6022",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"TRAIN",
@@ -1154,7 +1154,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"0",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"HELI",
@@ -1188,7 +1188,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"0",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"DODO",
@@ -1222,7 +1222,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8000",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"COACH",
@@ -1256,7 +1256,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8040",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"CABBIE",
@@ -1290,7 +1290,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"2",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"STALLION",
@@ -1324,7 +1324,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"2101",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"RUMPO",
@@ -1358,7 +1358,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"22",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"RCBANDIT",
@@ -1392,7 +1392,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"0",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"BELLYUP",
@@ -1426,7 +1426,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"422",
     "frontlights":"0",
-    "rearlights":3
+    "rearlights":"3"
   },
   {
     "id":"MRWONGS",
@@ -1460,7 +1460,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"423",
     "frontlights":"0",
-    "rearlights":3
+    "rearlights":"3"
   },
   {
     "id":"MAFIA",
@@ -1494,7 +1494,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8002",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"YARDIE",
@@ -1528,7 +1528,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8103",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"YAKUZA",
@@ -1562,7 +1562,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"180",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"DIABLOS",
@@ -1596,7 +1596,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"9102",
     "frontlights":"1",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"COLUMB",
@@ -1630,7 +1630,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"9A00",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"HOODS",
@@ -1664,7 +1664,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"8023",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"AIRTRAIN",
@@ -1698,7 +1698,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"0",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"DEADDODO",
@@ -1732,7 +1732,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"0",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"SPEEDER",
@@ -1766,7 +1766,7 @@ export default [
     "suspensionbias":0.2,
     "flags":"4",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"REEFER",
@@ -1800,7 +1800,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"4",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"PANLANT",
@@ -1834,7 +1834,7 @@ export default [
     "suspensionbias":0.4,
     "flags":"22",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"FLATBED",
@@ -1868,7 +1868,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"2022",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"YANKEE",
@@ -1902,7 +1902,7 @@ export default [
     "suspensionbias":0.5,
     "flags":"4423",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   },
   {
     "id":"BORGNINE",
@@ -1936,6 +1936,6 @@ export default [
     "suspensionbias":0.45,
     "flags":"2",
     "frontlights":"0",
-    "rearlights":1
+    "rearlights":"1"
   }
 ];

@@ -108,7 +108,6 @@ define('constants',["exports"], function (exports) {
     exports.default = {
         FIELD_CONFIG: {
             id: {
-                name: "Vehicle ID",
                 hide: true
             },
             mass: {
@@ -182,8 +181,7 @@ define('constants',["exports"], function (exports) {
                 step: 0.01
             },
             abs: {
-                name: "Anti-lock Brakes",
-                step: 0.01
+                hide: true
             },
             steeringlock: {
                 name: "Steering Lock",
@@ -225,10 +223,14 @@ define('constants',["exports"], function (exports) {
                 type: "text"
             },
             frontlights: {
-                name: "Front Lights Size"
+                name: "Front Lights Type",
+                type: "select",
+                options: [{ value: "0", name: "Long" }, { value: "1", name: "Small" }, { value: "2", name: "Big" }, { value: "3", name: "Tall" }]
             },
             rearlights: {
-                name: "Rear Light Size"
+                name: "Rear Lights Type",
+                type: "select",
+                options: [{ value: "0", name: "Long" }, { value: "1", name: "Small" }, { value: "2", name: "Big" }, { value: "3", name: "Tall" }]
             }
         },
 
@@ -391,7 +393,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "C00B",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "IDAHO",
     "mass": 1600,
@@ -424,7 +426,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "2",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "STINGER",
     "mass": 1000,
@@ -457,7 +459,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "A182",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "LINERUN",
     "mass": 3800,
@@ -490,7 +492,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "100",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "PEREN",
     "mass": 1200,
@@ -523,7 +525,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "A",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "SENTINEL",
     "mass": 1400,
@@ -556,7 +558,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8002",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "PATRIOT",
     "mass": 2500,
@@ -589,7 +591,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "4103",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "FIRETRUK",
     "mass": 6500,
@@ -622,7 +624,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "4404",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "TRASH",
     "mass": 5500,
@@ -655,7 +657,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.55,
     "flags": "4003",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "STRETCH",
     "mass": 2200,
@@ -688,7 +690,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8002",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "MANANA",
     "mass": 1000,
@@ -721,7 +723,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "2",
     "frontlights": "0",
-    "rearlights": 0
+    "rearlights": "0"
   }, {
     "id": "INFERNUS",
     "mass": 1600,
@@ -754,7 +756,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8181",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BLISTA",
     "mass": 1900,
@@ -787,7 +789,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "2",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "PONY",
     "mass": 2600,
@@ -820,7 +822,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "flags": "22",
     "frontlights": "0",
-    "rearlights": 3
+    "rearlights": "3"
   }, {
     "id": "MULE",
     "mass": 3500,
@@ -853,7 +855,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "4422",
     "frontlights": "0",
-    "rearlights": 3
+    "rearlights": "3"
   }, {
     "id": "CHEETAH",
     "mass": 1200,
@@ -886,7 +888,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8181",
     "frontlights": "0",
-    "rearlights": 0
+    "rearlights": "0"
   }, {
     "id": "AMBULAN",
     "mass": 2600,
@@ -919,7 +921,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "822",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "FBICAR",
     "mass": 1500,
@@ -952,7 +954,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8002",
     "frontlights": "0",
-    "rearlights": 2
+    "rearlights": "2"
   }, {
     "id": "MOONBEAM",
     "mass": 2000,
@@ -985,7 +987,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "A",
     "frontlights": "0",
-    "rearlights": 3
+    "rearlights": "3"
   }, {
     "id": "ESPERANT",
     "mass": 1800,
@@ -1018,7 +1020,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "1",
     "frontlights": "0",
-    "rearlights": 3
+    "rearlights": "3"
   }, {
     "id": "TAXI",
     "mass": 1450,
@@ -1051,7 +1053,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8002",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "KURUMA",
     "mass": 1500,
@@ -1084,7 +1086,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8002",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BOBCAT",
     "mass": 2000,
@@ -1117,7 +1119,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.45,
     "flags": "A02",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "MRWHOOP",
     "mass": 1700,
@@ -1150,7 +1152,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "4402",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BFINJECT",
     "mass": 800,
@@ -1183,7 +1185,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "A118",
     "frontlights": "1",
-    "rearlights": 2
+    "rearlights": "2"
   }, {
     "id": "POLICE",
     "mass": 1600,
@@ -1216,7 +1218,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "9002",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "ENFORCER",
     "mass": 4000,
@@ -1249,7 +1251,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "27",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "SECURICA",
     "mass": 7000,
@@ -1282,7 +1284,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "823",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BANSHEE",
     "mass": 1400,
@@ -1315,7 +1317,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "A183",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "PREDATOR",
     "mass": 2200,
@@ -1348,7 +1350,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0,
     "flags": "4",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BUS",
     "mass": 5500,
@@ -1381,7 +1383,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.45,
     "flags": "1",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "RHINO",
     "mass": 18000,
@@ -1414,7 +1416,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "4003",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BARRACKS",
     "mass": 10500,
@@ -1447,7 +1449,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "6022",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "TRAIN",
     "mass": 25500,
@@ -1480,7 +1482,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "0",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "HELI",
     "mass": 25500,
@@ -1513,7 +1515,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "0",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "DODO",
     "mass": 2500,
@@ -1546,7 +1548,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8000",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "COACH",
     "mass": 9500,
@@ -1579,7 +1581,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8040",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "CABBIE",
     "mass": 1250,
@@ -1612,7 +1614,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "2",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "STALLION",
     "mass": 1600,
@@ -1645,7 +1647,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "2101",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "RUMPO",
     "mass": 2000,
@@ -1678,7 +1680,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "22",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "RCBANDIT",
     "mass": 100,
@@ -1711,7 +1713,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "0",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BELLYUP",
     "mass": 2600,
@@ -1744,7 +1746,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "422",
     "frontlights": "0",
-    "rearlights": 3
+    "rearlights": "3"
   }, {
     "id": "MRWONGS",
     "mass": 3500,
@@ -1777,7 +1779,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "423",
     "frontlights": "0",
-    "rearlights": 3
+    "rearlights": "3"
   }, {
     "id": "MAFIA",
     "mass": 1700,
@@ -1810,7 +1812,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8002",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "YARDIE",
     "mass": 1800,
@@ -1843,7 +1845,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8103",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "YAKUZA",
     "mass": 1400,
@@ -1876,7 +1878,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "180",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "DIABLOS",
     "mass": 1500,
@@ -1909,7 +1911,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "9102",
     "frontlights": "1",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "COLUMB",
     "mass": 3200,
@@ -1942,7 +1944,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "9A00",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "HOODS",
     "mass": 2000,
@@ -1975,7 +1977,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "8023",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "AIRTRAIN",
     "mass": 25500,
@@ -2008,7 +2010,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "0",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "DEADDODO",
     "mass": 25500,
@@ -2041,7 +2043,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "0",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "SPEEDER",
     "mass": 2200,
@@ -2074,7 +2076,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.2,
     "flags": "4",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "REEFER",
     "mass": 5000,
@@ -2107,7 +2109,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "4",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "PANLANT",
     "mass": 2600,
@@ -2140,7 +2142,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "flags": "22",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "FLATBED",
     "mass": 8500,
@@ -2173,7 +2175,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "2022",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "YANKEE",
     "mass": 4500,
@@ -2206,7 +2208,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "flags": "4423",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }, {
     "id": "BORGNINE",
     "mass": 1900,
@@ -2239,7 +2241,7 @@ define('models/gta_iii',["exports"], function (exports) {
     "suspensionbias": 0.45,
     "flags": "2",
     "frontlights": "0",
-    "rearlights": 1
+    "rearlights": "1"
   }];
 });
 define('models/gta_iv',["exports"], function (exports) {
