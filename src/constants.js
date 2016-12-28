@@ -58,15 +58,21 @@ export default {
         },
         drivetype: {
             name: "Drive Type",
-            maxlength: 1,
             type: "select",
-            options: ["4", "F", "R"]
+            options: [
+                { value: "4", name: "4-Wheel Drive" },
+                { value: "F", name: "Front-Wheel Drive" },
+                { value: "R", name: "Rear-Wheel Drive" }
+            ]
         },
         enginetype: {
             name: "Engine Type",
-            maxlength: 1,
             type: "select",
-            options: ["D", "P", "E"]
+            options: [
+                { value: "D", name: "Diesel" },
+                { value: "P", name: "Petrol" },
+                { value: "E", name: "Electric" }
+            ]
         },
         deceleration: { 
             name: "Deceleration",

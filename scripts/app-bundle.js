@@ -165,15 +165,13 @@ define('constants',["exports"], function (exports) {
             },
             drivetype: {
                 name: "Drive Type",
-                maxlength: 1,
                 type: "select",
-                options: ["4", "F", "R"]
+                options: [{ value: "4", name: "4-Wheel Drive" }, { value: "F", name: "Front-Wheel Drive" }, { value: "R", name: "Rear-Wheel Drive" }]
             },
             enginetype: {
                 name: "Engine Type",
-                maxlength: 1,
                 type: "select",
-                options: ["D", "P", "E"]
+                options: [{ value: "D", name: "Diesel" }, { value: "P", name: "Petrol" }, { value: "E", name: "Electric" }]
             },
             deceleration: {
                 name: "Deceleration",
@@ -20052,5 +20050,5 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
     }
     exports.VehicleNameValueConverter = VehicleNameValueConverter;
 });
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\n                <!-- Input Type -->\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || ''\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n\n                <!-- Select Type -->\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <select value.bind=\"vehicle[prop.key]\">\n                        <option repeat.for=\"option of prop.data.options\" \n                            value=\"${option}\">${option}\n                        </option>\n                    </select>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\n                <!-- Input Type -->\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || ''\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n\n                <!-- Select Type -->\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <select value.bind=\"vehicle[prop.key]\">\n                        <option repeat.for=\"option of prop.data.options\" \n                            value=\"${option.value}\">${option.name}\n                        </option>\n                    </select>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map
