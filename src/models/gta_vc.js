@@ -32,8 +32,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.25,
         "flags":"C00B",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"IDAHO",
@@ -67,8 +67,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.5,
         "flags":"200002",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"STINGER",
@@ -102,8 +102,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.4,
         "flags":"A102",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"LINERUN",
@@ -137,8 +137,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"2000100",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"PEREN",
@@ -172,8 +172,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"A",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"SENTINEL",
@@ -207,8 +207,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.3,
         "flags":"8102",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"PATRIOT",
@@ -242,8 +242,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"4103",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"FIRETRUK",
@@ -277,8 +277,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"4404",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"TRASH",
@@ -312,8 +312,8 @@ export default [
         "suspensionbias":0.55,
         "suspensionantidive":0,
         "flags":"2004003",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"STRETCH",
@@ -347,8 +347,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"8102",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"MANANA",
@@ -382,8 +382,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"2",
-        "frontlights":0,
-        "rearlights":0
+        "frontlights":"0",
+        "rearlights":"0"
     },
     {
         "id":"INFERNUS",
@@ -417,8 +417,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.4,
         "flags":"1208182",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"PONY",
@@ -452,8 +452,8 @@ export default [
         "suspensionbias":0.25,
         "suspensionantidive":0,
         "flags":"22",
-        "frontlights":0,
-        "rearlights":3
+        "frontlights":"0",
+        "rearlights":"3"
     },
     {
         "id":"MULE",
@@ -487,8 +487,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"4402",
-        "frontlights":0,
-        "rearlights":3
+        "frontlights":"0",
+        "rearlights":"3"
     },
     {
         "id":"CHEETAH",
@@ -522,8 +522,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.3,
         "flags":"1008181",
-        "frontlights":0,
-        "rearlights":0
+        "frontlights":"0",
+        "rearlights":"0"
     },
     {
         "id":"AMBULAN",
@@ -557,8 +557,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"822",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"FBICAR",
@@ -592,8 +592,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.3,
         "flags":"8102",
-        "frontlights":0,
-        "rearlights":2
+        "frontlights":"0",
+        "rearlights":"2"
     },
     {
         "id":"MOONBEAM",
@@ -627,8 +627,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"A",
-        "frontlights":1,
-        "rearlights":3
+        "frontlights":"1",
+        "rearlights":"3"
     },
     {
         "id":"ESPERANT",
@@ -662,8 +662,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"1",
-        "frontlights":0,
-        "rearlights":3
+        "frontlights":"0",
+        "rearlights":"3"
     },
     {
         "id":"TAXI",
@@ -697,8 +697,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"8002",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"KURUMA",
@@ -732,8 +732,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"8002",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"BOBCAT",
@@ -767,8 +767,8 @@ export default [
         "suspensionbias":0.4,
         "suspensionantidive":0,
         "flags":"1000A02",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"MRWHOOP",
@@ -802,8 +802,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"4402",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"BFINJECT",
@@ -837,8 +837,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"700A918",
-        "frontlights":1,
-        "rearlights":2
+        "frontlights":"1",
+        "rearlights":"2"
     },
     {
         "id":"POLICE",
@@ -872,8 +872,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"9002",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"ENFORCER",
@@ -907,8 +907,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"27",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"SECURICA",
@@ -942,8 +942,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"823",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"BANSHEE",
@@ -977,8 +977,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0.3,
         "flags":"8183",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"BUS",
@@ -1012,8 +1012,8 @@ export default [
         "suspensionbias":0.45,
         "suspensionantidive":0,
         "flags":"3",
-        "frontlights":1,
-        "rearlights":1
+        "frontlights":"1",
+        "rearlights":"1"
     },
     {
         "id":"RHINO",
@@ -1047,8 +1047,8 @@ export default [
         "suspensionbias":0.5,
         "suspensionantidive":0,
         "flags":"4003",
-        "frontlights":0,
-        "rearlights":1
+        "frontlights":"0",
+        "rearlights":"1"
     },
     {
         "id":"BARRACKS",
@@ -1082,8 +1082,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"6022",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"TRAIN",
@@ -1117,8 +1117,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"0",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"HELI",
@@ -1152,8 +1152,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"20000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"DODO",
@@ -1187,8 +1187,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"48000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"COACH",
@@ -1222,8 +1222,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8040",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"CABBIE",
@@ -1257,8 +1257,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.5,
     "flags":"2",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"STALLION",
@@ -1292,8 +1292,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"2901",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"RUMPO",
@@ -1327,8 +1327,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"22",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"RCBANDIT",
@@ -1362,8 +1362,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"0",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"MAFIA",
@@ -1397,8 +1397,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.5,
     "flags":"8102",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"AIRTRAIN",
@@ -1432,8 +1432,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"0",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"DEADDODO",
@@ -1467,8 +1467,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"0",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"FLATBED",
@@ -1502,8 +1502,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"2022",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"YANKEE",
@@ -1537,8 +1537,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"4403",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"GOLFCART",
@@ -1572,8 +1572,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"100810",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"VOODOO",
@@ -1607,8 +1607,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.6,
     "flags":"8002",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"WASHING",
@@ -1642,8 +1642,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.35,
     "flags":"8101",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"CUBAN",
@@ -1677,8 +1677,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.45,
     "flags":"102",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"ROMERO",
@@ -1712,8 +1712,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"A",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"PACKER",
@@ -1747,8 +1747,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"ADMIRAL",
@@ -1782,8 +1782,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.55,
     "flags":"8002",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"GANGBUR",
@@ -1817,8 +1817,8 @@ export default [
     "suspensionbias":0.4,
     "suspensionantidive":0.5,
     "flags":"8123",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"ZEBRA",
@@ -1852,8 +1852,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.5,
     "flags":"1008002",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"TOPFUN",
@@ -1887,8 +1887,8 @@ export default [
     "suspensionbias":0.4,
     "suspensionantidive":0,
     "flags":"22",
-    "frontlights":0,
-    "rearlights":3
+    "frontlights":"0",
+    "rearlights":"3"
   },
   {
     "id":"GLENDALE",
@@ -1922,8 +1922,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.5,
     "flags":"200002",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"OCEANIC",
@@ -1957,8 +1957,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.5,
     "flags":"200002",
-    "frontlights":2,
-    "rearlights":1
+    "frontlights":"2",
+    "rearlights":"1"
   },
   {
     "id":"HERMES",
@@ -1992,8 +1992,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"101",
-    "frontlights":1,
-    "rearlights":3
+    "frontlights":"1",
+    "rearlights":"3"
   },
   {
     "id":"SABRE1",
@@ -2027,8 +2027,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.25,
     "flags":"801",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"SABRETUR",
@@ -2062,8 +2062,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.4,
     "flags":"3009901",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"PHEONIX",
@@ -2097,8 +2097,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.3,
     "flags":"208101",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"WALTON",
@@ -2132,8 +2132,8 @@ export default [
     "suspensionbias":0.4,
     "suspensionantidive":0,
     "flags":"A02",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"REGINA",
@@ -2167,8 +2167,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.2,
     "flags":"9",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"COMET",
@@ -2202,8 +2202,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.3,
     "flags":"2103",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"DELUXO",
@@ -2237,8 +2237,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.35,
     "flags":"8182",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"BURRITO",
@@ -2272,8 +2272,8 @@ export default [
     "suspensionbias":0.4,
     "suspensionantidive":0.5,
     "flags":"8021",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"SPAND",
@@ -2307,8 +2307,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"402",
-    "frontlights":0,
-    "rearlights":3
+    "frontlights":"0",
+    "rearlights":"3"
   },
   {
     "id":"BAGGAGE",
@@ -2342,8 +2342,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"100810",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"KAUFMAN",
@@ -2377,8 +2377,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.4,
     "flags":"2",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"RANCHER",
@@ -2412,8 +2412,8 @@ export default [
     "suspensionbias":0.45,
     "suspensionantidive":0.3,
     "flags":"480B",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"FBIRANCH",
@@ -2447,8 +2447,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.5,
     "flags":"C00B",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"VIRGO",
@@ -2482,8 +2482,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"102",
-    "frontlights":0,
-    "rearlights":0
+    "frontlights":"0",
+    "rearlights":"0"
   },
   {
     "id":"GREENWOO",
@@ -2517,8 +2517,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"2",
-    "frontlights":0,
-    "rearlights":3
+    "frontlights":"0",
+    "rearlights":"3"
   },
   {
     "id":"HOTRING",
@@ -2552,8 +2552,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0.6,
     "flags":"208182",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"SANDKING",
@@ -2587,8 +2587,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"4004003",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"BLISTAC",
@@ -2622,8 +2622,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"208002",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"BOXVILLE",
@@ -2657,8 +2657,8 @@ export default [
     "suspensionbias":0.4,
     "suspensionantidive":0.6,
     "flags":"2004022",
-    "frontlights":0,
-    "rearlights":3
+    "frontlights":"0",
+    "rearlights":"3"
   },
   {
     "id":"BENSON",
@@ -2692,8 +2692,8 @@ export default [
     "suspensionbias":0.35,
     "suspensionantidive":0,
     "flags":"4402",
-    "frontlights":1,
-    "rearlights":3
+    "frontlights":"1",
+    "rearlights":"3"
   },
   {
     "id":"DESPERAD",
@@ -2727,8 +2727,8 @@ export default [
     "suspensionbias":0.35,
     "suspensionantidive":0.4,
     "flags":"2203",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"LOVEFIST",
@@ -2762,8 +2762,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8102",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"BLOODRA",
@@ -2797,8 +2797,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"3200003",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"BLOODRB",
@@ -2832,8 +2832,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"3200003",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"BIKE",
@@ -2867,8 +2867,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"10102",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"MOPED",
@@ -2902,8 +2902,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"10003",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"DIRTBIKE",
@@ -2937,8 +2937,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"10003",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"ANGEL",
@@ -2972,8 +2972,8 @@ export default [
     "suspensionbias":0.55,
     "suspensionantidive":0,
     "flags":"10103",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"FREEWAY",
@@ -3007,8 +3007,8 @@ export default [
     "suspensionbias":0.55,
     "suspensionantidive":0,
     "flags":"10103",
-    "frontlights":1,
-    "rearlights":1
+    "frontlights":"1",
+    "rearlights":"1"
   },
   {
     "id":"PREDATOR",
@@ -3042,8 +3042,8 @@ export default [
     "suspensionbias":0,
     "suspensionantidive":0,
     "flags":"80004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"SPEEDER",
@@ -3077,8 +3077,8 @@ export default [
     "suspensionbias":2,
     "suspensionantidive":0,
     "flags":"880004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"REEFER",
@@ -3112,8 +3112,8 @@ export default [
     "suspensionbias":0,
     "suspensionantidive":0,
     "flags":"80004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"RIO",
@@ -3147,8 +3147,8 @@ export default [
     "suspensionbias":0,
     "suspensionantidive":0,
     "flags":"80004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"SQUALO",
@@ -3182,8 +3182,8 @@ export default [
     "suspensionbias":0,
     "suspensionantidive":0,
     "flags":"880004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"TROPIC",
@@ -3217,8 +3217,8 @@ export default [
     "suspensionbias":0,
     "suspensionantidive":0,
     "flags":"880004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"COASTGRD",
@@ -3252,8 +3252,8 @@ export default [
     "suspensionbias":2.5,
     "suspensionantidive":0,
     "flags":"80004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"DINGHY",
@@ -3287,8 +3287,8 @@ export default [
     "suspensionbias":0.7,
     "suspensionantidive":0,
     "flags":"80004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"MARQUIS",
@@ -3322,8 +3322,8 @@ export default [
     "suspensionbias":1,
     "suspensionantidive":0,
     "flags":"80004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"CUPBOAT",
@@ -3357,8 +3357,8 @@ export default [
     "suspensionbias":1.5,
     "suspensionantidive":0,
     "flags":"880004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"SEAPLANE",
@@ -3392,8 +3392,8 @@ export default [
     "suspensionbias":2,
     "suspensionantidive":0,
     "flags":"8840004",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"SPARROW",
@@ -3427,8 +3427,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8028000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"SEASPAR",
@@ -3462,8 +3462,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8028000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"MAVERICK",
@@ -3497,8 +3497,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8028000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"COASTMAV",
@@ -3532,8 +3532,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8028000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"POLMAV",
@@ -3567,8 +3567,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8028000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"HUNTER",
@@ -3602,8 +3602,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"8028000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"RCBARON",
@@ -3637,8 +3637,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"40000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"RCGOBLIN",
@@ -3672,8 +3672,8 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"20000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   },
   {
     "id":"RCCOPTER",
@@ -3707,7 +3707,7 @@ export default [
     "suspensionbias":0.5,
     "suspensionantidive":0,
     "flags":"20000",
-    "frontlights":0,
-    "rearlights":1
+    "frontlights":"0",
+    "rearlights":"1"
   }
 ];

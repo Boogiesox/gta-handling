@@ -14856,8 +14856,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.25,
     "flags": "C00B",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "IDAHO",
     "mass": 1600,
@@ -14890,8 +14890,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.5,
     "flags": "200002",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "STINGER",
     "mass": 1400,
@@ -14924,8 +14924,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.4,
     "flags": "A102",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "LINERUN",
     "mass": 3800,
@@ -14958,8 +14958,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "2000100",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "PEREN",
     "mass": 1200,
@@ -14992,8 +14992,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "A",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "SENTINEL",
     "mass": 1400,
@@ -15026,8 +15026,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.3,
     "flags": "8102",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "PATRIOT",
     "mass": 2500,
@@ -15060,8 +15060,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "4103",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "FIRETRUK",
     "mass": 6500,
@@ -15094,8 +15094,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "4404",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "TRASH",
     "mass": 5500,
@@ -15128,8 +15128,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.55,
     "suspensionantidive": 0,
     "flags": "2004003",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "STRETCH",
     "mass": 2200,
@@ -15162,8 +15162,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8102",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "MANANA",
     "mass": 1000,
@@ -15196,8 +15196,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "2",
-    "frontlights": 0,
-    "rearlights": 0
+    "frontlights": "0",
+    "rearlights": "0"
   }, {
     "id": "INFERNUS",
     "mass": 1600,
@@ -15230,8 +15230,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.4,
     "flags": "1208182",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "PONY",
     "mass": 2600,
@@ -15264,8 +15264,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.25,
     "suspensionantidive": 0,
     "flags": "22",
-    "frontlights": 0,
-    "rearlights": 3
+    "frontlights": "0",
+    "rearlights": "3"
   }, {
     "id": "MULE",
     "mass": 3500,
@@ -15298,8 +15298,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "4402",
-    "frontlights": 0,
-    "rearlights": 3
+    "frontlights": "0",
+    "rearlights": "3"
   }, {
     "id": "CHEETAH",
     "mass": 1200,
@@ -15332,8 +15332,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.3,
     "flags": "1008181",
-    "frontlights": 0,
-    "rearlights": 0
+    "frontlights": "0",
+    "rearlights": "0"
   }, {
     "id": "AMBULAN",
     "mass": 2600,
@@ -15366,8 +15366,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "822",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "FBICAR",
     "mass": 1500,
@@ -15400,8 +15400,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.3,
     "flags": "8102",
-    "frontlights": 0,
-    "rearlights": 2
+    "frontlights": "0",
+    "rearlights": "2"
   }, {
     "id": "MOONBEAM",
     "mass": 2000,
@@ -15434,8 +15434,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "A",
-    "frontlights": 1,
-    "rearlights": 3
+    "frontlights": "1",
+    "rearlights": "3"
   }, {
     "id": "ESPERANT",
     "mass": 1800,
@@ -15468,8 +15468,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "1",
-    "frontlights": 0,
-    "rearlights": 3
+    "frontlights": "0",
+    "rearlights": "3"
   }, {
     "id": "TAXI",
     "mass": 1450,
@@ -15502,8 +15502,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8002",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "KURUMA",
     "mass": 1500,
@@ -15536,8 +15536,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8002",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "BOBCAT",
     "mass": 2000,
@@ -15570,8 +15570,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "suspensionantidive": 0,
     "flags": "1000A02",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "MRWHOOP",
     "mass": 1700,
@@ -15604,8 +15604,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "4402",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "BFINJECT",
     "mass": 800,
@@ -15638,8 +15638,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "700A918",
-    "frontlights": 1,
-    "rearlights": 2
+    "frontlights": "1",
+    "rearlights": "2"
   }, {
     "id": "POLICE",
     "mass": 1600,
@@ -15672,8 +15672,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "9002",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "ENFORCER",
     "mass": 4000,
@@ -15706,8 +15706,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "27",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "SECURICA",
     "mass": 7000,
@@ -15740,8 +15740,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "823",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "BANSHEE",
     "mass": 1400,
@@ -15774,8 +15774,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.3,
     "flags": "8183",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "BUS",
     "mass": 5500,
@@ -15808,8 +15808,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.45,
     "suspensionantidive": 0,
     "flags": "3",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "RHINO",
     "mass": 18000,
@@ -15842,8 +15842,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "4003",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "BARRACKS",
     "mass": 10500,
@@ -15876,8 +15876,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "6022",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "TRAIN",
     "mass": 25500,
@@ -15910,8 +15910,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "0",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "HELI",
     "mass": 25500,
@@ -15944,8 +15944,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "20000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "DODO",
     "mass": 2500,
@@ -15978,8 +15978,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "48000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "COACH",
     "mass": 9500,
@@ -16012,8 +16012,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8040",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "CABBIE",
     "mass": 1750,
@@ -16046,8 +16046,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.5,
     "flags": "2",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "STALLION",
     "mass": 1600,
@@ -16080,8 +16080,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "2901",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "RUMPO",
     "mass": 2000,
@@ -16114,8 +16114,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "22",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "RCBANDIT",
     "mass": 100,
@@ -16148,8 +16148,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "0",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "MAFIA",
     "mass": 1700,
@@ -16182,8 +16182,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.5,
     "flags": "8102",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "AIRTRAIN",
     "mass": 25500,
@@ -16216,8 +16216,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "0",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "DEADDODO",
     "mass": 25500,
@@ -16250,8 +16250,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "0",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "FLATBED",
     "mass": 8500,
@@ -16284,8 +16284,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "2022",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "YANKEE",
     "mass": 4500,
@@ -16318,8 +16318,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "4403",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "GOLFCART",
     "mass": 1000,
@@ -16352,8 +16352,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "100810",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "VOODOO",
     "mass": 1800,
@@ -16386,8 +16386,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.6,
     "flags": "8002",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "WASHING",
     "mass": 1850,
@@ -16420,8 +16420,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.35,
     "flags": "8101",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "CUBAN",
     "mass": 2150,
@@ -16454,8 +16454,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.45,
     "flags": "102",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "ROMERO",
     "mass": 2500,
@@ -16488,8 +16488,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "A",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "PACKER",
     "mass": 8000,
@@ -16522,8 +16522,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "ADMIRAL",
     "mass": 1650,
@@ -16556,8 +16556,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.55,
     "flags": "8002",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "GANGBUR",
     "mass": 2000,
@@ -16590,8 +16590,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "suspensionantidive": 0.5,
     "flags": "8123",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "ZEBRA",
     "mass": 2250,
@@ -16624,8 +16624,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.5,
     "flags": "1008002",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "TOPFUN",
     "mass": 1900,
@@ -16658,8 +16658,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "suspensionantidive": 0,
     "flags": "22",
-    "frontlights": 0,
-    "rearlights": 3
+    "frontlights": "0",
+    "rearlights": "3"
   }, {
     "id": "GLENDALE",
     "mass": 1600,
@@ -16692,8 +16692,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.5,
     "flags": "200002",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "OCEANIC",
     "mass": 1900,
@@ -16726,8 +16726,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.5,
     "flags": "200002",
-    "frontlights": 2,
-    "rearlights": 1
+    "frontlights": "2",
+    "rearlights": "1"
   }, {
     "id": "HERMES",
     "mass": 1950,
@@ -16760,8 +16760,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "101",
-    "frontlights": 1,
-    "rearlights": 3
+    "frontlights": "1",
+    "rearlights": "3"
   }, {
     "id": "SABRE1",
     "mass": 1700,
@@ -16794,8 +16794,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.25,
     "flags": "801",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "SABRETUR",
     "mass": 1800,
@@ -16828,8 +16828,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.4,
     "flags": "3009901",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "PHEONIX",
     "mass": 1400,
@@ -16862,8 +16862,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.3,
     "flags": "208101",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "WALTON",
     "mass": 1850,
@@ -16896,8 +16896,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "suspensionantidive": 0,
     "flags": "A02",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "REGINA",
     "mass": 1500,
@@ -16930,8 +16930,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.2,
     "flags": "9",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "COMET",
     "mass": 1400,
@@ -16964,8 +16964,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.3,
     "flags": "2103",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "DELUXO",
     "mass": 1600,
@@ -16998,8 +16998,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.35,
     "flags": "8182",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "BURRITO",
     "mass": 1900,
@@ -17032,8 +17032,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "suspensionantidive": 0.5,
     "flags": "8021",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "SPAND",
     "mass": 2400,
@@ -17066,8 +17066,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "402",
-    "frontlights": 0,
-    "rearlights": 3
+    "frontlights": "0",
+    "rearlights": "3"
   }, {
     "id": "BAGGAGE",
     "mass": 1000,
@@ -17100,8 +17100,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "100810",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "KAUFMAN",
     "mass": 1650,
@@ -17134,8 +17134,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.4,
     "flags": "2",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "RANCHER",
     "mass": 2500,
@@ -17168,8 +17168,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.45,
     "suspensionantidive": 0.3,
     "flags": "480B",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "FBIRANCH",
     "mass": 3500,
@@ -17202,8 +17202,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.5,
     "flags": "C00B",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "VIRGO",
     "mass": 1700,
@@ -17236,8 +17236,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "102",
-    "frontlights": 0,
-    "rearlights": 0
+    "frontlights": "0",
+    "rearlights": "0"
   }, {
     "id": "GREENWOO",
     "mass": 1800,
@@ -17270,8 +17270,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "2",
-    "frontlights": 0,
-    "rearlights": 3
+    "frontlights": "0",
+    "rearlights": "3"
   }, {
     "id": "HOTRING",
     "mass": 1600,
@@ -17304,8 +17304,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0.6,
     "flags": "208182",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "SANDKING",
     "mass": 2000,
@@ -17338,8 +17338,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "4004003",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "BLISTAC",
     "mass": 1000,
@@ -17372,8 +17372,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "208002",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "BOXVILLE",
     "mass": 5500,
@@ -17406,8 +17406,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.4,
     "suspensionantidive": 0.6,
     "flags": "2004022",
-    "frontlights": 0,
-    "rearlights": 3
+    "frontlights": "0",
+    "rearlights": "3"
   }, {
     "id": "BENSON",
     "mass": 3500,
@@ -17440,8 +17440,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.35,
     "suspensionantidive": 0,
     "flags": "4402",
-    "frontlights": 1,
-    "rearlights": 3
+    "frontlights": "1",
+    "rearlights": "3"
   }, {
     "id": "DESPERAD",
     "mass": 1300,
@@ -17474,8 +17474,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.35,
     "suspensionantidive": 0.4,
     "flags": "2203",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "LOVEFIST",
     "mass": 2700,
@@ -17508,8 +17508,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8102",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "BLOODRA",
     "mass": 2100,
@@ -17542,8 +17542,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "3200003",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "BLOODRB",
     "mass": 1600,
@@ -17576,8 +17576,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "3200003",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "BIKE",
     "mass": 500,
@@ -17610,8 +17610,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "10102",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "MOPED",
     "mass": 350,
@@ -17644,8 +17644,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "10003",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "DIRTBIKE",
     "mass": 500,
@@ -17678,8 +17678,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "10003",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "ANGEL",
     "mass": 800,
@@ -17712,8 +17712,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.55,
     "suspensionantidive": 0,
     "flags": "10103",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "FREEWAY",
     "mass": 800,
@@ -17746,8 +17746,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.55,
     "suspensionantidive": 0,
     "flags": "10103",
-    "frontlights": 1,
-    "rearlights": 1
+    "frontlights": "1",
+    "rearlights": "1"
   }, {
     "id": "PREDATOR",
     "mass": 2200,
@@ -17780,8 +17780,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0,
     "suspensionantidive": 0,
     "flags": "80004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "SPEEDER",
     "mass": 2200,
@@ -17814,8 +17814,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 2,
     "suspensionantidive": 0,
     "flags": "880004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "REEFER",
     "mass": 5000,
@@ -17848,8 +17848,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0,
     "suspensionantidive": 0,
     "flags": "80004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "RIO",
     "mass": 3000,
@@ -17882,8 +17882,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0,
     "suspensionantidive": 0,
     "flags": "80004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "SQUALO",
     "mass": 2200,
@@ -17916,8 +17916,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0,
     "suspensionantidive": 0,
     "flags": "880004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "TROPIC",
     "mass": 2200,
@@ -17950,8 +17950,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0,
     "suspensionantidive": 0,
     "flags": "880004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "COASTGRD",
     "mass": 1200,
@@ -17984,8 +17984,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 2.5,
     "suspensionantidive": 0,
     "flags": "80004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "DINGHY",
     "mass": 800,
@@ -18018,8 +18018,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.7,
     "suspensionantidive": 0,
     "flags": "80004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "MARQUIS",
     "mass": 5000,
@@ -18052,8 +18052,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 1,
     "suspensionantidive": 0,
     "flags": "80004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "CUPBOAT",
     "mass": 3000,
@@ -18086,8 +18086,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 1.5,
     "suspensionantidive": 0,
     "flags": "880004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "SEAPLANE",
     "mass": 5000,
@@ -18120,8 +18120,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 2,
     "suspensionantidive": 0,
     "flags": "8840004",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "SPARROW",
     "mass": 2500,
@@ -18154,8 +18154,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8028000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "SEASPAR",
     "mass": 3000,
@@ -18188,8 +18188,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8028000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "MAVERICK",
     "mass": 5000,
@@ -18222,8 +18222,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8028000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "COASTMAV",
     "mass": 3500,
@@ -18256,8 +18256,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8028000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "POLMAV",
     "mass": 4500,
@@ -18290,8 +18290,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8028000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "HUNTER",
     "mass": 10000,
@@ -18324,8 +18324,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "8028000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "RCBARON",
     "mass": 150,
@@ -18358,8 +18358,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "40000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "RCGOBLIN",
     "mass": 100,
@@ -18392,8 +18392,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "20000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }, {
     "id": "RCCOPTER",
     "mass": 100,
@@ -18426,8 +18426,8 @@ define('models/gta_vc',["exports"], function (exports) {
     "suspensionbias": 0.5,
     "suspensionantidive": 0,
     "flags": "20000",
-    "frontlights": 0,
-    "rearlights": 1
+    "frontlights": "0",
+    "rearlights": "1"
   }];
 });
 define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../constants'], function (exports, _constants) {
@@ -20053,4 +20053,6 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
     exports.VehicleNameValueConverter = VehicleNameValueConverter;
 });
 define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\n                <!-- Input Type -->\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || ''\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n\n                <!-- Select Type -->\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <select value.bind=\"vehicle[prop.key]\">\n                        <option repeat.for=\"option of prop.data.options\" \n                            value=\"${option.value}\">${option.name}\n                        </option>\n                    </select>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
+define('text!app.css', ['module'], function(module) { module.exports = ""; });
+define('text!css/app.css', ['module'], function(module) { module.exports = "input,\nselect {\n    padding: 0.33em;\n}"; });
 //# sourceMappingURL=app-bundle.js.map
