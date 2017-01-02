@@ -9,6 +9,7 @@ export class ConfigService {
             quotes: false,
             delimiter: " ",
             newline: "\r\n",
+            headerRow: false
         });
     };
 

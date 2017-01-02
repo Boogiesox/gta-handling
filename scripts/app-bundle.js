@@ -82,7 +82,8 @@ define('configService',["exports", "./node_modules/@boogiesox/papaparse/papapars
             return _papaparse2.default.unparse(data, {
                 quotes: false,
                 delimiter: " ",
-                newline: "\r\n"
+                newline: "\r\n",
+                headerRow: false
             });
         }
 
@@ -18814,7 +18815,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			var dataKeyedByField = !(data[0] instanceof Array);
 
 			// If there a header row, write it first
-			if (hasHeader)
+			if (hasHeader && _config.headerRow !== false)
 			{
 				for (var i = 0; i < fields.length; i++)
 				{
@@ -18822,6 +18823,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 						csv += _delimiter;
 					csv += safe(fields[i], i);
 				}
+
 				if (data.length > 0)
 					csv += _newline;
 			}
