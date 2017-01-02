@@ -1,4 +1,4 @@
-import Papa from './node_modules/papaparse/papaparse.js';
+import Papa from './node_modules/@boogiesox/papaparse/papaparse.js';
 
 export class ConfigService {
     constructor() {

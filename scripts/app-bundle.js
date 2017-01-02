@@ -59,7 +59,7 @@ define('app',['exports', 'models/gta_iii', 'models/gta_vc', 'models/gta_sa', 'mo
     }
     exports.App = App;
 });
-define('configService',["exports", "./node_modules/papaparse/papaparse.js"], function (exports, _papaparse) {
+define('configService',["exports", "./node_modules/@boogiesox/papaparse/papaparse.js"], function (exports, _papaparse) {
     "use strict";
 
     Object.defineProperty(exports, "__esModule", {
@@ -18493,10 +18493,30 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 	v4.1.2
 	https://github.com/mholt/PapaParse
 */
-(function(global)
+(function(root, factory)
 {
-	"use strict";
+	if (typeof define === 'function' && define.amd)
+	{
+		// AMD. Register as an anonymous module.
+		define('node_modules/@boogiesox/papaparse/papaparse.js',[], factory);
+	}
+	else if (typeof module === 'object' && module.exports)
+	{
+		// Node. Does not work with strict CommonJS, but
+		// only CommonJS-like environments that support module.exports,
+		// like Node.
+		module.exports = factory();
+	}
+	else
+	{
+		// Browser globals (root is window)
+		root.Papa = factory();
+	}
+}(this, function()
+{
+	'use strict';
 
+	var global = Function('return this')();
 	var IS_WORKER = !global.document && !!global.postMessage,
 		IS_PAPA_WORKER = IS_WORKER && /(\?|&)papaworker(=|&|$)/.test(global.location.search),
 		LOADED_SYNC = false, AUTO_SCRIPT_PATH;
@@ -18509,15 +18529,15 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 	Papa.RECORD_SEP = String.fromCharCode(30);
 	Papa.UNIT_SEP = String.fromCharCode(31);
-	Papa.BYTE_ORDER_MARK = "\ufeff";
-	Papa.BAD_DELIMITERS = ["\r", "\n", "\"", Papa.BYTE_ORDER_MARK];
+	Papa.BYTE_ORDER_MARK = '\ufeff';
+	Papa.BAD_DELIMITERS = ['\r', '\n', '"', Papa.BYTE_ORDER_MARK];
 	Papa.WORKERS_SUPPORTED = !IS_WORKER && !!global.Worker;
 	Papa.SCRIPT_PATH = null;	// Must be set by your code if you use workers and this lib is loaded asynchronously
 
 	// Configurable chunk sizes for local and remote files, respectively
 	Papa.LocalChunkSize = 1024 * 1024 * 10;	// 10 MB
 	Papa.RemoteChunkSize = 1024 * 1024 * 5;	// 5 MB
-	Papa.DefaultDelimiter = ",";			// Used if not specified and detection fails
+	Papa.DefaultDelimiter = ',';			// Used if not specified and detection fails
 
 	// Exposed for testing and development only
 	Papa.Parser = Parser;
@@ -18525,22 +18545,6 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 	Papa.NetworkStreamer = NetworkStreamer;
 	Papa.FileStreamer = FileStreamer;
 	Papa.StringStreamer = StringStreamer;
-
-	if (typeof module !== 'undefined' && module.exports)
-	{
-		// Export to Node...
-		module.exports = Papa;
-	}
-	else if (isFunction(global.define) && global.define.amd)
-	{
-		// Wireup with RequireJS
-		define('node_modules/papaparse/papaparse.js',[],function() { return Papa; });
-	}
-	else
-	{
-		// ...or as browser global
-		global.Papa = Papa;
-	}
 
 	if (global.jQuery)
 	{
@@ -18552,11 +18556,11 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 			this.each(function(idx)
 			{
-				var supported = $(this).prop('tagName').toUpperCase() == "INPUT"
-								&& $(this).attr('type').toLowerCase() == "file"
+				var supported = $(this).prop('tagName').toUpperCase() === 'INPUT'
+								&& $(this).attr('type').toLowerCase() === 'file'
 								&& global.FileReader;
 
-				if (!supported || !this.files || this.files.length == 0)
+				if (!supported || !this.files || this.files.length === 0)
 					return true;	// continue to next input element
 
 				for (var i = 0; i < this.files.length; i++)
@@ -18575,7 +18579,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 			function parseNextFile()
 			{
-				if (queue.length == 0)
+				if (queue.length === 0)
 				{
 					if (isFunction(options.complete))
 						options.complete();
@@ -18590,12 +18594,12 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 					if (typeof returned === 'object')
 					{
-						if (returned.action == "abort")
+						if (returned.action === 'abort')
 						{
-							error("AbortError", f.file, f.inputElem, returned.reason);
+							error('AbortError', f.file, f.inputElem, returned.reason);
 							return;	// Aborts all queued files immediately
 						}
-						else if (returned.action == "skip")
+						else if (returned.action === 'skip')
 						{
 							fileComplete();	// parse the next file in the queue, if any
 							return;
@@ -18603,7 +18607,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 						else if (typeof returned.config === 'object')
 							f.instanceConfig = $.extend(f.instanceConfig, returned.config);
 					}
-					else if (returned == "skip")
+					else if (returned === 'skip')
 					{
 						fileComplete();	// parse the next file in the queue, if any
 						return;
@@ -18665,6 +18669,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 	function CsvToJson(_input, _config)
 	{
 		_config = _config || {};
+		_config.dynamicTyping = _config.dynamicTyping || false;
 
 		if (_config.worker && Papa.WORKERS_SUPPORTED)
 		{
@@ -18711,7 +18716,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 	function JsonToCsv(_input, _config)
 	{
-		var _output = "";
+		var _output = '';
 		var _fields = [];
 
 		// Default configuration
@@ -18720,10 +18725,10 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 		var _quotes = false;
 
 		/** delimiting character */
-		var _delimiter = ",";
+		var _delimiter = ',';
 
 		/** newline character(s) */
-		var _newline = "\r\n";
+		var _newline = '\r\n';
 
 		unpackConfig();
 
@@ -18745,19 +18750,22 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			if (_input.data instanceof Array)
 			{
 				if (!_input.fields)
-					_input.fields = _input.data[0] instanceof Array
+					_input.fields =  _input.meta && _input.meta.fields;
+
+				if (!_input.fields)
+					_input.fields =  _input.data[0] instanceof Array
 									? _input.fields
 									: objectKeys(_input.data[0]);
 
 				if (!(_input.data[0] instanceof Array) && typeof _input.data[0] !== 'object')
-					_input.data = [_input.data];	// handles input like [1,2,3] or ["asdf"]
+					_input.data = [_input.data];	// handles input like [1,2,3] or ['asdf']
 			}
 
 			return serialize(_input.fields || [], _input.data || []);
 		}
 
 		// Default (any valid paths should return before this)
-		throw "exception: Unable to serialize unrecognized input";
+		throw 'exception: Unable to serialize unrecognized input';
 
 
 		function unpackConfig()
@@ -18766,8 +18774,8 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 				return;
 
 			if (typeof _config.delimiter === 'string'
-				&& _config.delimiter.length == 1
-				&& Papa.BAD_DELIMITERS.indexOf(_config.delimiter) == -1)
+				&& _config.delimiter.length === 1
+				&& Papa.BAD_DELIMITERS.indexOf(_config.delimiter) === -1)
 			{
 				_delimiter = _config.delimiter;
 			}
@@ -18795,7 +18803,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 		/** The double for loop that iterates the data and writes out a CSV string including header row */
 		function serialize(fields, data)
 		{
-			var csv = "";
+			var csv = '';
 
 			if (typeof fields === 'string')
 				fields = JSON.parse(fields);
@@ -18808,12 +18816,12 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			// If there a header row, write it first
 			if (hasHeader)
 			{
-				// for (var i = 0; i < fields.length; i++)
-				// {
-				// 	if (i > 0)
-				// 		csv += _delimiter;
-				// 	csv += safe(fields[i], i);
-				// }
+				for (var i = 0; i < fields.length; i++)
+				{
+					if (i > 0)
+						csv += _delimiter;
+					csv += safe(fields[i], i);
+				}
 				if (data.length > 0)
 					csv += _newline;
 			}
@@ -18841,8 +18849,8 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 		/** Encloses a value around quotes if needed (makes a value safe for CSV insertion) */
 		function safe(str, col)
 		{
-			if (typeof str === "undefined" || str === null)
-				return "";
+			if (typeof str === 'undefined' || str === null)
+				return '';
 
 			str = str.toString().replace(/"/g, '""');
 
@@ -18850,8 +18858,8 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 							|| (_quotes instanceof Array && _quotes[col])
 							|| hasAny(str, Papa.BAD_DELIMITERS)
 							|| str.indexOf(_delimiter) > -1
-							|| str.charAt(0) == ' '
-							|| str.charAt(str.length - 1) == ' ';
+							|| str.charAt(0) === ' '
+							|| str.charAt(str.length - 1) === ' ';
 
 			return needsQuotes ? '"' + str + '"' : str;
 		}
@@ -18873,7 +18881,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 		this._finished = false;
 		this._input = null;
 		this._baseIndex = 0;
-		this._partialLine = "";
+		this._partialLine = '';
 		this._rowCount = 0;
 		this._start = 0;
 		this._nextChunk = null;
@@ -18898,15 +18906,15 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 			// Rejoin the line we likely just split in two by chunking the file
 			var aggregate = this._partialLine + chunk;
-			this._partialLine = "";
+			this._partialLine = '';
 
 			var results = this._handle.parse(aggregate, this._baseIndex, !this._finished);
-			
+
 			if (this._handle.paused() || this._handle.aborted())
 				return;
-			
+
 			var lastIndex = results.meta.cursor;
-			
+
 			if (!this._finished)
 			{
 				this._partialLine = aggregate.substring(lastIndex - this._baseIndex);
@@ -18942,7 +18950,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			}
 
 			if (finishedIncludingPreview && isFunction(this._config.complete) && (!results || !results.meta.aborted))
-				this._config.complete(this._completeResults);
+				this._config.complete(this._completeResults, this._input);
 
 			if (!finishedIncludingPreview && (!results || !results.meta.paused))
 				this._nextChunk();
@@ -19018,20 +19026,25 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			}
 
 			xhr = new XMLHttpRequest();
-			
+
+			if (this._config.withCredentials)
+			{
+				xhr.withCredentials = this._config.withCredentials;
+			}
+
 			if (!IS_WORKER)
 			{
 				xhr.onload = bindFunction(this._chunkLoaded, this);
 				xhr.onerror = bindFunction(this._chunkError, this);
 			}
 
-			xhr.open("GET", this._input, !IS_WORKER);
-			
+			xhr.open('GET', this._input, !IS_WORKER);
+
 			if (this._config.chunkSize)
 			{
 				var end = this._start + this._config.chunkSize - 1;	// minus one because byte range is inclusive
-				xhr.setRequestHeader("Range", "bytes="+this._start+"-"+end);
-				xhr.setRequestHeader("If-None-Match", "webkit-no-cache"); // https://bugs.webkit.org/show_bug.cgi?id=82672
+				xhr.setRequestHeader('Range', 'bytes='+this._start+'-'+end);
+				xhr.setRequestHeader('If-None-Match', 'webkit-no-cache'); // https://bugs.webkit.org/show_bug.cgi?id=82672
 			}
 
 			try {
@@ -19041,7 +19054,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 				this._chunkError(err.message);
 			}
 
-			if (IS_WORKER && xhr.status == 0)
+			if (IS_WORKER && xhr.status === 0)
 				this._chunkError();
 			else
 				this._start += this._config.chunkSize;
@@ -19070,8 +19083,8 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 		function getFileSize(xhr)
 		{
-			var contentRange = xhr.getResponseHeader("Content-Range");
-			return parseInt(contentRange.substr(contentRange.lastIndexOf("/") + 1));
+			var contentRange = xhr.getResponseHeader('Content-Range');
+			return parseInt(contentRange.substr(contentRange.lastIndexOf('/') + 1));
 		}
 	}
 	NetworkStreamer.prototype = Object.create(ChunkStreamer.prototype);
@@ -19207,7 +19220,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 					processResults();
 
 					// It's possbile that this line was empty and there's no row here after all
-					if (_results.data.length == 0)
+					if (_results.data.length === 0)
 						return;
 
 					_stepCounter += results.data.length;
@@ -19232,7 +19245,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			_delimiterError = false;
 			if (!_config.delimiter)
 			{
-				var delimGuess = guessDelimiter(input);
+				var delimGuess = guessDelimiter(input, _config.newline);
 				if (delimGuess.successful)
 					_config.delimiter = delimGuess.bestDelimiter;
 				else
@@ -19272,9 +19285,10 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			self.streamer.parseChunk(_input);
 		};
 
-		this.aborted = function () {
+		this.aborted = function ()
+		{
 			return _aborted;
-		}
+		};
 
 		this.abort = function()
 		{
@@ -19283,21 +19297,21 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			_results.meta.aborted = true;
 			if (isFunction(_config.complete))
 				_config.complete(_results);
-			_input = "";
+			_input = '';
 		};
 
 		function processResults()
 		{
 			if (_results && _delimiterError)
 			{
-				addError("Delimiter", "UndetectableDelimiter", "Unable to auto-detect delimiting character; defaulted to '"+Papa.DefaultDelimiter+"'");
+				addError('Delimiter', 'UndetectableDelimiter', 'Unable to auto-detect delimiting character; defaulted to \''+Papa.DefaultDelimiter+'\'');
 				_delimiterError = false;
 			}
 
 			if (_config.skipEmptyLines)
 			{
 				for (var i = 0; i < _results.data.length; i++)
-					if (_results.data[i].length == 1 && _results.data[i][0] == "")
+					if (_results.data[i].length === 1 && _results.data[i][0] === '')
 						_results.data.splice(i--, 1);
 			}
 
@@ -19309,7 +19323,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 		function needsHeaderRow()
 		{
-			return _config.header && _fields.length == 0;
+			return _config.header && _fields.length === 0;
 		}
 
 		function fillHeaderFields()
@@ -19322,6 +19336,20 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			_results.data.splice(0, 1);
 		}
 
+		function parseDynamic(field, value)
+		{
+			if ((_config.dynamicTyping[field] || _config.dynamicTyping) === true)
+			{
+				if (value === 'true' || value === 'TRUE')
+					return true;
+				else if (value === 'false' || value === 'FALSE')
+					return false;
+				else
+					return tryParseFloat(value);
+			}
+			return value;
+		}
+
 		function applyHeaderAndDynamicTyping()
 		{
 			if (!_results || (!_config.header && !_config.dynamicTyping))
@@ -19329,41 +19357,35 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 			for (var i = 0; i < _results.data.length; i++)
 			{
-				var row = {};
+				var row = _config.header ? {} : [];
 
 				for (var j = 0; j < _results.data[i].length; j++)
 				{
-					if (_config.dynamicTyping)
-					{
-						var value = _results.data[i][j];
-						if (value == "true" || value == "TRUE")
-							_results.data[i][j] = true;
-						else if (value == "false" || value == "FALSE")
-							_results.data[i][j] = false;
-						else
-							_results.data[i][j] = tryParseFloat(value);
-					}
+					var field = j;
+					var value = _results.data[i][j];
 
 					if (_config.header)
+						field = j >= _fields.length ? '__parsed_extra' : _fields[j];
+
+					value = parseDynamic(field, value);
+
+					if (field === '__parsed_extra')
 					{
-						if (j >= _fields.length)
-						{
-							if (!row["__parsed_extra"])
-								row["__parsed_extra"] = [];
-							row["__parsed_extra"].push(_results.data[i][j]);
-						}
-						else
-							row[_fields[j]] = _results.data[i][j];
+						row[field] = row[field] || [];
+						row[field].push(value);
 					}
+					else
+						row[field] = value;
 				}
+
+				_results.data[i] = row;
 
 				if (_config.header)
 				{
-					_results.data[i] = row;
 					if (j > _fields.length)
-						addError("FieldMismatch", "TooManyFields", "Too many fields: expected " + _fields.length + " fields but parsed " + j, i);
+						addError('FieldMismatch', 'TooManyFields', 'Too many fields: expected ' + _fields.length + ' fields but parsed ' + j, i);
 					else if (j < _fields.length)
-						addError("FieldMismatch", "TooFewFields", "Too few fields: expected " + _fields.length + " fields but parsed " + j, i);
+						addError('FieldMismatch', 'TooFewFields', 'Too few fields: expected ' + _fields.length + ' fields but parsed ' + j, i);
 				}
 			}
 
@@ -19372,9 +19394,9 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			return _results;
 		}
 
-		function guessDelimiter(input)
+		function guessDelimiter(input, newline)
 		{
-			var delimChoices = [",", "\t", "|", ";", Papa.RECORD_SEP, Papa.UNIT_SEP];
+			var delimChoices = [',', '\t', '|', ';', Papa.RECORD_SEP, Papa.UNIT_SEP];
 			var bestDelim, bestDelta, fieldCountPrevRow;
 
 			for (var i = 0; i < delimChoices.length; i++)
@@ -19385,6 +19407,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 				var preview = new Parser({
 					delimiter: delim,
+					newline: newline,
 					preview: 10
 				}).parse(input);
 
@@ -19430,13 +19453,17 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 			var r = input.split('\r');
 
-			if (r.length == 1)
+			var n = input.split('\n');
+
+			var nAppearsFirst = (n.length > 1 && n[0].length < r[0].length);
+
+			if (r.length === 1 || nAppearsFirst)
 				return '\n';
 
 			var numWithN = 0;
 			for (var i = 0; i < r.length; i++)
 			{
-				if (r[i][0] == '\n')
+				if (r[i][0] === '\n')
 					numWithN++;
 			}
 
@@ -19475,17 +19502,18 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 		var step = config.step;
 		var preview = config.preview;
 		var fastMode = config.fastMode;
+		var quoteChar = config.quoteChar || '"';
 
 		// Delimiter must be valid
 		if (typeof delim !== 'string'
 			|| Papa.BAD_DELIMITERS.indexOf(delim) > -1)
-			delim = ",";
+			delim = ',';
 
 		// Comment character must be valid
 		if (comments === delim)
-			throw "Comment character same as delimiter";
+			throw 'Comment character same as delimiter';
 		else if (comments === true)
-			comments = "#";
+			comments = '#';
 		else if (typeof comments !== 'string'
 			|| Papa.BAD_DELIMITERS.indexOf(comments) > -1)
 			comments = false;
@@ -19502,7 +19530,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 		{
 			// For some reason, in Chrome, this speeds things up (!?)
 			if (typeof input !== 'string')
-				throw "Input must be a string";
+				throw 'Input must be a string';
 
 			// We don't need to compute some of these every time parse() is called,
 			// but having them in a more local scope seems to perform better
@@ -19519,7 +19547,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 			if (!input)
 				return returnable();
 
-			if (fastMode || (fastMode !== false && input.indexOf('"') === -1))
+			if (fastMode || (fastMode !== false && input.indexOf(quoteChar) === -1))
 			{
 				var rows = input.split(newline);
 				for (var i = 0; i < rows.length; i++)
@@ -19530,7 +19558,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 						cursor += newline.length;
 					else if (ignoreLastRow)
 						return returnable();
-					if (comments && row.substr(0, commentsLen) == comments)
+					if (comments && row.substr(0, commentsLen) === comments)
 						continue;
 					if (stepIsFunction)
 					{
@@ -19553,12 +19581,13 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 
 			var nextDelim = input.indexOf(delim, cursor);
 			var nextNewline = input.indexOf(newline, cursor);
+			var quoteCharRegex = new RegExp(quoteChar+quoteChar, 'g');
 
 			// Parser loop
 			for (;;)
 			{
 				// Field has opening quote
-				if (input[cursor] == '"')
+				if (input[cursor] === quoteChar)
 				{
 					// Start our search for the closing quote where the cursor is
 					var quoteSearch = cursor;
@@ -19569,16 +19598,16 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 					for (;;)
 					{
 						// Find closing quote
-						var quoteSearch = input.indexOf('"', quoteSearch+1);
+						var quoteSearch = input.indexOf(quoteChar, quoteSearch+1);
 
 						if (quoteSearch === -1)
 						{
 							if (!ignoreLastRow) {
 								// No closing quote... what a pity
 								errors.push({
-									type: "Quotes",
-									code: "MissingQuotes",
-									message: "Quoted field unterminated",
+									type: 'Quotes',
+									code: 'MissingQuotes',
+									message: 'Quoted field unterminated',
 									row: data.length,	// row has yet to be inserted
 									index: cursor
 								});
@@ -19589,21 +19618,21 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 						if (quoteSearch === inputLen-1)
 						{
 							// Closing quote at EOF
-							var value = input.substring(cursor, quoteSearch).replace(/""/g, '"');
+							var value = input.substring(cursor, quoteSearch).replace(quoteCharRegex, quoteChar);
 							return finish(value);
 						}
 
 						// If this quote is escaped, it's part of the data; skip it
-						if (input[quoteSearch+1] == '"')
+						if (input[quoteSearch+1] === quoteChar)
 						{
 							quoteSearch++;
 							continue;
 						}
 
-						if (input[quoteSearch+1] == delim)
+						if (input[quoteSearch+1] === delim)
 						{
 							// Closing quote followed by delimiter
-							row.push(input.substring(cursor, quoteSearch).replace(/""/g, '"'));
+							row.push(input.substring(cursor, quoteSearch).replace(quoteCharRegex, quoteChar));
 							cursor = quoteSearch + 1 + delimLen;
 							nextDelim = input.indexOf(delim, cursor);
 							nextNewline = input.indexOf(newline, cursor);
@@ -19613,7 +19642,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 						if (input.substr(quoteSearch+1, newlineLen) === newline)
 						{
 							// Closing quote followed by newline
-							row.push(input.substring(cursor, quoteSearch).replace(/""/g, '"'));
+							row.push(input.substring(cursor, quoteSearch).replace(quoteCharRegex, quoteChar));
 							saveRow(quoteSearch + 1 + newlineLen);
 							nextDelim = input.indexOf(delim, cursor);	// because we may have skipped the nextDelim in the quoted field
 
@@ -19623,7 +19652,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 								if (aborted)
 									return returnable();
 							}
-							
+
 							if (preview && data.length >= preview)
 								return returnable(true);
 
@@ -19637,7 +19666,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 				// Comment found at start of new line
 				if (comments && row.length === 0 && input.substr(cursor, commentsLen) === comments)
 				{
-					if (nextNewline == -1)	// Comment ends at EOF
+					if (nextNewline === -1)	// Comment ends at EOF
 						return returnable();
 					cursor = nextNewline + newlineLen;
 					nextNewline = input.indexOf(newline, cursor);
@@ -19774,7 +19803,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 				'You need to set Papa.SCRIPT_PATH manually.'
 			);
 		var workerUrl = Papa.SCRIPT_PATH || AUTO_SCRIPT_PATH;
-		// Append "papaworker" to the search string to tell papaparse that this is our worker.
+		// Append 'papaworker' to the search string to tell papaparse that this is our worker.
 		workerUrl += (workerUrl.indexOf('?') !== -1 ? '&' : '?') + 'papaworker';
 		var w = new global.Worker(workerUrl);
 		w.onmessage = mainThreadReceivedMessage;
@@ -19839,7 +19868,7 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 	}
 
 	function notImplemented() {
-		throw "Not implemented.";
+		throw 'Not implemented.';
 	}
 
 	/** Callback when worker thread receives a message */
@@ -19890,7 +19919,9 @@ define('resources/value-converters/VehicleNameValueConverter',['exports', '../..
 	{
 		return typeof func === 'function';
 	}
-})(typeof window !== 'undefined' ? window : this);
 
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\r\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\r\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\r\n\r\n    <div>\r\n        <form submit.delegate=\"generateConfig()\">\r\n            <button click.delegate=\"previous()\"><</button>\r\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\r\n            <button click.delegate=\"next()\">></button>\r\n\r\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\r\n                <!-- Input Type -->\r\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\r\n                    ${prop.data.name}\r\n                    <input \r\n                        readonly.bind=\"prop.data.readonly\"\r\n                        disabled.bind =\"prop.data.disabled\"\r\n                        pattern.bind=\"prop.data.pattern || '.*'\"\r\n                        maxlength.bind=\"prop.data.maxlength\"\r\n                        type.bind=\"prop.data.type || 'number'\"\r\n                        step.bind=\"prop.data.step || 1\"\r\n                        value.bind=\"vehicle[prop.key]\"/>\r\n                </label>\r\n\r\n                <!-- Select Type -->\r\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\r\n                    ${prop.data.name}\r\n                    <select value.bind=\"vehicle[prop.key]\">\r\n                        <option repeat.for=\"option of prop.data.options\" \r\n                            value=\"${option.value}\">${option.name}\r\n                        </option>\r\n                    </select>\r\n                </label>\r\n            </div>\r\n\r\n            <input type=\"submit\" value=\"Parse\" />\r\n        </form>\r\n    </div>\r\n</template>\r\n"; });
+	return Papa;
+}));
+
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\n                <!-- Input Type -->\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || '.*'\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n\n                <!-- Select Type -->\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <select value.bind=\"vehicle[prop.key]\">\n                        <option repeat.for=\"option of prop.data.options\" \n                            value=\"${option.value}\">${option.name}\n                        </option>\n                    </select>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
 //# sourceMappingURL=app-bundle.js.map
