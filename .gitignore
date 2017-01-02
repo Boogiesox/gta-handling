@@ -2,3 +2,7 @@ node_modules
 /build
 *.log*
 .DS_Store
+scripts/app-bundle.js
+scripts/app-bundle.js
+scripts/app-bundle.js.map
+scripts/vendor-bundle.js

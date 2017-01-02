@@ -14,7 +14,7 @@ export class ConfigService {
 
     generateFile(configBlob) {
         var textToWrite = configBlob,
-            textFileAsBlob = new Blob(["; " + textToWrite], {type:'text/plain'}),
+            textFileAsBlob = new Blob([textToWrite + "\r\n;\r\n;the end\r\n"], {type:'text/plain'}),
             downloadLink = document.createElement("a");
 
         downloadLink.download = "handling.cfg";

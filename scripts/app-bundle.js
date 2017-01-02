@@ -88,7 +88,7 @@ define('configService',["exports", "./node_modules/papaparse/papaparse.js"], fun
 
         generateFile(configBlob) {
             var textToWrite = configBlob,
-                textFileAsBlob = new Blob(["; " + textToWrite], { type: 'text/plain' }),
+                textFileAsBlob = new Blob([textToWrite + "\r\n;\r\n;the end\r\n"], { type: 'text/plain' }),
                 downloadLink = document.createElement("a");
 
             downloadLink.download = "handling.cfg";
@@ -343,17 +343,6 @@ define('main',['exports', './environment'], function (exports, _environment) {
 
     aurelia.start().then(() => aurelia.setRoot());
   }
-});
-define('resources/index',["exports"], function (exports) {
-    "use strict";
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.configure = configure;
-    function configure(config) {
-        //config.globalResources([]);
-    }
 });
 define('models/gta_iii',["exports"], function (exports) {
   "use strict";
@@ -18430,13 +18419,24 @@ define('models/gta_vc',["exports"], function (exports) {
     "rearlights": "1"
   }];
 });
-define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../constants'], function (exports, _constants) {
+define('resources/index',["exports"], function (exports) {
+    "use strict";
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.configure = configure;
+    function configure(config) {
+        //config.globalResources([]);
+    }
+});
+define('resources/value-converters/FieldsConfigValueConverter',['exports', '../../constants'], function (exports, _constants) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.FieldDataProvider = undefined;
+    exports.FieldsConfigValueConverter = undefined;
 
     var _constants2 = _interopRequireDefault(_constants);
 
@@ -18446,7 +18446,7 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
         };
     }
 
-    class FieldDataProvider {
+    class FieldsConfigValueConverter {
         toView(obj) {
             var fields = [],
                 fieldConfigSet = _constants2.default.FIELD_CONFIG;
@@ -18457,10 +18457,36 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
                     key: key
                 });
             });
+
             return fields;
         }
     }
-    exports.FieldDataProvider = FieldDataProvider;
+    exports.FieldsConfigValueConverter = FieldsConfigValueConverter;
+});
+define('resources/value-converters/VehicleNameValueConverter',['exports', '../../constants'], function (exports, _constants) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.VehicleNameValueConverter = undefined;
+
+    var _constants2 = _interopRequireDefault(_constants);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    class VehicleNameValueConverter {
+        toView(id) {
+            var vehicleNames = _constants2.default.VEHICLE_NAMES;
+
+            return vehicleNames[id] || id;
+        }
+    }
+    exports.VehicleNameValueConverter = VehicleNameValueConverter;
 });
 /*!
 	Papa Parse
@@ -18782,12 +18808,12 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
 			// If there a header row, write it first
 			if (hasHeader)
 			{
-				for (var i = 0; i < fields.length; i++)
-				{
-					if (i > 0)
-						csv += _delimiter;
-					csv += safe(fields[i], i);
-				}
+				// for (var i = 0; i < fields.length; i++)
+				// {
+				// 	if (i > 0)
+				// 		csv += _delimiter;
+				// 	csv += safe(fields[i], i);
+				// }
 				if (data.length > 0)
 					csv += _newline;
 			}
@@ -19866,193 +19892,5 @@ define('resources/value-converters/ObjectKeysValueConverter',['exports', '../../
 	}
 })(typeof window !== 'undefined' ? window : this);
 
-define('resources/value-converters/FieldDataProvider',['exports', '../../constants'], function (exports, _constants) {
-    'use strict';
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.FieldsConfigMapper = undefined;
-
-    var _constants2 = _interopRequireDefault(_constants);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    class FieldsConfigMapper {
-        toView(obj) {
-            var fields = [],
-                fieldConfigSet = _constants2.default.FIELD_CONFIG;
-
-            Object.keys(obj).forEach(key => {
-                fields.push({
-                    data: fieldConfigSet[key],
-                    key: key
-                });
-            });
-            return fields;
-        }
-    }
-    exports.FieldsConfigMapper = FieldsConfigMapper;
-});
-define('resources/value-converters/FieldsConfigMapper',['exports', '../../constants'], function (exports, _constants) {
-    'use strict';
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.FieldsConfigValueConverter = undefined;
-
-    var _constants2 = _interopRequireDefault(_constants);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    class FieldsConfigValueConverter {
-        toView(obj) {
-            var fields = [],
-                fieldConfigSet = _constants2.default.FIELD_CONFIG;
-
-            Object.keys(obj).forEach(key => {
-                fields.push({
-                    data: fieldConfigSet[key],
-                    key: key
-                });
-            });
-            return fields;
-        }
-    }
-    exports.FieldsConfigValueConverter = FieldsConfigValueConverter;
-});
-define('resources/value-converters/FieldsConfigValueConverter',['exports', '../../constants'], function (exports, _constants) {
-    'use strict';
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.FieldsConfigValueConverter = undefined;
-
-    var _constants2 = _interopRequireDefault(_constants);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    class FieldsConfigValueConverter {
-        toView(obj) {
-            var fields = [],
-                fieldConfigSet = _constants2.default.FIELD_CONFIG;
-
-            Object.keys(obj).forEach(key => {
-                fields.push({
-                    data: fieldConfigSet[key],
-                    key: key
-                });
-            });
-
-            return fields;
-        }
-    }
-    exports.FieldsConfigValueConverter = FieldsConfigValueConverter;
-});
-define('resources/value-converters/CarNamesValueConverter',['exports', '../../constants'], function (exports, _constants) {
-    'use strict';
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.VehicleDataValueConverter = undefined;
-
-    var _constants2 = _interopRequireDefault(_constants);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    class VehicleDataValueConverter {
-        toView(obj) {
-            var fields = [],
-                vehicleData = _constants2.default.VEHICLE_DATA;
-
-            Object.keys(obj).forEach(id => {
-                fields.push({
-                    data: vehicleData[id],
-                    key: key
-                });
-            });
-            return fields;
-        }
-    }
-    exports.VehicleDataValueConverter = VehicleDataValueConverter;
-});
-define('resources/value-converters/VehicleDataValueConverter',['exports', '../../constants'], function (exports, _constants) {
-    'use strict';
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.VehicleNameValueConverter = undefined;
-
-    var _constants2 = _interopRequireDefault(_constants);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    class VehicleNameValueConverter {
-        toView(obj) {
-            var vehicles = [],
-                vehicleData = _constants2.default.VEHICLE_Names;
-
-            Object.keys(obj).forEach(id => {
-                vehicles.push({
-                    id: vehicleData[id] || { name: id }
-                });
-            });
-
-            return vehicles;
-        }
-    }
-    exports.VehicleNameValueConverter = VehicleNameValueConverter;
-});
-define('resources/value-converters/VehicleNameValueConverter',['exports', '../../constants'], function (exports, _constants) {
-    'use strict';
-
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.VehicleNameValueConverter = undefined;
-
-    var _constants2 = _interopRequireDefault(_constants);
-
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
-
-    class VehicleNameValueConverter {
-        toView(id) {
-            var vehicleNames = _constants2.default.VEHICLE_NAMES;
-
-            return vehicleNames[id] || id;
-        }
-    }
-    exports.VehicleNameValueConverter = VehicleNameValueConverter;
-});
-define('text!app.html', ['module'], function(module) { module.exports = "<template>\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\n\n    <div>\n        <form submit.delegate=\"generateConfig()\">\n            <button click.delegate=\"previous()\"><</button>\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\n            <button click.delegate=\"next()\">></button>\n\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\n                <!-- Input Type -->\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <input \n                        readonly.bind=\"prop.data.readonly\"\n                        disabled.bind =\"prop.data.disabled\"\n                        pattern.bind=\"prop.data.pattern || ''\"\n                        maxlength.bind=\"prop.data.maxlength\"\n                        type.bind=\"prop.data.type || 'number'\"\n                        step.bind=\"prop.data.step || 1\"\n                        value.bind=\"vehicle[prop.key]\"/>\n                </label>\n\n                <!-- Select Type -->\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\n                    ${prop.data.name}\n                    <select value.bind=\"vehicle[prop.key]\">\n                        <option repeat.for=\"option of prop.data.options\" \n                            value=\"${option.value}\">${option.name}\n                        </option>\n                    </select>\n                </label>\n            </div>\n\n            <input type=\"submit\" value=\"Parse\" />\n        </form>\n    </div>\n</template>\n"; });
-define('text!app.css', ['module'], function(module) { module.exports = ""; });
-define('text!css/app.css', ['module'], function(module) { module.exports = "input,\nselect {\n    padding: 0.33em;\n}"; });
+define('text!app.html', ['module'], function(module) { module.exports = "<template>\r\n    <require from=\"./resources/value-converters/FieldsConfigValueConverter\"></require>\r\n    <require from=\"./resources/value-converters/VehicleNameValueConverter\"></require>\r\n\r\n    <div>\r\n        <form submit.delegate=\"generateConfig()\">\r\n            <button click.delegate=\"previous()\"><</button>\r\n            <span style=\"width: 150px; display: inline-block; text-align: center\">${vehicle.id | vehicleName}</span>\r\n            <button click.delegate=\"next()\">></button>\r\n\r\n            <div repeat.for=\"prop of vehicle | fieldsConfig\">\r\n                <!-- Input Type -->\r\n                <label if.bind=\"prop.data.type !== 'select' && !prop.data.hide\">\r\n                    ${prop.data.name}\r\n                    <input \r\n                        readonly.bind=\"prop.data.readonly\"\r\n                        disabled.bind =\"prop.data.disabled\"\r\n                        pattern.bind=\"prop.data.pattern || '.*'\"\r\n                        maxlength.bind=\"prop.data.maxlength\"\r\n                        type.bind=\"prop.data.type || 'number'\"\r\n                        step.bind=\"prop.data.step || 1\"\r\n                        value.bind=\"vehicle[prop.key]\"/>\r\n                </label>\r\n\r\n                <!-- Select Type -->\r\n                <label if.bind=\"prop.data.type === 'select' && !prop.data.hide\">\r\n                    ${prop.data.name}\r\n                    <select value.bind=\"vehicle[prop.key]\">\r\n                        <option repeat.for=\"option of prop.data.options\" \r\n                            value=\"${option.value}\">${option.name}\r\n                        </option>\r\n                    </select>\r\n                </label>\r\n            </div>\r\n\r\n            <input type=\"submit\" value=\"Parse\" />\r\n        </form>\r\n    </div>\r\n</template>\r\n"; });
 //# sourceMappingURL=app-bundle.js.map
