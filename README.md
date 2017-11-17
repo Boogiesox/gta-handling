@@ -1,8 +1,7 @@
-# SNAFOO
-### Nerdery Snack Food Ordering System
+# GTA Handling
+### GTA Handling Config File Generator
 
 ## QuickStart:
-1. Start a compatible server at ```localhost:3000```
 1. Run ```npm i```
 1. Run ```npm run start```
 
