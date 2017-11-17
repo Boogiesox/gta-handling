@@ -4,7 +4,9 @@ const FIELD_CONFIG = {
     },
     mass: {
         name: "Mass",
-        maxlength: 10
+        maxlength: 10,
+        step: 1,
+        type: "number",
     },
     dimx: {
         name: "Dimension X",
@@ -37,7 +39,9 @@ const FIELD_CONFIG = {
         type: "number",
     },
     persubmerged: {
-        name: "Percent Submerged"
+        name: "Percent Submerged",
+        step: 1,
+        type: "number",
     },
     tractionmult: {
         name: "Traction Multiplier",
@@ -55,13 +59,19 @@ const FIELD_CONFIG = {
         type: "number",
     },
     numofgears: {
-        name: "Number of Gears"
+        name: "Number of Gears",
+        step: 1,
+        type: "number",
     },
     velocity: {
-        name: "Max Velocity"
+        name: "Max Velocity",
+        step: 1,
+        type: "number",
     },
     acceleration: {
-        name: "Acceleration"
+        name: "Acceleration",
+        step: 1,
+        type: "number",
     },
     drivetype: {
         name: "Drive Type",
@@ -120,7 +130,9 @@ const FIELD_CONFIG = {
         type: "number",
     },
     value: {
-        name: "Monetary Value"
+        name: "Monetary Value",
+        step: 1,
+        type: "number",
     },
     suspensionuplimit: {
         name: "Suspension Upper Limit",
@@ -139,7 +151,8 @@ const FIELD_CONFIG = {
     },
     flags: {
         name: "Flags",
-        type: "text"
+        type: "text",
+        maxlength: 8,
     },
     frontlights: {
         name: "Front Lights Type",

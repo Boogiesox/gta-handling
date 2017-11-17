@@ -17,12 +17,12 @@ const Label = ({ config, name }) => {
     return label;
 };
 
-const Param = ({ onChange, config, value }) => {
-    let param = null;
+const ParamField = ({ onChange, config, value }) => {
+    let paramField = null;
     
     if(config && !config.hide && config.type) {
         if(config.type === "number") {
-            param = (
+            paramField = (
                 <input
                     onChange={onChange}
                     type="number"
@@ -30,13 +30,24 @@ const Param = ({ onChange, config, value }) => {
                     value={value}
                 />
             );
+        } else if(config.type === "text") {
+            paramField = (
+                <input
+                    onChange={onChange}
+                    type="text"
+                    value={value}
+                    maxLength={config.maxLength}
+                />
+            );
         } else if(config.type === "select") {
-            param = (
+            paramField = (
                 <select onChange={onChange}>
                     {
-                        config.options.map((o) => {
+                        config.options.map((o, i) => {
                             return (
-                                <option value={o.value}>
+                                <option
+                                    key={`paramOption_${i}`}
+                                    value={o.value}>
                                     {o.name}
                                 </option>
                             )
@@ -47,7 +58,7 @@ const Param = ({ onChange, config, value }) => {
         }
     }
 
-    return param;
+    return paramField;
 };
 
 const ParamsList = ({ onChange, selectedVehicleModel }) => {
@@ -56,17 +67,15 @@ const ParamsList = ({ onChange, selectedVehicleModel }) => {
             {
                 Object.keys(selectedVehicleModel)
                     .map((k) => (
-                        <div>
+                        <div key={`param_${k}`}>
                             <Label
-                                key={`paramLabel_${k}`}
                                 config={constants.fieldConfig[k]}
                                 name={constants.fieldConfig[k]
                                     ? constants.fieldConfig[k].name
                                     : k}
                             />
                             
-                            <Param
-                                key={`paramInput_${k}`}
+                            <ParamField
                                 config={constants.fieldConfig[k]}
                                 value={selectedVehicleModel[k]}
                                 onChange={(e) => onChange(k, e.target.value)}

@@ -21335,15 +21335,27 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         }));
     }
 
-    parse(model) {
+    buildAndDownloadFile(config) {
+        const textFileAsBlob = new Blob([config], { type: 'text/plain' });
+        const downloadLink = document.createElement("a");
+
+        downloadLink.download = "handling.cfg";
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+    }
+
+    unparse(model) {
         const config = {
             delimiter: " ",
-            newline: "", // auto-detect
+            newline: "\r\n",
             quoteChar: '"',
             header: false
         };
+        const unparsed = __WEBPACK_IMPORTED_MODULE_4_papaparse___default.a.unparse(model, config);
+        const processed = `${unparsed}${config.newline};${config.newline};the end`;
 
-        console.log(__WEBPACK_IMPORTED_MODULE_4_papaparse___default.a.unparse(model, config));
+        this.buildAndDownloadFile(processed);
     }
 
     render() {
@@ -21372,7 +21384,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
                 { onClick: () => {
-                        this.parse(gameModel);
+                        this.unparse(gameModel);
                     } },
                 'Parse'
             )
@@ -45385,7 +45397,9 @@ const FIELD_CONFIG = {
     },
     mass: {
         name: "Mass",
-        maxlength: 10
+        maxlength: 10,
+        step: 1,
+        type: "number"
     },
     dimx: {
         name: "Dimension X",
@@ -45418,7 +45432,9 @@ const FIELD_CONFIG = {
         type: "number"
     },
     persubmerged: {
-        name: "Percent Submerged"
+        name: "Percent Submerged",
+        step: 1,
+        type: "number"
     },
     tractionmult: {
         name: "Traction Multiplier",
@@ -45436,13 +45452,19 @@ const FIELD_CONFIG = {
         type: "number"
     },
     numofgears: {
-        name: "Number of Gears"
+        name: "Number of Gears",
+        step: 1,
+        type: "number"
     },
     velocity: {
-        name: "Max Velocity"
+        name: "Max Velocity",
+        step: 1,
+        type: "number"
     },
     acceleration: {
-        name: "Acceleration"
+        name: "Acceleration",
+        step: 1,
+        type: "number"
     },
     drivetype: {
         name: "Drive Type",
@@ -45493,7 +45515,9 @@ const FIELD_CONFIG = {
         type: "number"
     },
     value: {
-        name: "Monetary Value"
+        name: "Monetary Value",
+        step: 1,
+        type: "number"
     },
     suspensionuplimit: {
         name: "Suspension Upper Limit",
@@ -45512,7 +45536,8 @@ const FIELD_CONFIG = {
     },
     flags: {
         name: "Flags",
-        type: "text"
+        type: "text",
+        maxlength: 8
     },
     frontlights: {
         name: "Front Lights Type",
@@ -45635,25 +45660,34 @@ const Label = ({ config, name }) => {
     return label;
 };
 
-const Param = ({ onChange, config, value }) => {
-    let param = null;
+const ParamField = ({ onChange, config, value }) => {
+    let paramField = null;
 
     if (config && !config.hide && config.type) {
         if (config.type === "number") {
-            param = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+            paramField = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
                 onChange: onChange,
                 type: 'number',
                 step: config.step,
                 value: value
             });
+        } else if (config.type === "text") {
+            paramField = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', {
+                onChange: onChange,
+                type: 'text',
+                value: value,
+                maxLength: config.maxLength
+            });
         } else if (config.type === "select") {
-            param = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            paramField = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'select',
                 { onChange: onChange },
-                config.options.map(o => {
+                config.options.map((o, i) => {
                     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'option',
-                        { value: o.value },
+                        {
+                            key: `paramOption_${i}`,
+                            value: o.value },
                         o.name
                     );
                 })
@@ -45661,7 +45695,7 @@ const Param = ({ onChange, config, value }) => {
         }
     }
 
-    return param;
+    return paramField;
 };
 
 const ParamsList = ({ onChange, selectedVehicleModel }) => {
@@ -45670,14 +45704,12 @@ const ParamsList = ({ onChange, selectedVehicleModel }) => {
         null,
         Object.keys(selectedVehicleModel).map(k => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            null,
+            { key: `param_${k}` },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Label, {
-                key: `paramLabel_${k}`,
                 config: __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* default */].fieldConfig[k],
                 name: __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* default */].fieldConfig[k] ? __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* default */].fieldConfig[k].name : k
             }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Param, {
-                key: `paramInput_${k}`,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(ParamField, {
                 config: __WEBPACK_IMPORTED_MODULE_2__constants__["a" /* default */].fieldConfig[k],
                 value: selectedVehicleModel[k],
                 onChange: e => onChange(k, e.target.value)
