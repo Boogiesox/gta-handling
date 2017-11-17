@@ -21335,7 +21335,8 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         }));
     }
 
-    buildAndDownloadFile(config) {
+    buildAndDownloadFile(model) {
+        const config = this.unparseAndProcess(model);
         const textFileAsBlob = new Blob([config], { type: 'text/plain' });
         const downloadLink = document.createElement("a");
 
@@ -21345,7 +21346,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         downloadLink.click();
     }
 
-    unparse(model) {
+    unparseAndProcess(model) {
         const config = {
             delimiter: " ",
             newline: "\r\n",
@@ -21355,7 +21356,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         const unparsed = __WEBPACK_IMPORTED_MODULE_4_papaparse___default.a.unparse(model, config);
         const processed = `${unparsed}${config.newline};${config.newline};the end`;
 
-        this.buildAndDownloadFile(processed);
+        return processed;
     }
 
     render() {
@@ -21384,7 +21385,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
                 { onClick: () => {
-                        this.unparse(gameModel);
+                        this.buildAndDownloadFile(gameModel);
                     } },
                 'Parse'
             )

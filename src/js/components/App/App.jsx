@@ -58,15 +58,28 @@ class App extends React.Component {
         }));
     }
 
-    parse(model) {
+    buildAndDownloadFile(model) {
+        const config = this.unparseAndProcess(model);
+        const textFileAsBlob = new Blob([config], {type:'text/plain'});
+        const downloadLink = document.createElement("a");
+
+        downloadLink.download = "handling.cfg";
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+    }
+
+    unparseAndProcess(model) {
         const config = {
             delimiter: " ",
-            newline: "",	// auto-detect
+            newline: "\r\n",
             quoteChar: '"',
             header: false,
         };
+        const unparsed = Papa.unparse(model, config);
+        const processed = `${unparsed}${config.newline};${config.newline};the end`;
 
-        console.log(Papa.unparse(model, config));
+        return processed;
     }
 
     render() {
@@ -94,7 +107,7 @@ class App extends React.Component {
                     selectedVehicleModel={this.getSelectedVehicleModel(this.state.selectedVehicle)}
                 />
 
-                <button onClick={() => {this.parse(gameModel)}}>Parse</button>
+                <button onClick={() => {this.buildAndDownloadFile(gameModel)}}>Parse</button>
             </div>
         );
     }
