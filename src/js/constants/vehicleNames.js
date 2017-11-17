@@ -1,4 +1,5 @@
 const VEHICLE_NAMES = {
+    "ADMIRAL": "Admiral",
     "LANDSTAL": "Landstalker",
     "IDAHO": "Idaho",
     "STINGER": "Stinger",

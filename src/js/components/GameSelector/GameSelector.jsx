@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 const PROP_TYPES = {
     selectedGame: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
 };
 
 const DEFAULT_PROPS = {
     selectedGame: 'gta_iii',
+    onChange: () => {},
 };
 
 const GAME_NAMES = {

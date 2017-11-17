@@ -23,17 +23,18 @@ class App extends React.Component {
         this.state.selectedVehicle = this.state.gameModel[0].id;
     }
 
-    getSelectedVehicleModel() {
+    getSelectedVehicleModel(vehicleId) {
         return this.state.gameModel
             .find((v) => {
-                return v.id === this.state.selectedVehicle;
+                return v.id === vehicleId;
             });
     }
 
     gameSelectionChange(gameOption) {
         this.setState(() => ({
             selectedGame: gameOption,
-            gameModel: models[this.state.selectedGame],
+            gameModel: models[gameOption],
+            selectedVehicle: models[gameOption][0].id,
         }));
     }
 
@@ -63,20 +64,6 @@ class App extends React.Component {
             newline: "",	// auto-detect
             quoteChar: '"',
             header: false,
-            dynamicTyping: false,
-            preview: 0,
-            encoding: "",
-            worker: false,
-            comments: false,
-            step: undefined,
-            complete: undefined,
-            error: undefined,
-            download: true,
-            skipEmptyLines: false,
-            chunk: undefined,
-            fastMode: undefined,
-            beforeFirstChunk: undefined,
-            withCredentials: undefined
         };
 
         console.log(Papa.unparse(model, config));
@@ -104,7 +91,7 @@ class App extends React.Component {
 
                 <ParamsList
                     onChange={this.handleVehicleParamChange}
-                    selectedVehicleModel={this.getSelectedVehicleModel()}
+                    selectedVehicleModel={this.getSelectedVehicleModel(this.state.selectedVehicle)}
                 />
 
                 <button onClick={() => {this.parse(gameModel)}}>Parse</button>

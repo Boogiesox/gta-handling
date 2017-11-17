@@ -6,7 +6,7 @@ import constants from '../../constants';
 const Label = ({ config, name }) => {
     let label = null;
 
-    if(!config.hide) {
+    if(config && !config.hide) {
         return (
             <label>
                 {name}
@@ -20,7 +20,7 @@ const Label = ({ config, name }) => {
 const Param = ({ onChange, config, value }) => {
     let param = null;
     
-    if(!config.hide && config.type) {
+    if(config && !config.hide && config.type) {
         if(config.type === "number") {
             param = (
                 <input
