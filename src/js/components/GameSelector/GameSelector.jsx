@@ -27,6 +27,10 @@ const Option = ({ value, text }) => (
 const GameSelector = ({ onChange, selectedGame }) => {
     return (
         <div>
+            <label>
+                Game:&nbsp;
+            </label>
+            
             <select
                 onChange={(e) => { onChange(e.target.value) }}
             >

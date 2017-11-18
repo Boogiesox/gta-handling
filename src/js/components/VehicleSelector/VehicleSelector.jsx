@@ -22,6 +22,9 @@ const Option = ({ value, text }) => (
 const VehicleSelector = ({ onChange, selectedVehicle, model }) => {
     return (
         <div>
+            <label>
+                Vehicle:&nbsp;
+            </label>
             <select
                 onChange={(e) => { onChange(e.target.value) }}
             >

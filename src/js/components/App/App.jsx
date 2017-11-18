@@ -59,8 +59,8 @@ class App extends React.Component {
     }
 
     buildAndDownloadFile(model) {
-        const config = this.unparseAndProcess(model);
-        const textFileAsBlob = new Blob([config], {type:'text/plain'});
+        const csv = this.unparseAndProcess(model);
+        const textFileAsBlob = new Blob([csv], {type:'text/plain'});
         const downloadLink = document.createElement("a");
 
         downloadLink.download = "handling.cfg";
@@ -102,12 +102,16 @@ class App extends React.Component {
                     model={this.state.gameModel}
                 />
 
+                <hr />
+
                 <ParamsList
                     onChange={this.handleVehicleParamChange}
                     selectedVehicleModel={this.getSelectedVehicleModel(this.state.selectedVehicle)}
                 />
 
-                <button onClick={() => {this.buildAndDownloadFile(gameModel)}}>Parse</button>
+                <hr />
+
+                <button onClick={() => {this.buildAndDownloadFile(gameModel)}}>Download</button>
             </div>
         );
     }

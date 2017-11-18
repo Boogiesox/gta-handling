@@ -21336,8 +21336,8 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
     }
 
     buildAndDownloadFile(model) {
-        const config = this.unparseAndProcess(model);
-        const textFileAsBlob = new Blob([config], { type: 'text/plain' });
+        const csv = this.unparseAndProcess(model);
+        const textFileAsBlob = new Blob([csv], { type: 'text/plain' });
         const downloadLink = document.createElement("a");
 
         downloadLink.download = "handling.cfg";
@@ -21378,16 +21378,18 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
                 selectedVehicle: selectedVehicle,
                 model: this.state.gameModel
             }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__ParamsList__["a" /* default */], {
                 onChange: this.handleVehicleParamChange,
                 selectedVehicleModel: this.getSelectedVehicleModel(this.state.selectedVehicle)
             }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'button',
                 { onClick: () => {
                         this.buildAndDownloadFile(gameModel);
                     } },
-                'Parse'
+                'Download'
             )
         );
     }
@@ -45295,6 +45297,11 @@ const GameSelector = ({ onChange, selectedGame }) => {
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'label',
+            null,
+            'Game:\xA0'
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'select',
             {
                 onChange: e => {
@@ -45363,6 +45370,11 @@ const VehicleSelector = ({ onChange, selectedVehicle, model }) => {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
         null,
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'label',
+            null,
+            'Vehicle:\xA0'
+        ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'select',
             {
