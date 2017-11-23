@@ -45700,6 +45700,7 @@ const ParamField = ({ onChange, config, value }) => {
                         'option',
                         {
                             key: `paramOption_${i}`,
+                            selected: o.value === value,
                             value: o.value },
                         o.name
                     );
