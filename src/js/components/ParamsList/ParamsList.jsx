@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import constants from '../../constants';
+import { fieldConfig } from '../../constants';
+import FlagsEditor from './FlagsEditor';
 
 const Label = ({ config, name }) => {
     let label = null;
@@ -17,7 +18,7 @@ const Label = ({ config, name }) => {
     return label;
 };
 
-const ParamField = ({ onChange, config, value }) => {
+const ParamField = ({ onChange, config, value, selectedGame }) => {
     let paramField = null;
     
     if(config && !config.hide && config.type) {
@@ -41,13 +42,15 @@ const ParamField = ({ onChange, config, value }) => {
             );
         } else if(config.type === "select") {
             paramField = (
-                <select onChange={onChange}>
+                <select
+                    onChange={onChange}
+                    value={value}
+                >
                     {
                         config.options.map((o, i) => {
                             return (
                                 <option
                                     key={`paramOption_${i}`}
-                                    selected={o.value === value}
                                     value={o.value}>
                                     {o.name}
                                 </option>
@@ -56,13 +59,21 @@ const ParamField = ({ onChange, config, value }) => {
                     }
                 </select>
             );
+        } else if(config.type === "flags") {
+            paramField = (
+                <FlagsEditor
+                    onChange={onChange}
+                    value={value}
+                    selectedGame={selectedGame}
+                />
+            );
         }
     }
 
     return paramField;
 };
 
-const ParamsList = ({ onChange, selectedVehicleModel }) => {
+const ParamsList = ({ onChange, selectedVehicleModel, selectedGame }) => {
     return (
         <div>
             {
@@ -70,22 +81,23 @@ const ParamsList = ({ onChange, selectedVehicleModel }) => {
                     .map((k) => (
                         <div key={`param_${k}`}>
                             <Label
-                                config={constants.fieldConfig[k]}
-                                name={constants.fieldConfig[k]
-                                    ? constants.fieldConfig[k].name
+                                config={fieldConfig[k]}
+                                name={fieldConfig[k]
+                                    ? fieldConfig[k].name
                                     : k}
                             />
                             
                             <ParamField
-                                config={constants.fieldConfig[k]}
+                                config={fieldConfig[k]}
                                 value={selectedVehicleModel[k]}
                                 onChange={(e) => onChange(k, e.target.value)}
+                                selectedGame={selectedGame}
                             />
                         </div>
                     ))
             }
         </div>
     );
-}
+};
 
 export default ParamsList;

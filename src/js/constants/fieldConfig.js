@@ -151,8 +151,7 @@ const FIELD_CONFIG = {
     },
     flags: {
         name: "Flags",
-        type: "text",
-        maxlength: 8,
+        type: "flags",
     },
     frontlights: {
         name: "Front Lights Type",

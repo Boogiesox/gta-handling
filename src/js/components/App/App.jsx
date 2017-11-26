@@ -99,14 +99,15 @@ class App extends React.Component {
                 <VehicleSelector
                     onChange={this.handleVehicleSelectionChange}
                     selectedVehicle={selectedVehicle}
-                    model={this.state.gameModel}
+                    model={gameModel}
                 />
 
                 <hr />
 
                 <ParamsList
                     onChange={this.handleVehicleParamChange}
-                    selectedVehicleModel={this.getSelectedVehicleModel(this.state.selectedVehicle)}
+                    selectedVehicleModel={this.getSelectedVehicleModel(selectedVehicle)}
+                    selectedGame={selectedGame}
                 />
 
                 <hr />
