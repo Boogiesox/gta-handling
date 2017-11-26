@@ -31,12 +31,10 @@ const getSelectedFlags = (hexValue) => {
     // (8) and working backward to find out what sequence adds
     // up to the decimal value using 1, 2, 4, and 8.
     for (let index = 8; index !== 0; index = index/2) {
-        if(decimal != 0) {
-            if(decimal >= index) {
-                selectedFlags.push(index);
-                decimal = decimal - index;
-            } 
-        }
+        if(decimal >= index) {
+            selectedFlags.push(index);
+            decimal = decimal - index;
+        } 
     };
 
     return selectedFlags
