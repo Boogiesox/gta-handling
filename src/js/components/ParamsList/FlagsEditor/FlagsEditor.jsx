@@ -14,7 +14,7 @@ const PROP_TYPES = {
 };
 
 const DEFAULT_PROPS = {
-    byteCount: 4,
+    onChange: () => {},
 };
 
 // Reduce 16-bit hex byte values above to array of flags
@@ -86,6 +86,12 @@ const FlagsEditor = ({ onChange, value, selectedGame }) => {
                     );
                 })
             }
+
+            <style jsx>{`
+                fieldset {
+                    display: inline-block;
+                }
+            `}</style>
         </div>
     );
 };
