@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { flagsConfig } from '../../../constants';
 
+// Helper to replace a string character at {index}
 String.prototype.replaceAt = function(index, character) {
     return this.substr(0, index) + character + this.substr(index+character.length);
 };
@@ -34,26 +35,33 @@ const getSelectedFlags = (hexValue) => {
         if(decimal >= index) {
             selectedFlags.push(index);
             decimal = decimal - index;
-        } 
+        }
     };
 
     return selectedFlags
 };
 
-const ByteValue = ({ onChange, label, byte, isSelected }) => {
+const FlagInput = ({ onChange, label, byte, isSelected, index, value }) => {
 
     return (
         <div>
+            <input
+                type="checkbox"
+                onChange={e => {
+                    onChange({
+                        action: isSelected ? 'remove' : 'add',
+                        index,
+                        value,
+                    });
+                }}
+                checked={isSelected}
+            />
+
+            &nbsp;
+
             <label>
                 {label}
             </label>
-            
-            <input
-                type="checkbox"
-                onChange={onChange}
-                name={byte.value}
-                checked={isSelected}
-            />
         </div>
     );
 };
@@ -64,19 +72,30 @@ const FlagsEditor = ({ onChange, value, selectedGame }) => {
     return (
         <div>
             {
-                bytes.map((b, i) => {
+                bytes.map((byte, i) => {
                     const selectedFlags = getSelectedFlags(value[i]);
 
                     return (
                         <fieldset>
                             {
-                                b.values.map(f => (
-                                    <ByteValue
-                                        onChange={onChange}
-                                        label={f.id}
-                                        byte={b}
-                                        flag={value[i]}
-                                        isSelected={selectedFlags.includes(f.value)}
+                                byte.values.map(flag => (
+                                    <FlagInput
+                                        onChange={update => {
+                                            const updatedByteHex = update.action === 'add' ?
+                                                value.replaceAt(update.index, (parseInt(value[update.index], 16) + update.value).toString(16).toUpperCase()) :
+                                                value.replaceAt(update.index, (parseInt(value[update.index], 16) - update.value).toString(16).toUpperCase());
+                                            const e = {
+                                                target: {
+                                                    value: updatedByteHex,
+                                                }
+                                            }
+                                            onChange(e);
+                                        }}
+                                        label={flag.name}
+                                        byte={byte}
+                                        isSelected={selectedFlags.includes(flag.value)}
+                                        index={i}
+                                        value={flag.value}
                                     />
                                 ))
                             }
