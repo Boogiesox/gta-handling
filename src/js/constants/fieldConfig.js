@@ -1,4 +1,4 @@
-const FIELD_CONFIG = {
+export default {
     id: {
         hide: true
     },
@@ -174,5 +174,3 @@ const FIELD_CONFIG = {
         ]
     }
 };
-
-export default FIELD_CONFIG;

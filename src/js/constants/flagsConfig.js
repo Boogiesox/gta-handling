@@ -1,4 +1,4 @@
-const FLAGS_CONFIG = {
+export default {
     gta_iii: [
         {
             values: [
@@ -301,5 +301,3 @@ const FLAGS_CONFIG = {
         },
     ],
 };
-
-export default FLAGS_CONFIG;

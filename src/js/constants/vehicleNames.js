@@ -1,4 +1,4 @@
-const VEHICLE_NAMES = {
+export default {
     "ADMIRAL": "Admiral",
     "LANDSTAL": "Landstalker",
     "IDAHO": "Idaho",
@@ -58,5 +58,3 @@ const VEHICLE_NAMES = {
     "YANKEE": "Yankee",
     "BORGNINE": "Borgnine Cabbie"
 };
-
-export default VEHICLE_NAMES;
