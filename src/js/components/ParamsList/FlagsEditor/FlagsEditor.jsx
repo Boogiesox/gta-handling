@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 
 import { flagsConfig } from '../../../constants';
 
-// Helper to replace a string character at {index}
-String.prototype.replaceAt = function(index, character) {
-    return this.substr(0, index) + character + this.substr(index+character.length);
-};
-
 const PROP_TYPES = {
     onChange: PropTypes.func.isRequired,
     value: PropTypes.string.isRequired,
