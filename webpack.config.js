@@ -1,6 +1,8 @@
 const path = require('path');
+const UglifyWebpackPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
+  mode: "development",
   entry: [
     './src/js/app.js'
   ],
@@ -12,12 +14,17 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?|.js?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        exclude: [
+          /node_modules/
+        ]
       },
     ]
   },
+  optimization: {
+    minimizer: [new UglifyWebpackPlugin({ sourceMap: true })]
+  }
 };

@@ -55,11 +55,15 @@ const getUpdatedByteHex = (value, update) => {
 
     switch (update.action) {
         case updateActions.ADD: // Add update value to existing value and convert to hex
-            return value.replaceAt(update.index, (decimal + update.value).toString(16).toUpperCase());
+            return value.replaceAt(update.index, (decimal + update.value)
+                .toString(16)
+                .toUpperCase());
             break;
         
         case updateActions.REMOVE: // Subtract update value from existing value and convert to hex
-            return value.replaceAt(update.index, (decimal - update.value).toString(16).toUpperCase());
+            return value.replaceAt(update.index, (decimal - update.value)
+                .toString(16)
+                .toUpperCase());
             break;
     
         default: // error
